@@ -1,0 +1,220 @@
+@include md {
+    .footer {
+        &__promo {
+            flex-direction: column;
+            padding: 47rem 0;
+            gap: 36rem;
+
+            &__text {
+                text-align: center;
+            }
+
+            &__form {
+                max-width: 486rem;
+                padding: 8rem 5rem 8rem 28rem;
+                box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.20);
+            }
+
+            &__button {
+                width: 141rem;
+            }
+        }
+
+        // .footer__background
+
+        &__background {
+            &_toy {
+                left: 9rem;
+                top: 0;
+            }
+
+            &_ball {
+                right: -15rem;
+                bottom: 0;
+                height: 231rem;
+            }
+        }
+
+        // .footer__phone
+
+        &__phone {
+
+            &__logo {
+                width: 20rem;
+            }
+        }
+
+        &__nav {
+
+            &__container {
+                padding-right: 42rem;
+                padding-top: 6rem;
+            }
+        }
+
+        &_bottom {
+            padding: 48rem 16rem 73rem;
+            gap: 76rem;
+        }
+
+        &__payment-copyright {
+
+            &__container {
+                gap: 36rem;
+            }
+        }
+
+        &__payment {
+            padding-left: 2rem;
+        }
+
+        &__copyright {
+            width: 327rem;
+        }
+    }
+}
+
+@include sm {
+    .footer {
+        &__promo {
+            flex-direction: column;
+            padding: 47rem 0 49rem;
+            gap: 27rem;
+
+            &__text {
+                max-width: 315rem;
+                text-align: center;
+                font-size: 16rem;
+                line-height: 20rem;
+            }
+
+            &__form {
+                max-width: 486rem;
+                height: 66rem;
+                padding: 8rem 8rem 8rem 19rem;
+                box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.20);
+            }
+
+            &__input {
+                padding-top: 5rem;
+                font-family: Montserrat;
+                font-size: 13px;
+                font-weight: 300;
+            }
+
+
+            &__button {
+                width: 96rem;
+                font-size: 13rem;
+            }
+        }
+
+        // .footer__background
+
+        &__background {
+
+            &_toy {
+                left: -87rem;
+                top: 0;
+                height: 132rem;
+            }
+
+
+
+            &_ball {
+                right: -83rem;
+                bottom: 0;
+                height: 175rem;
+            }
+        }
+
+
+        // .footer__info
+
+        &__info {
+            &__container {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 28rem;
+            }
+        }
+
+        &__contacts {
+
+            &__wrapper {
+                gap: 27rem;
+            }
+        }
+
+        // .footer__phone
+
+        &__phone {
+            &__wrapper {
+                gap: 16rem;
+            }
+
+            &__logo {
+                width: 20rem;
+            }
+        }
+
+        &__socials {
+            gap: 27rem;
+
+            .social {
+                cursor: pointer;
+                width: 33rem;
+                height: 33rem;
+            }
+        }
+
+        &__nav {
+            gap:35rem;
+
+            &__container {
+                padding-right: 0;
+                gap:77rem;
+            }
+
+            &__link {
+                font-size: 14rem;
+                white-space: nowrap;
+            }
+        }
+
+        &_bottom {
+            padding: 49rem 16rem 43rem;
+            gap: 43rem;
+        }
+
+        &__payment-copyright {
+
+            &__container {
+                gap: 31rem;
+            }
+
+            &__wrapper{
+                flex-direction: column;
+                gap:32rem;
+            }
+        }
+
+        &__payment {
+            padding-left: 0;
+            width: 100%;
+            gap: 7rem;
+            justify-content: space-between;
+
+        &__icon {
+            width: 60rem;
+        }
+        }
+
+        &__copyright {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}

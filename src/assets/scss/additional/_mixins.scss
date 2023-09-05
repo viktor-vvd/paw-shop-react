@@ -1,0 +1,46 @@
+@mixin text__button_hover {
+    .text__button {
+        font-size: 15rem;
+        font-weight: 500;
+    }
+
+    .text__button .cat,
+    .text__button .dog {
+        font-weight: 600;
+    }
+}
+
+@mixin button__icon_arrow_hover {
+    .button__icon_arrow {
+        transform: rotate(-45deg);
+    }
+
+    .button__icon_arrow_right {
+        transform: rotate(45deg);
+    }
+}
+
+@mixin banner__button_hover {
+    background: #FFF;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+
+    .banner__button .cat,
+    .banner__button .dog {
+        font-weight: 600;
+    }
+
+    @include text__button_hover;
+    @include button__icon_arrow_hover;
+}
+
+@mixin md {
+    @media (max-width: 1000px){
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 767px) {
+        @content;
+    }
+}

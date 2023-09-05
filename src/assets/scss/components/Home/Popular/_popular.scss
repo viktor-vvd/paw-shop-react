@@ -1,0 +1,23 @@
+.section-popular {
+    width: 100%;
+    padding-top: 140rem;
+    padding-bottom: 129.5rem;
+    gap: 50.08rem;
+
+    // .section-popular__container
+
+    &__container {
+        gap: 40rem;
+    }
+
+    .populars {
+        width: 100%;
+        gap: 29.92rem;
+        justify-content: center;
+    }
+
+    .for-cat-dog__container {
+        gap: 30.56rem;
+    }
+}
+

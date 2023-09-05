@@ -1,0 +1,119 @@
+@include md {
+    .product-card {
+        width: 235rem;
+
+        .image {
+            width: 195rem;
+            height: auto;
+
+            &__container {
+                height: 194rem;
+                align-items: center;
+
+                .tag {
+                    position: absolute;
+                    top: -2rem;
+                    left: 0;
+                }
+            }
+        }
+
+        &__bottom {
+
+            .price {
+                // .price__container
+
+                &__container {
+                    gap: 10.36rem;
+                }
+            }
+
+            .button {
+                width: 73.703rem;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@include sm {
+    .product-card {
+        width: 157rem;
+        height: 284rem;
+        padding: 14rem;
+        gap: 12rem;
+        justify-content: flex-start;
+
+        &__title {
+            width: 100%;
+            height: 51rem;
+            line-height: 17rem;
+        }
+
+        .image {
+            width: 124rem;
+            height: auto;
+
+            &__container {
+                height: 112rem;
+                align-items: center;
+
+                .tag {
+                    position: absolute;
+                    top: 0rem;
+                    left: 0;
+                    padding: 5rem 8rem;
+                    font-size: 14rem;
+                    line-height: 17rem;
+                }
+            }
+        }
+
+        .rate {
+            justify-content: flex-start;
+            height: 15px;
+            gap: 14rem;
+
+            // .rate__stars
+
+            &__stars {
+                gap: 5rem;
+            }
+
+
+            // .rate__text
+
+            &__text {
+                color: $dark-grey;
+                font-family: Montserrat;
+                font-size: 13rem;
+                font-weight: 400;
+            }
+        }
+
+
+        &__bottom {
+            .price {
+                font-family: Montserrat;
+                font-size: 16rem;
+                font-weight: 500;
+
+                // .price_old
+
+                &_old {
+                    font-size: 12rem;
+                }
+
+                // .price__container
+
+                &__container {
+                    gap: 15.36rem;
+                }
+            }
+
+            .button {
+                width: fit-content;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@include md {
+    .section-promo {
+        width: 100%;
+        background: linear-gradient(180deg, #964BFF 0%, #722AD8 100%);
+        gap: 89.6rem;
+        justify-content: center;
+        position: relative;
+
+        .container {
+            max-width: 100%;
+        }
+
+        .promo {
+            // .promo__slider
+
+            &__slider {
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .PC,
+                .SM {
+                    display: none;
+                }
+
+                .MD {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .section-promo {
+        .promo {
+            // .promo__slider
+
+            &__slider {
+
+                .PC,
+                .MD {
+                    display: none;
+                }
+
+                .SM {
+                    display: block;
+                }
+            }
+        }
+    }
+}

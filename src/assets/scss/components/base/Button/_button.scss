@@ -1,0 +1,29 @@
+.button {
+    height: 46rem;
+    padding: 10rem 20rem;
+    gap: 15rem;
+    flex-shrink: 0;
+    border-radius: $border-radius;
+    background: $accent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    // .button__text
+
+    &__text {
+        color: #FFF;
+        font-family: Montserrat Alternates;
+        font-size: 24rem;
+        font-weight: 400;
+    }
+
+    // .button__icon
+
+    &__icon{
+        width: 20rem;
+    }
+
+    &:hover{
+        background: $dark;
+    }
+}

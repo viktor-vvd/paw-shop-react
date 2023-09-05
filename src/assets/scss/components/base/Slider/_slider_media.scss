@@ -1,0 +1,54 @@
+@include md {
+    .slider {
+
+        // .slider__button
+
+        &__button {
+            position: absolute;
+            right: 16rem;
+
+            &:first-child {
+                left: 16rem;
+            }
+        }
+
+        // .slider__dots
+
+        &__dots {
+            bottom: 21rem;
+            gap: 30rem;
+
+            // .dots__item
+
+            &__item {
+                width: 17rem;
+                height: 17rem;
+            }
+        }
+    }
+}
+
+@include sm {
+    .slider {
+
+        // .slider__button
+
+        &__button {
+            display: none;
+        }
+
+        // .slider__dots
+
+        &__dots {
+            bottom: 30rem;
+            gap: 23rem;
+
+            // .dots__item
+
+            &__item {
+                width: 15rem;
+                height: 15rem;
+            }
+        }
+    }
+}

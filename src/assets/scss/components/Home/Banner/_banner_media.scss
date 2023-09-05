@@ -1,0 +1,236 @@
+@include md {
+    .banner {
+        gap: 130rem;
+        /*padding-top: 56rem;*/
+        padding-top: 260rem;
+        padding-bottom: 0;
+
+        .background {
+            height: 100%;
+            padding-top: 70rem;
+            padding-left: 29rem;
+            padding-bottom: 161rem;
+        }
+
+        .cat-image {
+            height: 48%;
+            position: absolute;
+            right: 45.05%;
+            bottom: 61rem;
+
+            &:hover {
+                bottom: 81rem;
+            }
+        }
+
+        .dog-image {
+            height: 70%;
+            left: 29%;
+            bottom: -134rem;
+    
+            &:hover {
+                bottom: -114rem;
+            }
+        }
+    
+        // .banner__middle-container
+
+        &__middle-container {
+            gap: 55rem;
+        }
+
+        // .banner__headline
+
+        &__headline {
+
+            .headline {
+                &__image {
+                    position: absolute;
+
+                    &_ball {
+                        transform: rotate(-105deg);
+                    }
+
+                    &_bone {
+                        width: 396rem;
+                        top: -212.8rem;
+                        right: -167rem;
+                    }
+                }
+            }
+        }
+
+        // .banner
+
+        &__buttons {
+            display: grid;
+            gap: 51rem 20rem;
+            justify-items: stretch;
+        }
+
+        // .banner__button
+
+        &__button {
+            &_dog {
+                justify-self: flex-end;
+            }
+        }
+
+        // .banner__subtitle
+
+        &__subtitle {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+        .benefits {
+            width: 100%;
+            height: 174rem;
+            flex-direction: column;
+            gap: 27rem 19rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 41rem 100rem;
+            border-radius: 0;
+            box-shadow: none;
+
+            // .benefits__item
+
+            &__item {
+                gap: 19.68rem;
+                align-items: center;
+
+                &__icon {
+                    height: 30rem;
+                    flex-shrink: 0;
+                }
+
+                b {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .banner {
+        gap: 79rem;
+        /*padding-top: 56rem;*/
+        padding-top: 188rem;
+        padding-bottom: 0;
+
+        .background {
+            height: 100%;
+            padding-top: 55rem;
+            padding-left: 0;
+            padding-bottom: 161rem;
+        }
+
+        .cat-image {
+            height: 28.35%;
+            right: 44.55%;
+            bottom: 235rem;
+
+            &:hover {
+                bottom: 255rem;
+            }
+        }
+
+        .dog-image {
+            height: 38%;
+            left: 31.6%;
+            bottom: 144rem;
+
+            &:hover {
+                bottom: 164rem;
+            }
+        }
+
+        // .banner__middle-container
+
+        &__middle-container {
+            gap: 36rem;
+        }
+
+        // .banner__headline
+
+        &__headline {
+            max-width: 264rem;
+
+            .headline {
+                &__image {
+                    position: absolute;
+
+                    &_ball {
+                        transform: rotate(-105deg);
+                        width: 127.8rem;
+                        left: -30.4rem;
+                        top: -84.2rem;
+                    }
+
+                    &_bone {
+                        width: 245rem;
+                        top: -114.8rem;
+                        right: -84rem;
+                        transform: rotate(6deg);
+                    }
+                }
+            }
+        }
+
+        // .banner__buttons
+
+        &__buttons {
+            display: grid;
+            gap: 106rem 16rem;
+            justify-items: stretch;
+        }
+
+        // .banner__button
+
+        &__button {
+            height: 57rem;
+            width: 120.5rem;
+            padding: 20rem;
+        }
+
+        // .banner__subtitle
+
+        &__subtitle {
+            grid-column: 1/3;
+            grid-row: 1/2;
+            font-size: 16rem;
+            max-width: 240rem;
+            justify-self: center;
+        }
+
+        .benefits {
+            width: 100%;
+            height: fit-content;
+            flex-direction: column;
+            gap: 20rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30rem 16rem;
+            border-radius: 0;
+            box-shadow: none;
+
+            // .benefits__item
+
+            &__item {
+                gap: 19.68rem;
+                align-items: center;
+
+                &__icon {
+                    height: 30rem;
+                    flex-shrink: 0;
+                }
+
+                b {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

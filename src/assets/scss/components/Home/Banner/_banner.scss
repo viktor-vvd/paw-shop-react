@@ -1,0 +1,177 @@
+.banner {
+    position: relative;
+    width: 100%;
+    /* min-height: 100vh; */
+    background: linear-gradient(179deg, #E9A904 0%, #FFC805 100%);
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 119rem;
+    padding-top: 236rem;
+    padding-bottom: 59rem;
+
+    .background {
+        mix-blend-mode: color-burn;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        padding-top: 64.96rem;
+        padding-bottom: 52.96rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        // .background__pattern
+
+        &__pattern {
+            opacity: 0.15;
+            height: 100%;
+        }
+    }
+
+    .cat-image {
+        height: 86.35%;
+        position: absolute;
+        right: 52.05%;
+        bottom: -131rem;
+        transition: all 1s ease-in-out;
+        cursor: pointer;
+        z-index: 2;
+
+        &:hover {
+            bottom: -99.2rem;
+        }
+
+        &:hover~.banner__middle-container .banner__buttons__container .banner__button_cat {
+            @include banner__button_hover;
+        }
+    }
+
+    .dog-image {
+        position: absolute;
+        height: 100%;
+        left: 47.6%;
+        bottom: -249rem;
+        transition: all 1s ease-in-out;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            bottom: -216rem;
+        }
+
+        &:hover~.banner__middle-container .banner__buttons__container .banner__button_dog {
+            @include banner__button_hover;
+        }
+    }
+
+    // .banner__middle-container
+
+    &__middle-container {
+        gap: 55rem;
+    }
+
+    // .banner__headline
+
+    &__headline {
+        max-width: 548rem;
+        position: relative;
+        z-index: 3;
+
+        .headline {
+            &__image {
+                position: absolute;
+                z-index: 5;
+
+                &_ball {
+                    width: 188.8rem;
+                    left: -110.4rem;
+                    top: -119.2rem;
+                }
+
+                &_bone {
+                    width: 360rem;
+                    top: -204.8rem;
+                    right: -152rem;
+                }
+            }
+
+            &__text {
+                color: $accent;
+                text-align: center;
+                width: 100%;
+                z-index: 4;
+
+                &_dark {
+                    color: $dark;
+                    text-align: center;
+                    width: 100%;
+                    position: absolute;
+                    top: 4.96rem;
+                    z-index: 3;
+                }
+            }
+        }
+    }
+
+    // .banner
+
+    &__buttons {
+        justify-content: center;
+        gap: 128rem;
+    }
+
+    // .banner__button
+
+    &__button {
+        height: 60rem;
+        width: 144.64rem;
+        padding: 25rem 30rem;
+        align-items: center;
+        gap: 15rem;
+        border-radius: $border-radius;
+        background: rgba(255, 255, 255, 0.90);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        z-index: 3;
+
+        &:hover {
+            @include banner__button_hover;
+        }
+    }
+
+    // .banner__subtitle
+
+    &__subtitle {
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 20rem;
+        font-weight: 400;
+        z-index: 3;
+    }
+
+    .benefits {
+        padding: 41rem 100rem;
+        gap: 89rem;
+        z-index: 3;
+        border-radius: $border-radius;
+        background: #FFF;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+
+        // .benefits__item
+
+        &__item {
+            gap: 19.68rem;
+            align-items: center;
+
+            &__icon {
+                height: 30rem;
+                flex-shrink: 0;
+            }
+
+            b {
+                font-weight: 500;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,34 @@
+.for-cat-dog__button {
+    height: 60rem;
+    width: 247.6rem;
+    padding: 16rem 0;
+    gap: 9.92rem;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: $border-radius;
+    cursor: pointer;
+    flex-wrap: nowrap;
+
+    // .for-cat-dog__button_cat
+
+    &_cat {
+        border: 1px solid $cat;
+    }
+
+    // .for-cat-dog__button_dog
+
+    &_dog {
+        border: 1px solid $dog;
+    }
+
+    &:hover {
+        @include text__button_hover;
+        @include button__icon_arrow_hover;
+        border-width: 2px;
+    }
+
+    &__button__icon {
+        width: 30rem;
+        flex-shrink: 0;
+    }
+}

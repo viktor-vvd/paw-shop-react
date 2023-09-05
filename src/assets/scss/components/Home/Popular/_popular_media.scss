@@ -1,0 +1,51 @@
+@include md {
+    .section-popular {
+        padding: 80rem 16rem;
+        gap: 50rem;
+
+        // .section-popular__container
+
+        &__container {
+            gap: 40rem;
+        }
+
+        .populars {
+            height: 401rem;
+            width: 100%;
+            gap: 15.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+
+        .for-cat-dog__container {
+            gap: 16.5rem;
+        }
+    }
+}
+
+@include sm {
+    .section-popular {
+        padding: 50rem 16rem;
+        gap: 40rem;
+
+        // .section-popular__container
+
+        &__container {
+            gap: 30rem;
+        }
+
+        .populars {
+            height: fit-content;
+            width: 100%;
+            gap: 13rem 14rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            overflow: visible;
+        }
+
+        .for-cat-dog__container {
+            gap: 14rem;
+        }
+    }
+}

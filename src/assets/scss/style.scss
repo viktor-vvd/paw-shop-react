@@ -1,0 +1,160 @@
+@import 'additional/reset';
+@import 'additional/variables';
+@import 'additional/mixins';
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Inter&display=swap);
+
+html {
+   font-size: calc(1vw / 19.2);
+}
+
+.outer__container {
+   padding: 0 16rem;
+}
+
+.container {
+   max-width: 1170rem;
+   width: 100%;
+}
+
+.container-vertical {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.container-horisontal {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logo__text {
+   font-family: Amatic SC;
+   font-size: 28rem;
+   font-weight: 700;
+}
+
+.text__button {
+   font-family: Montserrat Alternates;
+   font-size: 15rem;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   white-space: nowrap;
+   text-align: center;
+   transition: all 0.2s ease-in-out;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+}
+
+.headline {
+   font-family: Montserrat Alternates;
+   font-size: 90rem;
+   font-weight: 900;
+   line-height: 110%;
+}
+
+.title {
+   font-family: Montserrat Alternates;
+   font-size: 36rem;
+   font-weight: 700;
+   line-height: 44rem;
+}
+
+.subtitle {
+   font-family: Montserrat Alternates;
+   font-size: 20rem;
+   font-weight: 500;
+}
+
+.text {
+   font-family: Montserrat;
+   font-size: 15rem;
+   font-weight: 400;
+   line-height: 18rem;
+}
+
+.text_light {
+   font-family: Montserrat;
+   font-size: 15rem;
+   font-weight: 300;
+   line-height: 18rem;
+}
+
+.text_accent {
+   color: $accent;
+}
+
+.text_alternates {
+   font-family: Montserrat Alternates;
+}
+
+.cat {
+   color: $cat;
+   font-size: 15rem;
+   font-weight: 500;
+   transition: all 0.2s ease-in-out;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+}
+
+.dog {
+   color: $dog;
+   font-size: 15rem;
+   font-weight: 500;
+   transition: all 0.2s ease-in-out;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+}
+
+.phone {
+   color: #000;
+   font-family: Montserrat;
+   font-size: 20rem;
+   font-style: normal;
+   font-weight: 500;
+   flex-shrink: 0;
+   line-height: 24rem;
+}
+
+.button__icon_arrow {
+   width: 9.5rem;
+   height: 9.5rem;
+   transition: all 0.2s ease-in-out;
+}
+
+.main {
+   width: 100%;
+}
+
+@import 'components/base/Header/header';
+@import 'components/Home/Banner/banner';
+@import 'components/Home/Promo/promo';
+@import 'components/base/Slider/slider';
+@import 'components/Home/Popular/popular';
+@import 'components/base/ProductCard/product_card';
+@import 'components/base/Button/button';
+@import 'components/base/ForCatDogButton/for_cat_dog_button';
+@import 'components/Home/Comments/comments';
+@import 'components/base/CommentCard/comment_card';
+@import 'components/Home/About/about';
+@import 'components/base/Footer/footer';
+@import 'components/base/Header/header_media';
+@import 'components/Home/Banner/banner_media';
+@import 'components/Home/Promo/promo_media';
+@import 'components/base/Slider/slider_media';
+@import 'components/Home/Popular/popular_media';
+@import 'components/base/ProductCard/product_card_media';
+@import 'components/base/Button/button_media';
+@import 'components/base/ForCatDogButton/for_cat_dog_button_media';
+@import 'components/Home/Comments/comments_media';
+@import 'components/base/CommentCard/comment_card_media';
+@import 'components/Home/About/about_media';
+@import 'components/base/Footer/footer_media';

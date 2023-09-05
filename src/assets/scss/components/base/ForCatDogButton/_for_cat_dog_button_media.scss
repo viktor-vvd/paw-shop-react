@@ -1,0 +1,17 @@
+@include sm {
+    .for-cat-dog__button {
+        height: 64rem;
+        width: 157rem;
+        padding: 0 18rem;
+        gap: 10rem;
+
+        .text__button{
+            white-space: wrap;
+        }
+
+        &__button__icon {
+            width: 30rem;
+            flex-shrink: 0;
+        }
+    }
+}

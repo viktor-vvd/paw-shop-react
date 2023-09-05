@@ -1,0 +1,19 @@
+@include sm {
+    .button {
+        height: 40rem;
+        padding: 10rem;
+        gap: 5rem;
+    
+        // .button__text
+    
+        &__text {
+            font-size: 16rem;
+        }
+    
+        // .button__icon
+    
+        &__icon{
+            width: 16rem;
+        }
+    }    
+}

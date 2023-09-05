@@ -1,0 +1,90 @@
+@include md {
+    .header {
+        // .header__container
+
+        &__container {
+            gap: 35rem;
+            height: 56rem;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__buttons {
+            gap: 35rem;
+
+            .menu__button {
+                display: block;
+            }
+        }
+    }
+}
+
+@include sm {
+    .header {
+        // .header__container
+
+        &__container {
+            gap: 29rem;
+            height: 52rem;
+        }
+
+        .logo {
+            // .logo__icon
+    
+            &__icon {
+                width: 38rem;
+            }
+        }
+
+        &__logo {
+            gap: 12rem;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        .phone{
+            display: none;
+        }
+
+        &__buttons {
+            gap: 30rem;
+
+            .cart {
+                padding-bottom: 2.79rem;
+    
+                &__button {
+                    width: 49.211px;
+                    height: 49.211px;
+                }
+    
+                &__icon {
+                    width: 22rem;
+                }
+    
+                &__number {
+                    position: absolute;
+                    bottom: -3rem;
+                    right: 0;
+                    padding: 1.92rem 6.26rem 2.08rem;
+                    font-size: 13rem;
+                }
+    
+                &__sum {
+                    display: none;
+                }
+            }
+    
+            .menu__button {
+                display: block;
+
+                img {
+                    width: 33rem;
+                }
+            }
+        }
+    }
+}

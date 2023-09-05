@@ -1,0 +1,29 @@
+.section-promo {
+    width: 100%;
+    background: linear-gradient(180deg, #964BFF 0%, #722AD8 100%);
+    gap: 89.6rem;
+    justify-content: center;
+    position: relative;
+
+    .promo {
+        // .promo__slider
+
+        &__slider {
+            padding-top: 56.96rem;
+            padding-bottom: 0;
+
+            .MD,
+            .SM {
+                display: none;
+            }
+        }
+
+        // .promo__slider__item
+
+        &__item {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+    }
+}

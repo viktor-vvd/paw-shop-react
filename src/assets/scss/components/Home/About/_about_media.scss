@@ -1,0 +1,119 @@
+@include md {
+    .section-about {
+        min-height: fit-content;
+        overflow: hidden;
+    
+        // .section-about__background
+    
+        &__background {
+            display: none;
+        }
+    
+        // .section-about__container
+    
+        &__container {
+            padding: 80rem 0;
+            gap: 40rem;
+            width: 100%;
+    
+            .about {
+    
+                // .about__container
+    
+                &__container {
+                    gap: 33.5rem;
+                    width: 100%;
+                }
+    
+                // .about__content
+    
+                &__content {
+                    width: 360rem;
+                    justify-content: flex-start;
+                    gap:12.8rem;
+    
+                    // .about__content__container
+    
+                    &__container{
+                        gap:16rem;
+                    }
+    
+                    // .about__content_left
+    
+                    &_left {
+                        justify-content: flex-end;
+                    }
+                }
+    
+                // .about__image
+    
+                &__image {
+                    width: 500rem;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .section-about {
+        min-height: fit-content;
+        overflow: hidden;
+    
+        // .section-about__background
+    
+        &__background {
+            display: none;
+        }
+    
+        // .section-about__container
+    
+        &__container {
+            padding: 52rem 0;
+            gap: 29rem;
+            width: 100%;
+    
+            .about {
+    
+                // .about__container
+    
+                &__container {
+                    gap: 26rem;
+                    width: 100%;
+                }
+    
+                // .about__content
+    
+                &__content {
+                    width: 100%;
+                    justify-content: flex-start;
+                    gap:16rem;
+    
+                    // .about__content__container
+    
+                    &__container{
+                        flex-wrap: wrap;
+                        gap:20.72rem;
+
+                        &:last-child{
+                            flex-direction: column-reverse;
+                        }
+                    }
+    
+                    // .about__content_left
+    
+                    &_left {
+                        justify-content: center;
+                    }
+                }
+    
+                // .about__image
+    
+                &__image {
+                    height: 230.275rem;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

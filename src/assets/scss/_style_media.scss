@@ -1,0 +1,56 @@
+@include md {
+    html {
+        font-size: calc(1vw / 7.68);
+    }
+}
+
+@include sm {
+    html {
+        font-size: calc(1vw / 3.60);
+    }
+
+    .logo__text {
+        font-size: 24rem;
+    }
+
+    .text__button {
+        font-size: 14rem;
+    }
+
+    .headline {
+        font-size: 48rem;
+    }
+
+    .title {
+        font-size: 24rem;
+        line-height: 29rem;
+    }
+
+    .subtitle {
+        font-size: 16rem;
+        line-height: 20rem;
+    }
+
+    .text {
+        font-size: 14rem;
+        line-height: 17rem;
+    }
+
+    .text_light {
+        font-size: 14rem;
+        line-height: 17rem;
+    }
+
+    .cat {
+        font-size: 14rem;
+    }
+
+    .dog {
+        font-size: 14rem;
+    }
+
+    .phone {
+        font-size: 16rem;
+        line-height: 20rem;
+    }
+}

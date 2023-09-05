@@ -1,0 +1,32 @@
+@include md {
+    .comment-card {
+        width: 360rem;
+    }
+}
+
+@include sm {
+    .comment-card {
+        width: 288px;
+        padding: 29px 30px 36px 30px;
+        gap: 21rem;
+
+        &__date {
+            font-size: 12rem;
+            height: 13rem;
+        }
+
+        &__name {
+            font-size: 14rem;
+        }
+
+        &__photos {
+            // .comment-card__photos__item
+
+            &__item {
+                &_MD {
+                    display: none;
+                }
+            }
+        }
+    }
+}
