@@ -41,7 +41,7 @@
             bottom: -99.2rem;
         }
 
-        &:hover~.banner__middle-container .banner__buttons__container .banner__button_cat {
+        &:hover~.banner__middle-container .banner__buttons .banner__button_cat {
             @include banner__button_hover;
         }
     }
@@ -59,7 +59,7 @@
             bottom: -216rem;
         }
 
-        &:hover~.banner__middle-container .banner__buttons__container .banner__button_dog {
+        &:hover~.banner__middle-container .banner__buttons .banner__button_dog {
             @include banner__button_hover;
         }
     }
