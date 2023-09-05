@@ -9,12 +9,12 @@ const Footer = () => {
           <img
             className="footer__background_toy"
             src={images['footerbg1.png']}
-            alt="image"
+            alt="img"
           />
           <img
             className="footer__background_ball"
             src={images['footerbg2.png']}
-            alt="image"
+            alt="img"
           />
           <span className="footer__promo__text">
             Get the latest news and promotions. No spam, just a few emails per
