@@ -1,6 +1,5 @@
 @include md {
     .reviews {
-        height: 858rem;
         background: linear-gradient(80deg, #964BFF 6.76%, #722AD8 97.75%);
 
         .SM,
@@ -12,10 +11,10 @@
             display: block;
         }
 
-        // .reviews__background
-
-        &__background {
-            height: 100%;
+        &::before {
+            bottom: 0;
+            left: -334rem;
+            height: 95.7%;
         }
 
         // .reviews__container
@@ -61,7 +60,6 @@
 
 @include sm {
     .reviews {
-        height: 655px;
         background: linear-gradient(80deg, #964BFF 6.76%, #722AD8 97.75%);
 
         .PC {
@@ -73,9 +71,10 @@
             display: block;
         }
 
-        // .reviews__background
-
-        &__background {
+        &::before {
+            top: 0;
+            left: 0;
+            background-image: url("./../../../../../public/images/dogbgSM.png");
             height: 100%;
         }
 
@@ -84,7 +83,7 @@
         &__container {
             justify-content: flex-start;
             gap: 24rem;
-            padding: 51rem 0rem 118.6rem;
+            padding: 50rem 0rem 119rem;
         }
 
         .reviews__slider {

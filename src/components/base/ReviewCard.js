@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import images from "imports/ImagesImport";
 
 const ReviewCard = ({ item }) => {
-  const maxImages = 3;
+  const [maxImages, setMaxImages] = useState(3);
+
+  useEffect (() => {
+    const handleWindowResize = () => {
+      window.innerWidth<767?(setMaxImages(2)):(setMaxImages(3))
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <div className="container-vertical review-card">
       <span className="review-card__date">{item.date}</span>

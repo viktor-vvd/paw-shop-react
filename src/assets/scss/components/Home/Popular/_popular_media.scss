@@ -1,7 +1,7 @@
 @include md {
     .section-popular {
         padding: 80rem 16rem;
-        gap: 50rem;
+        gap: 51rem;
 
         // .section-popular__container
 
@@ -26,13 +26,13 @@
 
 @include sm {
     .section-popular {
-        padding: 50rem 16rem;
-        gap: 40rem;
+        padding: 51rem 16rem 50rem;
+        gap: 39rem;
 
         // .section-popular__container
 
         &__container {
-            gap: 30rem;
+            gap: 29rem;
         }
 
         .populars {

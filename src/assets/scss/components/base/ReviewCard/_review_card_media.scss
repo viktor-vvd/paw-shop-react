@@ -6,8 +6,8 @@
 
 @include sm {
     .review-card {
-        width: 288px;
-        padding: 29px 30px 36px 30px;
+        width: 288rem;
+        padding: 29.5rem 30rem 38rem 30rem;
         gap: 21rem;
 
         &__date {
@@ -23,6 +23,7 @@
             // .review-card__photos__item
 
             &__item {
+                height: 65rem;
                 &_MD {
                     display: none;
                 }

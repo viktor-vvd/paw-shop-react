@@ -4,7 +4,7 @@ import images from "imports/ImagesImport";
 const Banner = () => {
   return (
     <section className="container-vertical banner ">
-      <div className="container-horisontal background">
+      {/* <div className="container-horisontal background">
         <img
           className="background__pattern"
           src={images["bg1.png"]}
@@ -15,7 +15,7 @@ const Banner = () => {
           src={images["bg2.png"]}
           alt="pattern"
         />
-      </div>
+      </div> */}
       <img className="cat-image" src={images["cat.png"]} alt="cat" />
       <img className="dog-image" src={images["dog.png"]} alt="dog" />
       <div className="container-vertical container outer__container banner__middle-container">

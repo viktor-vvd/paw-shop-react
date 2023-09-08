@@ -9,23 +9,19 @@
     padding-top: 236rem;
     padding-bottom: 59rem;
 
-    .background {
-        mix-blend-mode: color-burn;
+    &::before {
         position: absolute;
-        width: 100vw;
-        height: 100%;
-        padding-top: 64.96rem;
-        padding-bottom: 52.96rem;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        content: '';
+        top: 64.96rem;
+        left: 0;
+        width: 100%;
+        height: 88%;
         z-index: 0;
-        // .background__pattern
-
-        &__pattern {
-            opacity: 0.15;
-            height: 100%;
-        }
+        opacity: 0.15;
+        background-image: url("./../../../../../public/images/bg1.png");
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        mix-blend-mode: color-burn;
     }
 
     .cat-image {
@@ -174,4 +170,3 @@
         }
     }
 }
-

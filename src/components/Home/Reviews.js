@@ -81,7 +81,7 @@ const Reviews = () => {
 
   return (
     <section className="container-vertical outer__container reviews">
-      <img
+      {/* <img
         className="reviews__background PC"
         src={images["dogpurplebg.png"]}
         alt="bg"
@@ -95,7 +95,7 @@ const Reviews = () => {
         className="reviews__background SM"
         src={images["dogpurplebgSM.png"]}
         alt="bg"
-      />
+      /> */}
       <div className="container-vertical reviews__container">
         <div className="reviews__title__container">
           <span className="title reviews__title_dark">Reviews</span>
