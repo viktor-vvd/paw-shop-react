@@ -4,89 +4,73 @@ import { register } from "swiper/element/bundle";
 
 const Promo = () => {
   const swiperElRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   register();
 
   useEffect(() => {
     const swiperContainer = swiperElRef.current;
 
     const params = {
+      slidesPerView: 1,
       pagination: true,
       loop: true,
-      injectStyles: [
-        `
-              .swiper-pagination-bullets.swiper-pagination-horizontal {
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 14rem;
-                top: auto;
-                bottom: 40rem;
-                left: 50%;
-                transform: translateX(-50%);
-              }
-              .swiper-pagination-bullet {
-                width: 13rem;
-                height: 13rem;
-                border-radius: 50%;
-                background-color: rgba(255, 255, 255, 0.30);
-                cursor: pointer;
-              }
-              .swiper-pagination-bullet-active {
-                background-color: white;
-              }
-          `,
-      ],
     };
 
     Object.assign(swiperContainer, params);
     swiperContainer.initialize();
 
-    const prev = document.getElementById("slider__button_prev");
-    prev.addEventListener("click", () => {
+    prevRef.current?.addEventListener("click", () => {
       swiperContainer.swiper.slidePrev();
     });
-    const next = document.getElementById("slider__button_next");
-    next.addEventListener("click", () => {
+    nextRef.current?.addEventListener("click", () => {
       swiperContainer.swiper.slideNext();
     });
   }, []);
   return (
     <section className="container-horisontal section-promo">
       <img
-        id="slider__button_prev"
         className="slider__button"
         src={images["leftbuttonarrow.png"]}
         alt="previous"
+        ref={prevRef}
       />
       {/*         <div className="container promo__slider"> */}
       <swiper-container
-        class="container promo__slider"
+        class="container slider promo__slider"
         init="false"
         ref={swiperElRef}
-        slides-per-view="1"
       >
-        <swiper-slide class="container">
-          <img
-            className="promo__slider__item PC"
-            src={images["promoimgPC.png"]}
-            alt="promo img"
-          />
-        </swiper-slide>
-        <swiper-slide class="container">
-          <img
-            className="promo__slider__item PC"
-            src={images["promoimgPC.png"]}
-            alt="promo img"
-          />
-        </swiper-slide>
-        <swiper-slide class="container">
-          <img
-            className="promo__slider__item PC"
-            src={images["promoimgPC.png"]}
-            alt="promo img"
-          />
-        </swiper-slide>
+        {[...Array(3)].map((e, i) => (
+          <swiper-slide class="container PC" key={"slide"+i}>
+            <img
+              className="promo__slider__item PC"
+              src={images["promoimgPC.png"]}
+              alt="promo img"
+              key={"img"+i}
+            />
+          </swiper-slide>
+        ))}
+        {[...Array(3)].map((e, i) => (
+          <swiper-slide class="container MD" key={"slide"+i}>
+            <img
+              className="promo__slider__item MD"
+              src={images["promoimgMD.png"]}
+              alt="promo img"
+              key={"img"+i}
+            />
+          </swiper-slide>
+        ))}
+        {[...Array(3)].map((e, i) => (
+          <swiper-slide class="container SM" key={"slide"+i}>
+            <img
+              className="promo__slider__item SM"
+              src={images["promoimgSM.png"]}
+              alt="promo img"
+              key={"img"+i}
+            />
+          </swiper-slide>
+        ))}
         {/* <img
             className="promo__slider__item MD"
             src={images["promoimgMD.png"]}
@@ -99,10 +83,10 @@ const Promo = () => {
           /> */}
       </swiper-container>
       <img
-        id="slider__button_next"
         className="slider__button"
         src={images["rightbuttonarrow.png"]}
         alt="next"
+        ref={nextRef}
       />
     </section>
     /* <section className="container-horisontal section-promo">

@@ -26,6 +26,8 @@
     .image {
         border-radius: $border-radius;
         height: 194rem;
+        width: 100%;
+        object-fit: cover;
         vertical-align: bottom;
 
         // .image__container

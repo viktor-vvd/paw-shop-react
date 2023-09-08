@@ -142,13 +142,14 @@ html {
 @import 'components/base/ProductCard/product_card';
 @import 'components/base/Button/button';
 @import 'components/base/ForCatDogButton/for_cat_dog_button';
-@import 'components/Home/Comments/comments';
-@import 'components/base/CommentCard/comment_card';
+@import 'components/Home/reviews/reviews';
+@import 'components/base/reviewCard/review_card';
 @import 'components/Home/About/about';
 @import 'components/base/Footer/footer';
 
 /* media */
 
+@import 'style_media';
 @import 'components/base/Header/header_media';
 @import 'components/Home/Banner/banner_media';
 @import 'components/Home/Promo/promo_media';
@@ -157,7 +158,7 @@ html {
 @import 'components/base/ProductCard/product_card_media';
 @import 'components/base/Button/button_media';
 @import 'components/base/ForCatDogButton/for_cat_dog_button_media';
-@import 'components/Home/Comments/comments_media';
-@import 'components/base/CommentCard/comment_card_media';
+@import 'components/Home/reviews/reviews_media';
+@import 'components/base/reviewCard/review_card_media';
 @import 'components/Home/About/about_media';
 @import 'components/base/Footer/footer_media';

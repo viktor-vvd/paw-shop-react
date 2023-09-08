@@ -1,11 +1,11 @@
 @include md {
-    .comment-card {
+    .review-card {
         width: 360rem;
     }
 }
 
 @include sm {
-    .comment-card {
+    .review-card {
         width: 288px;
         padding: 29px 30px 36px 30px;
         gap: 21rem;
@@ -20,7 +20,7 @@
         }
 
         &__photos {
-            // .comment-card__photos__item
+            // .review-card__photos__item
 
             &__item {
                 &_MD {

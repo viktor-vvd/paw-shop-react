@@ -7,33 +7,32 @@
         width: 59rem;
         border-radius: 50%;
         cursor: pointer;
-    }
-
-    // .slider__dots
-
-    &__dots {
-        display: flex;
-        width: 100%;
-        position: absolute;
-        bottom: 40rem;
-        align-items: center;
-        justify-content: center;
-        gap: 20rem;
-        list-style-type: none;
-
-        // .dots__item
-
-        &__item {
-            width: 13rem;
-            height: 13rem;
-            border-radius: 50%;
-            background: $transparent-white;
-            cursor: pointer;
-            // .dots__item_active
-
-            &_active {
-                background: #FFF;
-            }
-        }
+        z-index: 8;
     }
 }
+    // .slider__dots
+
+    swiper-container::part(container) {
+        overflow-y: visible;
+    }
+
+    swiper-container::part(pagination) {
+        display: flex;
+        justify-content: center;
+        bottom: 40rem;
+        gap: 14rem;
+    }
+
+    swiper-container::part(bullet){
+        width: 13rem;
+        height: 13rem;
+        border-radius: 50%;
+        background: $transparent-white;
+    }
+
+    swiper-container::part(bullet-active) {
+        background: #FFF;
+        width: 13rem;
+        height: 13rem;
+        border-radius: 50%;
+    }

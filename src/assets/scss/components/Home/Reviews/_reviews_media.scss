@@ -1,23 +1,24 @@
 @include md {
-    .section-comments {
+    .reviews {
         height: 858rem;
         background: linear-gradient(80deg, #964BFF 6.76%, #722AD8 97.75%);
 
-        .SM, .PC{
+        .SM,
+        .PC {
             display: none;
         }
 
-        .MD{
+        .MD {
             display: block;
         }
 
-        // .section-comments__background
+        // .reviews__background
 
         &__background {
             height: 100%;
         }
 
-        // .section-comments__container
+        // .reviews__container
 
         &__container {
             justify-content: flex-start;
@@ -25,22 +26,26 @@
             padding: 89rem 0rem 236.56rem;
         }
 
-        .comments__slider {
+        .reviews__slider {
             gap: 17rem;
 
-            // .comments__slider__dots
+            &__container {
+                swiper-container::part(pagination) {
+                    bottom: -128rem;
+                }
 
-            &__dots {
-                bottom: -128rem;
+                swiper-container::part(bullet) {
+                    width: 20rem;
+                    height: 20rem;
+                }
+
+                swiper-container::part(bullet-active) {
+                    width: 20rem;
+                    height: 20rem;
+                }
             }
         }
 
-        .slider__dots {
-            &__item {
-                width: 20rem;
-                height: 20rem;
-            }
-        }
 
         .slider__button {
             position: absolute;
@@ -55,25 +60,26 @@
 }
 
 @include sm {
-    .section-comments {
+    .reviews {
         height: 655px;
         background: linear-gradient(80deg, #964BFF 6.76%, #722AD8 97.75%);
 
-        .PC{
+        .PC {
             display: none;
         }
 
-        .SM, .MD{
+        .SM,
+        .MD {
             display: block;
         }
 
-        // .section-comments__background
+        // .reviews__background
 
         &__background {
             height: 100%;
         }
 
-        // .section-comments__container
+        // .reviews__container
 
         &__container {
             justify-content: flex-start;
@@ -81,21 +87,24 @@
             padding: 51rem 0rem 118.6rem;
         }
 
-        .comments__slider {
+        .reviews__slider {
             gap: 17rem;
 
-            // .comments__slider__dots
+            &__container {
+                swiper-container::part(pagination) {
+                    bottom: -69rem;
+                    gap: 26rem;
+                }
 
-            &__dots {
-                bottom: -69rem;
-                gap:26rem;
-            }
-        }
+                swiper-container::part(bullet) {
+                    width: 15rem;
+                    height: 15rem;
+                }
 
-        .slider__dots {
-            &__item {
-                width: 15rem;
-                height: 15rem;
+                swiper-container::part(bullet-active) {
+                    width: 15rem;
+                    height: 15rem;
+                }
             }
         }
 

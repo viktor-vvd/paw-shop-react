@@ -6,12 +6,12 @@ const ProductCard = ({ item }) => {
     <div className="container-vertical product-card">
       <div className="container-horisontal image__container">
           {item.discount > 0 && (
-            <span class="tag tag_discount">-{item.discount}%</span>
+            <span className="tag tag_discount">-{item.discount}%</span>
           )}
           {item.new && (
-            <span class="tag tag_new">New</span>
+            <span className="tag tag_new">New</span>
           )}
-        <img className="image" src={item.image} alt="product img" />
+        <img className="image" width="200" height="100" src={item.image} alt="product img" />
       </div>
       <h3 className="text product-card__title">{item.name}</h3>
       <div className="container-horisontal rate">
@@ -26,7 +26,7 @@ const ProductCard = ({ item }) => {
               />
             ))}
         </div>
-        <span className="rate__text">{item.comments}</span>
+        <span className="rate__text">{item.reviews}</span>
       </div>
       <div className="container-horisontal product-card__bottom">
         <div className="container-horisontal price__container">

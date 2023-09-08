@@ -1,4 +1,4 @@
-.section-comments {
+.reviews {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -6,15 +6,16 @@
     background: linear-gradient(80deg, #964BFF 6.76%, #722AD8 97.75%);
     z-index: 1;
 
-    .SM, .MD{
+    .SM,
+    .MD {
         display: none;
     }
 
-    .PC{
+    .PC {
         display: block;
     }
 
-    // .section-comments__background
+    // .reviews__background
 
     &__background {
         height: 100%;
@@ -26,7 +27,7 @@
         z-index: 1;
     }
 
-    // .section-comments__container
+    // .reviews__container
 
     &__container {
         width: 100%;
@@ -36,21 +37,21 @@
         padding: 140rem 0rem 194.56rem;
     }
 
-    // .section-comments__title
+    // .reviews__title
 
     &__title {
         position: inherit;
         color: #fff;
         z-index: 3;
 
-        // .section-comments__title__container
+        // .reviews__title__container
 
         &__container {
             position: relative;
             z-index: 2;
         }
 
-        // .section-comments__title_dark
+        // .reviews__title_dark
 
         &_dark {
             position: absolute;
@@ -60,7 +61,7 @@
         }
     }
 
-    .comments__slider {
+    .reviews__slider {
         gap: 32rem;
         align-items: flex-start;
         justify-content: flex-start;
@@ -70,13 +71,10 @@
             justify-content: center;
             gap: 80rem;
             position: relative;
-        }
 
-        // .comments__slider__dots
-
-        &__dots {
-            bottom: -94rem;
+            swiper-container::part(pagination) {
+                bottom: -94rem;
+            }
         }
     }
 }
-

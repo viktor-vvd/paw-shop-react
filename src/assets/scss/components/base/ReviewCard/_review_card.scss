@@ -1,4 +1,4 @@
-.comment-card {
+.review-card {
     width: 368rem;
     padding: 40rem 40rem 47rem 41rem;
     align-items: flex-start;
@@ -7,7 +7,7 @@
     background: #FFF;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.25);
     flex-shrink: 0;
-    // .comment-card__date
+    // .review-card__date
 
     &__date {
         color: $dark-grey;
@@ -17,13 +17,13 @@
         height: 13rem;
     }
 
-    // .comment-card__header
+    // .review-card__header
 
     &__header {
         width: 100%;
     }
 
-    // .comment-card__name
+    // .review-card__name
 
     &__name {
         font-family: Montserrat;
@@ -31,13 +31,13 @@
         font-weight: 500;
     }
 
-    // .comment-card__stars
+    // .review-card__stars
 
     &__stars {
         gap: 7.36rem;
         flex-shrink: 0;
 
-        // .comment-card__stars__item
+        // .review-card__stars__item
 
         &__item {
             width: 19.36rem;
@@ -45,13 +45,13 @@
         }
     }
 
-    // .comment-card__photos
+    // .review-card__photos
 
     &__photos {
         justify-content: flex-start;
         gap: 9.92rem;
 
-        // .comment-card__photos__item
+        // .review-card__photos__item
 
         &__item {
             width: 64rem;
@@ -60,13 +60,13 @@
             cursor: pointer;
         }
 
-        // .comment-card__photos__more
+        // .review-card__photos__more
 
         &__more {
             border: 1px solid $accent;
             justify-content: center;
 
-            // .comment-card__photos__more__text
+            // .review-card__photos__more__text
 
             &__text {
                 color: $accent;
@@ -76,7 +76,7 @@
         }
     }
 
-    // .comment-card__link
+    // .review-card__link
 
     &__link {
         gap: 16rem;
@@ -85,7 +85,7 @@
         flex-shrink: 0;
         text-decoration: none;
 
-        // .comment-card__link__icon
+        // .review-card__link__icon
 
         &__icon {
             width: 9.5rem;
