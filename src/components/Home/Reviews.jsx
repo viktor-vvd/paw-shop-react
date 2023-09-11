@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import images from "imports/ImagesImport";
-import ReviewCard from "components/base/ReviewCard";
+import images from "@imports/ImagesImport";
+import ReviewCard from "@components/base/ReviewCard";
 import { register } from "swiper/element/bundle";
 
 const Reviews = () => {

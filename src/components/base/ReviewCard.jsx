@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import images from "imports/ImagesImport";
+import images from "@imports/ImagesImport";
 
 const ReviewCard = ({ item }) => {
   const [maxImages, setMaxImages] = useState(3);

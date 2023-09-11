@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import images from "imports/ImagesImport";
+import images from "@imports/ImagesImport";
 
 const Menu = () => {
   const [showMenu, setshowMenu] = useState(false);

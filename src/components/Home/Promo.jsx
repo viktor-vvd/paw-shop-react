@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import images from "imports/ImagesImport";
+import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
 
 const Promo = () => {

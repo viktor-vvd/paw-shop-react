@@ -1,6 +1,6 @@
 import React from "react";
-import images from "imports/ImagesImport";
-import Menu from "./Menu";
+import images from "@imports/ImagesImport";
+import Menu from "@components/base/Header/Menu";
 
 const Header = () => {
   return (

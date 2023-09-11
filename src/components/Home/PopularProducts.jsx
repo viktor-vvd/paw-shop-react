@@ -1,6 +1,6 @@
 import React from "react";
-import images from "imports/ImagesImport";
-import ProductCard from "components/base/ProductCard";
+import images from "@imports/ImagesImport";
+import ProductCard from "@components/base/ProductCard";
 
 const PopularProducts = () => {
   const data = [
