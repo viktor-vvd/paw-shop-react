@@ -135,6 +135,7 @@ html {
 }
 
 @import 'components/base/Header/header';
+@import 'components/base/Menu/menu';
 @import 'components/Home/Banner/banner';
 @import 'components/Home/Promo/promo';
 @import 'components/base/Slider/slider';
@@ -151,6 +152,7 @@ html {
 
 @import 'style_media';
 @import 'components/base/Header/header_media';
+@import 'components/base/Menu/menu_media';
 @import 'components/Home/Banner/banner_media';
 @import 'components/Home/Promo/promo_media';
 @import 'components/base/Slider/slider_media';

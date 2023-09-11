@@ -13,10 +13,6 @@
 
         &__buttons {
             gap: 35rem;
-
-            .menu__button {
-                display: block;
-            }
         }
     }
 }
@@ -75,14 +71,6 @@
     
                 &__sum {
                     display: none;
-                }
-            }
-    
-            .menu__button {
-                display: block;
-
-                img {
-                    width: 33rem;
                 }
             }
         }

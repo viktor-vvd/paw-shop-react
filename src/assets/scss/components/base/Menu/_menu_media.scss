@@ -1,0 +1,96 @@
+@include md {
+    .menu {
+        // .menu__container
+
+        &__container {
+            display: block;
+        }
+
+    }
+}
+
+@include sm {
+    .menu {
+        @keyframes show {
+            from {
+                transform: translateY(-490rem);
+                visibility: hidden;
+            }
+
+            to {
+                transform: translateY(0);
+                visibility: visible;
+            }
+        }
+
+        &.show {
+            animation: show 0.5s ease forwards;
+        }
+
+        @keyframes fade {
+            from {
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            to {
+                transform: translateY(-490rem);
+                visibility: hidden;
+            }
+        }
+
+        &.hide {
+            animation: fade 0.5s ease forwards;
+        }
+
+        // .menu__button
+
+        &__button {
+            img {
+                width: 33rem;
+            }
+        }
+
+        //.menu__bottom
+
+        &__bottom {
+            padding: 37rem 16rem 47rem;
+            gap: 53rem;
+        }
+
+        .close {
+
+            // .close__icon
+
+            &__icon {
+                width: 32rem;
+                height: 32rem;
+            }
+        }
+
+        .nav {
+
+            // .nav__list
+
+            &__list {
+
+                height: fit-content;
+
+                &__item a {
+                    font-size: 16rem;
+                    line-height: 20rem;
+
+                    b {
+                        font-size: 16rem;
+                    }
+                }
+            }
+        }
+
+        .phone {
+            display: block;
+            font-size: 20rem;
+            line-height: 24rem;
+        }
+    }
+}

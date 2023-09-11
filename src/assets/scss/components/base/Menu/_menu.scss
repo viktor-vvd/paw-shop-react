@@ -1,0 +1,125 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    @keyframes show {
+        from {
+            transform: translateY(-390rem);
+            visibility: hidden;
+        }
+
+        to {
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+
+    &.show {
+        animation: show 0.5s ease forwards;
+    }
+
+    @keyframes fade {
+        from {
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        to {
+            transform: translateY(-390rem);
+            visibility: hidden;
+        }
+    }
+
+    &.hide {
+        animation: fade 0.5s ease forwards;
+    }
+
+    // .menu__container
+
+    &__container {
+        display: none;
+    }
+
+    // .menu__button
+
+    &__button {
+        flex-shrink: 0;
+
+        img {
+            width: 38rem;
+        }
+    }
+
+    // .menu__header
+
+    &__header {
+        width: 100%;
+        padding: 24.5rem 16rem 25.5rem;
+    }
+
+    hr {
+        border: 1rem solid $light-grey;
+        width: 100%;
+    }
+
+    //.menu__bottom
+
+    &__bottom {
+        width: 100%;
+        padding: 37rem 16rem 78rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .close {
+
+        // .close__icon
+
+        &__icon {
+            border-radius: 50%;
+            width: 47rem;
+            height: 47rem;
+            cursor: pointer;
+        }
+    }
+
+    .header {
+
+        // .header__nav
+
+        &__nav {
+            display: block;
+        }
+    }
+
+    .nav {
+
+        // .nav__list
+
+        &__list {
+
+            height: 143rem;
+            gap: 35rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &__item a {
+                font-size: 20rem;
+                line-height: 24rem;
+
+                b {
+                    font-size: 20rem;
+                }
+            }
+        }
+    }
+
+    .phone{
+        display: none;
+    }
+}

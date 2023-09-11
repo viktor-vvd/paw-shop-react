@@ -1,5 +1,6 @@
 import React from "react";
 import images from "imports/ImagesImport";
+import Menu from "./Menu";
 
 const Header = () => {
   return (
@@ -47,9 +48,7 @@ const Header = () => {
             </div>
             <span className="cart__sum">$8</span>
           </div>
-          <div className="menu__button">
-            <img src={images['menu.png']} alt="cart" />
-          </div>
+          <Menu/>
         </div>
       </div>
     </header>
