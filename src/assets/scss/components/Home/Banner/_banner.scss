@@ -29,12 +29,12 @@
         position: absolute;
         right: 52.05%;
         bottom: -131rem;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
         cursor: pointer;
         z-index: 2;
 
         &:hover {
-            bottom: -99.2rem;
+            transform: translateY(-40rem);
         }
 
         &:hover~.banner__middle-container .banner__buttons .banner__button_cat {
@@ -47,12 +47,12 @@
         height: 100%;
         left: 47.6%;
         bottom: -249rem;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
         cursor: pointer;
         z-index: 1;
 
         &:hover {
-            bottom: -216rem;
+            transform: translateY(-40rem);
         }
 
         &:hover~.banner__middle-container .banner__buttons .banner__button_dog {
