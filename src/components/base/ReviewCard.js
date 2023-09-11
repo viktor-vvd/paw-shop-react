@@ -4,15 +4,13 @@ import images from "imports/ImagesImport";
 const ReviewCard = ({ item }) => {
   const [maxImages, setMaxImages] = useState(3);
 
-  useEffect (() => {
+  useEffect(() => {
     const handleWindowResize = () => {
-      window.innerWidth<767?(setMaxImages(2)):(setMaxImages(3))
+      window.innerWidth < 767 ? setMaxImages(2) : setMaxImages(3);
     };
-
-    window.addEventListener('resize', handleWindowResize);
-
+    window.addEventListener("resize", handleWindowResize);
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
