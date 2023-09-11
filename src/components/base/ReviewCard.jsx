@@ -24,7 +24,7 @@ const ReviewCard = ({ item }) => {
             [...Array(item.rate)].map((e, i) => (
               <img
                 className="review-card__stars__item"
-                src={images["star.png"]}
+                src={images["star"]}
                 alt="star"
                 key={"star" + i}
               />
@@ -61,7 +61,7 @@ const ReviewCard = ({ item }) => {
         See the product{" "}
         <img
           className="review-card__link__icon"
-          src={images["toprightpurplearrow.png"]}
+          src={images["toprightpurplearrow"]}
           alt="arrow"
         />
       </a>

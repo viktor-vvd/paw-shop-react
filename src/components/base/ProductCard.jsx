@@ -20,7 +20,7 @@ const ProductCard = ({ item }) => {
             [...Array(item.rate)].map((e, i) => (
               <img
                 className="stars__item"
-                src={images["star.png"]}
+                src={images["star"]}
                 alt="star"
                 key={"star" + i}
               />
@@ -46,7 +46,7 @@ const ProductCard = ({ item }) => {
           <span className="button__text">+</span>
           <img
             className="button__icon"
-            src={images["basket.png"]}
+            src={images["basket"]}
             alt="basket"
           />
         </div>

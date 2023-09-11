@@ -31,7 +31,7 @@ const Promo = () => {
     <section className="container-horisontal section-promo">
       <img
         className="slider__button"
-        src={images["leftbuttonarrow.png"]}
+        src={images["leftbuttonarrow"]}
         alt="previous"
         ref={prevRef}
       />
@@ -45,7 +45,7 @@ const Promo = () => {
           <swiper-slide class="container PC" key={"slide"+i}>
             <img
               className="promo__slider__item PC"
-              src={images["promoimgPC.png"]}
+              src={images["promoimgPC"]}
               alt="promo img"
               key={"img"+i}
             />
@@ -55,7 +55,7 @@ const Promo = () => {
           <swiper-slide class="container MD" key={"slide"+i}>
             <img
               className="promo__slider__item MD"
-              src={images["promoimgMD.png"]}
+              src={images["promoimgMD"]}
               alt="promo img"
               key={"img"+i}
             />
@@ -65,7 +65,7 @@ const Promo = () => {
           <swiper-slide class="container SM" key={"slide"+i}>
             <img
               className="promo__slider__item SM"
-              src={images["promoimgSM.png"]}
+              src={images["promoimgSM"]}
               alt="promo img"
               key={"img"+i}
             />
@@ -73,18 +73,18 @@ const Promo = () => {
         ))}
         {/* <img
             className="promo__slider__item MD"
-            src={images["promoimgMD.png"]}
+            src={images["promoimgMD"]}
             alt="promo img"
           />
           <img
             className="promo__slider__item SM"
-            src={images["promoimgSM.png"]}
+            src={images["promoimgSM"]}
             alt="promo img"
           /> */}
       </swiper-container>
       <img
         className="slider__button"
-        src={images["rightbuttonarrow.png"]}
+        src={images["rightbuttonarrow"]}
         alt="next"
         ref={nextRef}
       />
@@ -92,23 +92,23 @@ const Promo = () => {
     /* <section className="container-horisontal section-promo">
           <img
             className="slider__button"
-            src={images["leftbuttonarrow.png"]}
+            src={images["leftbuttonarrow"]}
             alt="left"
           />
           <div className="container promo__slider">
             <img
               className="promo__slider__item PC"
-              src={images["promoimgPC.png"]}
+              src={images["promoimgPC"]}
               alt="promo img"
             />
             <img
               className="promo__slider__item MD"
-              src={images["promoimgMD.png"]}
+              src={images["promoimgMD"]}
               alt="promo img"
             />
             <img
               className="promo__slider__item SM"
-              src={images["promoimgSM.png"]}
+              src={images["promoimgSM"]}
               alt="promo img"
             />
           </div>
@@ -119,7 +119,7 @@ const Promo = () => {
           </ul>
           <img
             className="slider__button"
-            src={images["rightbuttonarrow.png"]}
+            src={images["rightbuttonarrow"]}
             alt="right"
           />
         </section> */

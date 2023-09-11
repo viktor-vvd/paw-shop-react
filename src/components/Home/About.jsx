@@ -6,12 +6,12 @@ const About = () => {
     <section className="container-horisontal outer__container section-about">
       <img
         className="section-about__background section-about__background_first"
-        src={images["paws1.png"]}
+        src={images["paws1"]}
         alt="paws"
       />
       <img
         className="section-about__background section-about__background_second"
-        src={images["paws2.png"]}
+        src={images["paws2"]}
         alt="paws"
       />
       <div className="container-vertical container section-about__container">
@@ -21,7 +21,7 @@ const About = () => {
             <div className="container-horisontal about__content about__content_left">
               <img
                 className="about__image"
-                src={images["aboutimage1.png"]}
+                src={images["aboutimage1"]}
                 alt="img"
               />
             </div>
@@ -86,7 +86,7 @@ const About = () => {
             <div className="container-horisontal about__content">
               <img
                 className="about__image"
-                src={images["aboutimage2.png"]}
+                src={images["aboutimage2"]}
                 alt="img"
               />
             </div>

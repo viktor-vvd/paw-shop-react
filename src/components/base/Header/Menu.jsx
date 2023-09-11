@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div className="menu__container">
       <div className="menu__button" onClick={() => setshowMenu(true)}>
-        <img src={images["menu.png"]} alt="cart" />
+        <img src={images["menu"]} alt="cart" />
       </div>
       <div
         className={
@@ -19,7 +19,7 @@ const Menu = () => {
           <h2 className="title">Menu</h2>
           <img
             className="close__icon"
-            src={images["closePurple.svg"]}
+            src={images["closePurple"]}
             alt="close"
             onClick={() => setshowMenu(false)}
           />

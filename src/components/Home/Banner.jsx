@@ -7,41 +7,41 @@ const Banner = () => {
       {/* <div className="container-horisontal background">
         <img
           className="background__pattern"
-          src={images["bg1.png"]}
+          src={images["bg1"]}
           alt="pattern"
         />
         <img
           className="background__pattern"
-          src={images["bg2.png"]}
+          src={images["bg2"]}
           alt="pattern"
         />
       </div> */}
-      <img className="cat-image" src={images["cat.png"]} alt="cat" />
-      <img className="dog-image" src={images["dog.png"]} alt="dog" />
+      <img className="cat-image" src={images["cat"]} alt="cat" />
+      <img className="dog-image" src={images["dog"]} alt="dog" />
       <div className="container-vertical container outer__container banner__middle-container">
         <div className="container-vertical banner__headline">
           <img
             className="headline__image headline__image_ball"
-            src={images["ball.png"]}
+            src={images["ball"]}
             alt="ball"
           />
           <img
             className="headline__image headline__image_bone"
-            src={images["bone.png"]}
+            src={images["bone"]}
             alt="bone"
           />
           <span className="headline headline__text headline__text_dark">
             Make your pet’s life better
           </span>
-          <h1 className="headline headline__text">
+          <h2 className="headline headline__text">
             Make your pet’s life better
-          </h1>
+          </h2>
         </div>
         <div className="container-horisontal banner__buttons">
           <button className="container-horisontal banner__button banner__button_cat">
             <img
               className="button__icon_arrow"
-              src={images["topleftarrow.png"]}
+              src={images["topleftarrow"]}
               alt="arrow"
             />
             <span className="text__button">
@@ -57,7 +57,7 @@ const Banner = () => {
             </span>
             <img
               className="button__icon_arrow button__icon_arrow_right"
-              src={images["toprightarrow.png"]}
+              src={images["toprightarrow"]}
               alt="arrow"
             />
           </button>
@@ -67,7 +67,7 @@ const Banner = () => {
         <li className="container-horisontal benefits__item">
           <img
             className="benefits__item__icon"
-            src={images["star.png"]}
+            src={images["star"]}
             alt="star"
           />
           <span className="text">
@@ -77,7 +77,7 @@ const Banner = () => {
         <li className="container-horisontal benefits__item">
           <img
             className="benefits__item__icon"
-            src={images["support.png"]}
+            src={images["support"]}
             alt="support"
           />
           <span className="text">
@@ -87,7 +87,7 @@ const Banner = () => {
         <li className="container-horisontal benefits__item">
           <img
             className="benefits__item__icon"
-            src={images["return.png"]}
+            src={images["return"]}
             alt="return"
           />
           <span className="text">
@@ -97,7 +97,7 @@ const Banner = () => {
         <li className="container-horisontal benefits__item">
           <img
             className="benefits__item__icon"
-            src={images["checkmark.png"]}
+            src={images["checkmark"]}
             alt="checkmark"
           />
           <span className="text">

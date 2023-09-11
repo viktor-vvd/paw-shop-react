@@ -7,7 +7,7 @@ const Header = () => {
     <header className="container-horisontal outer__container header">
       <div className="container-horisontal container header__container">
         <div className="container-horisontal header__logo">
-          <img className="logo__icon" src={images['logo.png']} alt="logo" />
+          <img className="logo__icon" src={images['logo']} alt="logo" />
           <h1 className="logo__text">PawShop</h1>
         </div>
         <nav className="header__nav">
@@ -35,13 +35,13 @@ const Header = () => {
         </a>
         <div className="container-horisontal header__buttons">
           <div>
-            <img className="profile" src={images['user.png']} alt="user" />
+            <img className="profile" src={images['user']} alt="user" />
           </div>
           <div className="container-horisontal cart">
             <div className="container-horisontal cart__button">
               <img
                 className="cart__icon"
-                src={images['basket.png']}
+                src={images['basket']}
                 alt="cart"
               />
               <span className="cart__number">2</span>

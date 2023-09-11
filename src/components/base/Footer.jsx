@@ -8,12 +8,12 @@ const Footer = () => {
         <div className="container-horisontal container footer__promo">
           <img
             className="footer__background_toy"
-            src={images['footerbg1.png']}
+            src={images['footerbg1']}
             alt="img"
           />
           <img
             className="footer__background_ball"
-            src={images['footerbg2.png']}
+            src={images['footerbg2']}
             alt="img"
           />
           <span className="footer__promo__text">
@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="container-horisontal footer__logo__container">
               <img
                 className="footer__logo"
-                src={images['logowhite.png']}
+                src={images['logowhite']}
                 alt="logo"
               />
               <h2 className="logo__text footer__logo__text">PawShop</h2>
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="container-horisontal footer__phone__wrapper">
               <img
                 className="footer__phone__logo"
-                src={images['phone.png']}
+                src={images['phone']}
                 alt="logo"
               />
               <a className="phone footer__phone" href="tel:1-800-055-5566">
@@ -57,21 +57,21 @@ const Footer = () => {
               <div className="container-horisontal social">
                 <img
                   className="social__icon"
-                  src={images['insta.png']}
+                  src={images['insta']}
                   alt="logo"
                 />
               </div>
               <div className="container-horisontal social">
                 <img
                   className="social__icon"
-                  src={images['facebook.png']}
+                  src={images['facebook']}
                   alt="logo"
                 />
               </div>
               <div className="container-horisontal social">
                 <img
                   className="social__icon social__icon_twitter"
-                  src={images['twitter.png']}
+                  src={images['twitter']}
                   alt="logo"
                 />
               </div>
@@ -120,27 +120,27 @@ const Footer = () => {
             <div className="container-horisontal footer__payment">
               <img
                 className="footer__payment__icon"
-                src={images['googlepay.png']}
+                src={images['googlepay']}
                 alt="payment"
               />
               <img
                 className="footer__payment__icon"
-                src={images['applepay.png']}
+                src={images['applepay']}
                 alt="payment"
               />
               <img
                 className="footer__payment__icon"
-                src={images['mastercard.png']}
+                src={images['mastercard']}
                 alt="payment"
               />
               <img
                 className="footer__payment__icon"
-                src={images['visa.png']}
+                src={images['visa']}
                 alt="payment"
               />
               <img
                 className="footer__payment__icon"
-                src={images['visa1.png']}
+                src={images['visa1']}
                 alt="payment"
               />
             </div>

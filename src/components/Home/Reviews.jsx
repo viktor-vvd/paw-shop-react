@@ -13,10 +13,10 @@ const Reviews = () => {
       content:
         "Dog loved this thing even before I got it completely out of the box. Within 1 hr. cover was torn and inside exposed. Tossing, chewing and shaking went on for an hour straight. Removed it from her mouth and all goes back to good. Might have been a one off, but be watchful. Would buy again.",
       images: [
-        images["comment1image1.png"],
-        images["comment1image1.png"],
-        images["comment1image3.png"],
-        images["comment1image3.png"],
+        images["comment1image1"],
+        images["comment1image1"],
+        images["comment1image3"],
+        images["comment1image3"],
       ],
     },
     {
@@ -34,7 +34,7 @@ const Reviews = () => {
       rate: 5,
       content:
         "Our 6 month old German Shepherd puppy loves this dragon! It has quickly become a favorite in just a few days. The dragon's wings make a crinkle noise and it's belly squeaks. It's perfect for fetch and tug of war. He also loves to just carry it around, squeak and shake It. Will definitely buy more toys.",
-      images: [images["comment3image1.png"], images["comment1image1.png"]],
+      images: [images["comment3image1"], images["comment1image1"]],
     },
   ];
 
@@ -83,17 +83,17 @@ const Reviews = () => {
     <section className="container-vertical outer__container reviews">
       {/* <img
         className="reviews__background PC"
-        src={images["dogpurplebg.png"]}
+        src={images["dogpurplebg"]}
         alt="bg"
       />
       <img
         className="reviews__background MD"
-        src={images["dogpurplebgMD.png"]}
+        src={images["dogpurplebgMD"]}
         alt="bg"
       />
       <img
         className="reviews__background SM"
-        src={images["dogpurplebgSM.png"]}
+        src={images["dogpurplebgSM"]}
         alt="bg"
       /> */}
       <div className="container-vertical reviews__container">
@@ -104,7 +104,7 @@ const Reviews = () => {
         <div className="container-horisontal reviews__slider__container">
           <img
             className="slider__button"
-            src={images["leftbuttonarrow.png"]}
+            src={images["leftbuttonarrow"]}
             alt="left"
             ref={prevRef}
           />
@@ -135,7 +135,7 @@ const Reviews = () => {
           </swiper-container>
           <img
             className="slider__button"
-            src={images["rightbuttonarrow.png"]}
+            src={images["rightbuttonarrow"]}
             alt="right"
             ref={nextRef}
           />

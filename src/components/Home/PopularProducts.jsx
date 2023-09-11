@@ -6,7 +6,7 @@ const PopularProducts = () => {
   const data = [
     {
       id: 0,
-      image: images["product1.png"],
+      image: images["product1"],
       name: "Ball for a dog «Denta Fun» d=5 см (rubber)",
       rate: 5,
       reviews: 2,
@@ -16,7 +16,7 @@ const PopularProducts = () => {
     },
     {
       id: 1,
-      image: images["product2.png"],
+      image: images["product2"],
       name: "Dog Toys Big Dog barbell Chew toy Interactive Stress Relief Dog Toy",
       rate: 5,
       reviews: 5,
@@ -26,7 +26,7 @@ const PopularProducts = () => {
     },
     {
       id: 2,
-      image: images["product3.png"],
+      image: images["product3"],
       name: "Mammoth Cottonblend 3 Knot Dog Rope Toy, Color Varies, Large",
       rate: 5,
       reviews: 10,
@@ -36,7 +36,7 @@ const PopularProducts = () => {
     },
     {
       id: 3,
-      image: images["product4.png"],
+      image: images["product4"],
       name: "Frisco Bird Teaser with Feathers Cat Toy",
       rate: 5,
       reviews: 10,
@@ -65,12 +65,12 @@ const PopularProducts = () => {
           </span>
           <img
             className="for-cat-dog__button__icon"
-            src={images["caticon.png"]}
+            src={images["caticon"]}
             alt="cat"
           />
           <img
             className="button__icon_arrow button__icon_arrow_right"
-            src={images["toprightarrow.png"]}
+            src={images["toprightarrow"]}
             alt="arrow"
           />
         </div>
@@ -78,10 +78,10 @@ const PopularProducts = () => {
           <span className="text__button">
             Products for <span className="text__button dog">DOG</span>
           </span>
-          <img src={images["dogicon.png"]} alt="arrow" />
+          <img src={images["dogicon"]} alt="arrow" />
           <img
             className="button__icon_arrow button__icon_arrow_right"
-            src={images["toprightarrow.png"]}
+            src={images["toprightarrow"]}
             alt="arrow"
           />
         </div>
