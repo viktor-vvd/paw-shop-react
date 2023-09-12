@@ -1,7 +1,6 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ images=null, item }) => {
   return (
     <div className="container-vertical product-card">
       <div className="container-horisontal image__container">

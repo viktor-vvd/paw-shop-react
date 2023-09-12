@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import images from "@imports/ImagesImport";
 
-const ReviewCard = ({ item }) => {
+const ReviewCard = ({ images=null, item }) => {
   const [maxImages, setMaxImages] = useState(3);
 
   useEffect(() => {
@@ -61,7 +60,7 @@ const ReviewCard = ({ item }) => {
         See the product{" "}
         <img
           className="review-card__link__icon"
-          src={images["toprightpurplearrow"]}
+          src={images["topRightPurpleArrow"]}
           alt="arrow"
         />
       </a>

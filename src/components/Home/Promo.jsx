@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
 
-const Promo = () => {
+const Promo = ({images=null}) => {
   const swiperElRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -31,7 +30,7 @@ const Promo = () => {
     <section className="container-horisontal section-promo">
       <img
         className="slider__button"
-        src={images["leftbuttonarrow"]}
+        src={images["leftButtonArrow"]}
         alt="previous"
         ref={prevRef}
       />
@@ -84,7 +83,7 @@ const Promo = () => {
       </swiper-container>
       <img
         className="slider__button"
-        src={images["rightbuttonarrow"]}
+        src={images["rightButtonArrow"]}
         alt="next"
         ref={nextRef}
       />

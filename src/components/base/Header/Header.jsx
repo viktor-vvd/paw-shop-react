@@ -1,8 +1,7 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
 
-const Header = () => {
+const Header = ({images=null}) => {
   return (
     <header className="container-horisontal outer__container header">
       <div className="container-horisontal container header__container">
@@ -48,7 +47,7 @@ const Header = () => {
             </div>
             <span className="cart__sum">$8</span>
           </div>
-          <Menu/>
+          <Menu images={images}/>
         </div>
       </div>
     </header>

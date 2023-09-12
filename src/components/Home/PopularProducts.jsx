@@ -1,8 +1,7 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 import ProductCard from "@components/base/ProductCard";
 
-const PopularProducts = () => {
+const PopularProducts = ({images=null}) => {
   const data = [
     {
       id: 0,
@@ -54,7 +53,7 @@ const PopularProducts = () => {
 
         {data &&
           data.map((item, index) => (
-            <ProductCard item={item} key={index} />
+            <ProductCard images={images} item={item} key={index} />
           ))}         
         </div>
       </div>
@@ -65,12 +64,12 @@ const PopularProducts = () => {
           </span>
           <img
             className="for-cat-dog__button__icon"
-            src={images["caticon"]}
+            src={images["catIcon"]}
             alt="cat"
           />
           <img
             className="button__icon_arrow button__icon_arrow_right"
-            src={images["toprightarrow"]}
+            src={images["topRightArrow"]}
             alt="arrow"
           />
         </div>
@@ -78,10 +77,10 @@ const PopularProducts = () => {
           <span className="text__button">
             Products for <span className="text__button dog">DOG</span>
           </span>
-          <img src={images["dogicon"]} alt="arrow" />
+          <img src={images["dogIcon"]} alt="arrow" />
           <img
             className="button__icon_arrow button__icon_arrow_right"
-            src={images["toprightarrow"]}
+            src={images["topRightArrow"]}
             alt="arrow"
           />
         </div>

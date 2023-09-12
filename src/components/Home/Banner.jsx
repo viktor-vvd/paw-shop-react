@@ -1,7 +1,6 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 
-const Banner = () => {
+const Banner = ({images=null}) => {
   return (
     <section className="container-vertical banner ">
       {/* <div className="container-horisontal background">
@@ -41,7 +40,7 @@ const Banner = () => {
           <button className="container-horisontal banner__button banner__button_cat">
             <img
               className="button__icon_arrow"
-              src={images["topleftarrow"]}
+              src={images["topLeftArrow"]}
               alt="arrow"
             />
             <span className="text__button">
@@ -57,7 +56,7 @@ const Banner = () => {
             </span>
             <img
               className="button__icon_arrow button__icon_arrow_right"
-              src={images["toprightarrow"]}
+              src={images["topRightArrow"]}
               alt="arrow"
             />
           </button>
@@ -87,7 +86,7 @@ const Banner = () => {
         <li className="container-horisontal benefits__item">
           <img
             className="benefits__item__icon"
-            src={images["return"]}
+            src={images["returnIcon"]}
             alt="return"
           />
           <span className="text">

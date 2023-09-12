@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import images from "@imports/ImagesImport";
 import ReviewCard from "@components/base/ReviewCard";
 import { register } from "swiper/element/bundle";
 
-const Reviews = () => {
+const Reviews = ({images=null}) => {
   const data = [
     {
       id: 0,
@@ -104,7 +103,7 @@ const Reviews = () => {
         <div className="container-horisontal reviews__slider__container">
           <img
             className="slider__button"
-            src={images["leftbuttonarrow"]}
+            src={images["leftButtonArrow"]}
             alt="left"
             ref={prevRef}
           />
@@ -117,25 +116,25 @@ const Reviews = () => {
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard item={item} key={index} />
+                  <ReviewCard images={images} item={item} key={index} />
                 </swiper-slide>
               ))}
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard item={item} key={index} />
+                  <ReviewCard images={images} item={item} key={index} />
                 </swiper-slide>
               ))}
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard item={item} key={index} />
+                  <ReviewCard images={images} item={item} key={index} />
                 </swiper-slide>
               ))}
           </swiper-container>
           <img
             className="slider__button"
-            src={images["rightbuttonarrow"]}
+            src={images["rightButtonArrow"]}
             alt="right"
             ref={nextRef}
           />

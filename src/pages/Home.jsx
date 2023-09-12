@@ -5,14 +5,14 @@ import PopularProducts from "@components/Home/PopularProducts";
 import Reviews from "@components/Home/Reviews";
 import About from "@components/Home/About";
 
-const Home = () => {
+const Home = ({ images = null }) => {
   return (
     <main className="main container-vertical">
-      <Banner />
-      <Promo />
-      <PopularProducts />
-      <Reviews />
-      <About />
+      <Banner images={images} />
+      <Promo images={images} />
+      <PopularProducts images={images} />
+      <Reviews images={images} />
+      <About images={images} />
     </main>
   );
 };

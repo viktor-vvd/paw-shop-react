@@ -1,7 +1,6 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 
-const About = () => {
+const About = ({images=null}) => {
   return (
     <section className="container-horisontal outer__container section-about">
       <img

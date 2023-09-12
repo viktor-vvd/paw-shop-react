@@ -1,7 +1,6 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 
-const Footer = () => {
+const Footer = ({images=null}) => {
   return (
     <footer className="container-vertical footer">
       <div className="container-horisontal outer__container footer_top">
@@ -38,7 +37,7 @@ const Footer = () => {
             <div className="container-horisontal footer__logo__container">
               <img
                 className="footer__logo"
-                src={images['logowhite']}
+                src={images['logoWhite']}
                 alt="logo"
               />
               <h2 className="logo__text footer__logo__text">PawShop</h2>
