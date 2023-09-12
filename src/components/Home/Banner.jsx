@@ -1,6 +1,7 @@
 import React from "react";
+import images from "@imports/ImagesImport";
 
-const Banner = ({images=null}) => {
+const Banner = () => {
   return (
     <section className="container-vertical banner ">
       {/* <div className="container-horisontal background">

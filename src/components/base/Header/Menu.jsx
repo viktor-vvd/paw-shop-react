@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import images from "@imports/ImagesImport";
 
-const Menu = ({images=null}) => {
+const Menu = () => {
   const [showMenu, setshowMenu] = useState(false);
   return (
     <div className="menu__container">

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
 
-const Promo = ({images=null}) => {
+const Promo = () => {
   const swiperElRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);

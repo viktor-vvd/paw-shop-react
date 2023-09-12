@@ -1,7 +1,8 @@
 import React from "react";
+import images from "@imports/ImagesImport";
 import ProductCard from "@components/base/ProductCard";
 
-const PopularProducts = ({images=null}) => {
+const PopularProducts = () => {
   const data = [
     {
       id: 0,
@@ -53,7 +54,7 @@ const PopularProducts = ({images=null}) => {
 
         {data &&
           data.map((item, index) => (
-            <ProductCard images={images} item={item} key={index} />
+            <ProductCard item={item} key={index} />
           ))}         
         </div>
       </div>

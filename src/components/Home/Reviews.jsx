@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import images from "@imports/ImagesImport";
 import ReviewCard from "@components/base/ReviewCard";
 import { register } from "swiper/element/bundle";
 
-const Reviews = ({images=null}) => {
+const Reviews = () => {
   const data = [
     {
       id: 0,
@@ -116,19 +117,19 @@ const Reviews = ({images=null}) => {
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard images={images} item={item} key={index} />
+                  <ReviewCard item={item} key={index} />
                 </swiper-slide>
               ))}
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard images={images} item={item} key={index} />
+                  <ReviewCard item={item} key={index} />
                 </swiper-slide>
               ))}
             {data &&
               data.map((item, index) => (
                 <swiper-slide key={index}>
-                  <ReviewCard images={images} item={item} key={index} />
+                  <ReviewCard item={item} key={index} />
                 </swiper-slide>
               ))}
           </swiper-container>

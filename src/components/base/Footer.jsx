@@ -1,6 +1,7 @@
 import React from "react";
+import images from "@imports/ImagesImport";
 
-const Footer = ({images=null}) => {
+const Footer = () => {
   return (
     <footer className="container-vertical footer">
       <div className="container-horisontal outer__container footer_top">

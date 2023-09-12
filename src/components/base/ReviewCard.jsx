@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import images from "@imports/ImagesImport";
 
-const ReviewCard = ({ images=null, item }) => {
+const ReviewCard = ({ item }) => {
   const [maxImages, setMaxImages] = useState(3);
 
   useEffect(() => {
