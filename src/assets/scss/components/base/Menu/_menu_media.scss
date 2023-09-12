@@ -11,36 +11,10 @@
 
 @include sm {
     .menu {
-        @keyframes show {
-            from {
-                transform: translateY(-490rem);
-                visibility: hidden;
-            }
-
-            to {
-                transform: translateY(0);
-                visibility: visible;
-            }
-        }
+        top: -490rem;
 
         &.show {
-            animation: show 0.5s ease forwards;
-        }
-
-        @keyframes fade {
-            from {
-                transform: translateY(0);
-                visibility: visible;
-            }
-
-            to {
-                transform: translateY(-490rem);
-                visibility: hidden;
-            }
-        }
-
-        &.hide {
-            animation: fade 0.5s ease forwards;
+            transform: translateY(489rem);
         }
 
         // .menu__button

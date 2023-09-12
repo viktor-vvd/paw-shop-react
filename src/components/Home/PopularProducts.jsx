@@ -51,11 +51,8 @@ const PopularProducts = () => {
       <div className="container-vertical container section-popular__container">
         <h2 className="title">Popular products</h2>
         <div className="container-horisontal populars">
-
-        {data &&
-          data.map((item, index) => (
-            <ProductCard item={item} key={index} />
-          ))}         
+          {data &&
+            data.map((item, index) => <ProductCard item={item} key={index} />)}
         </div>
       </div>
       <div className="container-horisontal for-cat-dog__container">
@@ -66,23 +63,35 @@ const PopularProducts = () => {
           <img
             className="for-cat-dog__button__icon"
             src={images["catIcon"]}
-            alt="cat"
+            loading="lazy" alt="cat"
+            width="30"
+            height="30"
           />
           <img
             className="button__icon_arrow button__icon_arrow_right"
             src={images["topRightArrow"]}
-            alt="arrow"
+            loading="lazy" alt="arrow"
+            width="10"
+            height="10"
           />
         </div>
         <div className="container-horisontal for-cat-dog__button for-cat-dog__button_dog">
           <span className="text__button">
             Products for <span className="text__button dog">DOG</span>
           </span>
-          <img src={images["dogIcon"]} alt="arrow" />
+          <img
+            className="for-cat-dog__button__icon"
+            src={images["dogIcon"]}
+            loading="lazy" alt="arrow"
+            width="30"
+            height="30"
+          />
           <img
             className="button__icon_arrow button__icon_arrow_right"
             src={images["topRightArrow"]}
-            alt="arrow"
+            loading="lazy" alt="arrow"
+            width="10"
+            height="10"
           />
         </div>
       </div>

@@ -26,6 +26,7 @@
 
     .cat-image {
         height: 86.35%;
+        width: auto;
         position: absolute;
         right: 52.05%;
         bottom: -131rem;
@@ -45,6 +46,7 @@
     .dog-image {
         position: absolute;
         height: 100%;
+        width: auto;
         left: 47.6%;
         bottom: -249rem;
         transition: all 0.5s ease-in-out;

@@ -27,8 +27,9 @@
         border-width: 2px;
     }
 
-    &__button__icon {
+    &__icon {
         width: 30rem;
+        height: auto;
         flex-shrink: 0;
     }
 }

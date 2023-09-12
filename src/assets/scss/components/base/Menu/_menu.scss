@@ -1,41 +1,18 @@
 .menu {
     position: absolute;
-    top: 0;
+    top: -390rem;
     left: 0;
     width: 100%;
     background: #fff;
     border-radius: 0 0 $border-radius $border-radius;
-
-    @keyframes show {
-        from {
-            transform: translateY(-390rem);
-            visibility: hidden;
-        }
-
-        to {
-            transform: translateY(0);
-            visibility: visible;
-        }
-    }
+    transition: all 0.5s ease-in-out;
 
     &.show {
-        animation: show 0.5s ease forwards;
-    }
-
-    @keyframes fade {
-        from {
-            transform: translateY(0);
-            visibility: visible;
-        }
-
-        to {
-            transform: translateY(-390rem);
-            visibility: hidden;
-        }
+        transform: translateY(389rem);
     }
 
     &.hide {
-        animation: fade 0.5s ease forwards;
+        transform: translateY(0rem);
     }
 
     // .menu__container

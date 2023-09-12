@@ -8,27 +8,43 @@ const Banner = () => {
         <img
           className="background__pattern"
           src={images["bg1"]}
-          alt="pattern"
+          loading="lazy" alt="pattern"
         />
         <img
           className="background__pattern"
           src={images["bg2"]}
-          alt="pattern"
+          loading="lazy" alt="pattern"
         />
       </div> */}
-      <img className="cat-image" src={images["cat"]} alt="cat" />
-      <img className="dog-image" src={images["dog"]} alt="dog" />
+      <img
+        className="cat-image"
+        src={images["cat"]}
+        alt="cat"
+        width="652"
+        height="689"
+      />
+      <img
+        className="dog-image"
+        src={images["dog"]}
+        alt="dog"
+        width="786"
+        height="798"
+      />
       <div className="container-vertical container outer__container banner__middle-container">
         <div className="container-vertical banner__headline">
           <img
             className="headline__image headline__image_ball"
             src={images["ball"]}
-            alt="ball"
+            loading="lazy" alt="ball"
+            width="188"
+            height="188"
           />
           <img
             className="headline__image headline__image_bone"
             src={images["bone"]}
-            alt="bone"
+            loading="lazy" alt="bone"
+            width="360"
+            height="329"
           />
           <span className="headline headline__text headline__text_dark">
             Make your pet’s life better
@@ -42,7 +58,9 @@ const Banner = () => {
             <img
               className="button__icon_arrow"
               src={images["topLeftArrow"]}
-              alt="arrow"
+              loading="lazy" alt="arrow"
+              width="10"
+              height="10"
             />
             <span className="text__button">
               For <span className="text__button cat">CAT</span>
@@ -58,7 +76,9 @@ const Banner = () => {
             <img
               className="button__icon_arrow button__icon_arrow_right"
               src={images["topRightArrow"]}
-              alt="arrow"
+              loading="lazy" alt="arrow"
+              width="10"
+              height="10"
             />
           </button>
         </div>
@@ -68,7 +88,9 @@ const Banner = () => {
           <img
             className="benefits__item__icon"
             src={images["star"]}
-            alt="star"
+            loading="lazy" alt="star"
+            width="30"
+            height="30"
           />
           <span className="text">
             <b>Unique</b> products
@@ -78,7 +100,9 @@ const Banner = () => {
           <img
             className="benefits__item__icon"
             src={images["support"]}
-            alt="support"
+            loading="lazy" alt="support"
+            width="30"
+            height="30"
           />
           <span className="text">
             <b>24/7</b> support
@@ -88,7 +112,9 @@ const Banner = () => {
           <img
             className="benefits__item__icon"
             src={images["returnIcon"]}
-            alt="return"
+            loading="lazy" alt="return"
+            width="30"
+            height="30"
           />
           <span className="text">
             <b>Free return</b> within 15 days
@@ -98,7 +124,9 @@ const Banner = () => {
           <img
             className="benefits__item__icon"
             src={images["checkmark"]}
-            alt="checkmark"
+            loading="lazy" alt="checkmark"
+            width="30"
+            height="30"
           />
           <span className="text">
             <b>Happy</b> pet

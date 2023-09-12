@@ -5,13 +5,17 @@ const ProductCard = ({ item }) => {
   return (
     <div className="container-vertical product-card">
       <div className="container-horisontal image__container">
-          {item.discount > 0 && (
-            <span className="tag tag_discount">-{item.discount}%</span>
-          )}
-          {item.new && (
-            <span className="tag tag_new">New</span>
-          )}
-        <img className="image" width="200" height="100" src={item.image} alt="product img" />
+        {item.discount > 0 && (
+          <span className="tag tag_discount">-{item.discount}%</span>
+        )}
+        {item.new && <span className="tag tag_new">New</span>}
+        <img
+          className="image"
+          width="230"
+          height="194"
+          src={item.image}
+          loading="lazy" alt="product img"
+        />
       </div>
       <h3 className="text product-card__title">{item.name}</h3>
       <div className="container-horisontal rate">
@@ -21,8 +25,10 @@ const ProductCard = ({ item }) => {
               <img
                 className="stars__item"
                 src={images["star"]}
-                alt="star"
+                loading="lazy" alt="star"
                 key={"star" + i}
+                width="13"
+                height="13"
               />
             ))}
         </div>
@@ -47,7 +53,9 @@ const ProductCard = ({ item }) => {
           <img
             className="button__icon"
             src={images["basket"]}
-            alt="basket"
+            loading="lazy" alt="basket"
+            width="20"
+            height="20"
           />
         </div>
       </div>

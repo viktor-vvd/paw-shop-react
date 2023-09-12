@@ -8,13 +8,17 @@ const Footer = () => {
         <div className="container-horisontal container footer__promo">
           <img
             className="footer__background_toy"
-            src={images['footerbg1']}
-            alt="img"
+            src={images["footerbg1"]}
+            loading="lazy" alt="img"
+            width="280"
+            height="180"
           />
           <img
             className="footer__background_ball"
-            src={images['footerbg2']}
-            alt="img"
+            src={images["footerbg2"]}
+            loading="lazy" alt="img"
+            width="116"
+            height="232"
           />
           <span className="footer__promo__text">
             Get the latest news and promotions. No spam, just a few emails per
@@ -38,16 +42,20 @@ const Footer = () => {
             <div className="container-horisontal footer__logo__container">
               <img
                 className="footer__logo"
-                src={images['logoWhite']}
-                alt="logo"
+                src={images["logoWhite"]}
+                loading="lazy" alt="logo"
+                width="54"
+                height="64"
               />
               <h2 className="logo__text footer__logo__text">PawShop</h2>
             </div>
             <div className="container-horisontal footer__phone__wrapper">
               <img
                 className="footer__phone__logo"
-                src={images['phone']}
-                alt="logo"
+                src={images["phone"]}
+                loading="lazy" alt="logo"
+                width="25"
+                height="25"
               />
               <a className="phone footer__phone" href="tel:1-800-055-5566">
                 1-800-055-5566
@@ -57,22 +65,28 @@ const Footer = () => {
               <div className="container-horisontal social">
                 <img
                   className="social__icon"
-                  src={images['insta']}
-                  alt="logo"
+                  src={images["insta"]}
+                  loading="lazy" alt="logo"
+                  width="20"
+                  height="20"
                 />
               </div>
               <div className="container-horisontal social">
                 <img
                   className="social__icon"
-                  src={images['facebook']}
-                  alt="logo"
+                  src={images["facebook"]}
+                  loading="lazy" alt="logo"
+                  width="10"
+                  height="20"
                 />
               </div>
               <div className="container-horisontal social">
                 <img
                   className="social__icon social__icon_twitter"
-                  src={images['twitter']}
-                  alt="logo"
+                  src={images["twitter"]}
+                  loading="lazy" alt="logo"
+                  width="20"
+                  height="16"
                 />
               </div>
             </div>
@@ -120,28 +134,38 @@ const Footer = () => {
             <div className="container-horisontal footer__payment">
               <img
                 className="footer__payment__icon"
-                src={images['googlepay']}
-                alt="payment"
+                src={images["googlepay"]}
+                loading="lazy" alt="payment"
+                width="100%"
+                height="100%"
               />
               <img
                 className="footer__payment__icon"
-                src={images['applepay']}
-                alt="payment"
+                src={images["applepay"]}
+                loading="lazy" alt="payment"
+                width="62"
+                height="35"
               />
               <img
                 className="footer__payment__icon"
-                src={images['mastercard']}
-                alt="payment"
+                src={images["mastercard"]}
+                loading="lazy" alt="payment"
+                width="62"
+                height="35"
               />
               <img
                 className="footer__payment__icon"
-                src={images['visa']}
-                alt="payment"
+                src={images["visa"]}
+                loading="lazy" alt="payment"
+                width="62"
+                height="35"
               />
               <img
                 className="footer__payment__icon"
-                src={images['visa1']}
-                alt="payment"
+                src={images["visa1"]}
+                loading="lazy" alt="payment"
+                width="62"
+                height="35"
               />
             </div>
             <span className="text footer__copyright">

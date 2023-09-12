@@ -57,12 +57,12 @@ const Reviews = () => {
         },
         767: {
           slidesPerView: 2,
-          slidesPerGroup:2,
+          slidesPerGroup: 2,
           spaceBetween: "32rem",
         },
         1000: {
           slidesPerView: 3,
-          slidesPerGroup:3,
+          slidesPerGroup: 3,
           spaceBetween: "32rem",
         },
       },
@@ -84,17 +84,17 @@ const Reviews = () => {
       {/* <img
         className="reviews__background PC"
         src={images["dogpurplebg"]}
-        alt="bg"
+        loading="lazy" alt="bg"
       />
       <img
         className="reviews__background MD"
         src={images["dogpurplebgMD"]}
-        alt="bg"
+        loading="lazy" alt="bg"
       />
       <img
         className="reviews__background SM"
         src={images["dogpurplebgSM"]}
-        alt="bg"
+        loading="lazy" alt="bg"
       /> */}
       <div className="container-vertical reviews__container">
         <div className="reviews__title__container">
@@ -105,8 +105,10 @@ const Reviews = () => {
           <img
             className="slider__button"
             src={images["leftButtonArrow"]}
-            alt="left"
+            loading="lazy" alt="left"
             ref={prevRef}
+            width="59"
+            height="59"
           />
           {/* <div className="container-horisontal container reviews__slider"> */}
           <swiper-container
@@ -136,7 +138,9 @@ const Reviews = () => {
           <img
             className="slider__button"
             src={images["rightButtonArrow"]}
-            alt="right"
+            loading="lazy" alt="right"
+            width="59"
+            height="59"
             ref={nextRef}
           />
         </div>

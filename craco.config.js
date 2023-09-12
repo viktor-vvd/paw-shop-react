@@ -33,6 +33,15 @@ module.exports = {
           ],
         })
       );
+      webpackConfig.module.rules[1].oneOf[1] = {
+        test: /\.(jpe?g|png|webp)$/i,
+        use: {
+          loader: 'responsive-loader',
+          options: {
+            adapter: require('responsive-loader/sharp'),
+          },
+        },
+      };
       return webpackConfig;
     },
   },

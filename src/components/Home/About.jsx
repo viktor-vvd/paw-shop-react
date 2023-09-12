@@ -7,12 +7,16 @@ const About = () => {
       <img
         className="section-about__background section-about__background_first"
         src={images["paws1"]}
-        alt="paws"
+        loading="lazy" alt="paws"
+        width="285"
+        height="526"
       />
       <img
         className="section-about__background section-about__background_second"
         src={images["paws2"]}
-        alt="paws"
+        loading="lazy" alt="paws"
+        width="285"
+        height="526"
       />
       <div className="container-vertical container section-about__container">
         <h2 className="title">About us</h2>
@@ -22,7 +26,9 @@ const About = () => {
               <img
                 className="about__image"
                 src={images["aboutimage1"]}
-                alt="img"
+                loading="lazy" alt="img"
+                width="682"
+                height="525"
               />
             </div>
             <div className="container-vertical about__content">
@@ -87,7 +93,9 @@ const About = () => {
               <img
                 className="about__image"
                 src={images["aboutimage2"]}
-                alt="img"
+                loading="lazy" alt="img"
+                width="682"
+                height="525"
               />
             </div>
           </div>

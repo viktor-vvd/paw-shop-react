@@ -25,8 +25,10 @@ const ReviewCard = ({ item }) => {
               <img
                 className="review-card__stars__item"
                 src={images["star"]}
-                alt="star"
+                loading="lazy" alt="star"
                 key={"star" + i}
+                width="19"
+                height="19"
               />
             ))}
         </div>
@@ -40,8 +42,10 @@ const ReviewCard = ({ item }) => {
                 <img
                   className="review-card__photos__item"
                   src={imageItem}
-                  alt="review img"
-                  key={"star" + index}
+                  loading="lazy" alt="review img"
+                  key={"picture" + index}
+                  width="64"
+                  height="66"
                 />
               )
           )}
@@ -62,7 +66,9 @@ const ReviewCard = ({ item }) => {
         <img
           className="review-card__link__icon"
           src={images["topRightPurpleArrow"]}
-          alt="arrow"
+          loading="lazy" alt="arrow"
+          width="10"
+          height="10"
         />
       </a>
     </div>

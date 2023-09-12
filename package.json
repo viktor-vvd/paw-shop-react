@@ -42,6 +42,8 @@
     "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-webp": "^8.0.0",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "sharp": "^0.32.5",
+    "webpack-image-resize-loader": "^5.0.0"
   }
 }

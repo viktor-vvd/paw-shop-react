@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div className="menu__container">
       <div className="menu__button" onClick={() => setshowMenu(true)}>
-        <img src={images["menu"]} alt="cart" />
+        <img src={images["menu"]} alt="cart" width="37" height="21" />
       </div>
       <div
         className={
@@ -20,7 +20,8 @@ const Menu = () => {
           <img
             className="close__icon"
             src={images["closePurple"]}
-            alt="close"
+            loading="lazy" alt="close"
+            width="32" height="32"
             onClick={() => setshowMenu(false)}
           />
         </div>
@@ -50,7 +51,7 @@ const Menu = () => {
             </ul>
           </nav>
           <a className="phone" href="tel:1-800-055-5566">
-          1-800-055-5566
+            1-800-055-5566
           </a>
         </div>
       </div>
