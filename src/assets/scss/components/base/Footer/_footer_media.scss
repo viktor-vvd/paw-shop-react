@@ -105,7 +105,10 @@
 
             &__button {
                 width: 96rem;
-                font-size: 13rem;
+
+                .button__text{
+                    font-size: 13rem;                
+                }
             }
         }
 

@@ -47,6 +47,8 @@ import twitter from "@public/images/twitter.svg";
 import user from "@public/images/user.svg";
 import visa from "@public/images/visa.webp";
 import visa1 from "@public/images/visa1.webp";
+import google from "@public/images/google.svg";
+import facebookColor from "@public/images/facebookColor.svg";
 
 const images = {
   logo: logo,
@@ -98,6 +100,8 @@ const images = {
   user: user,
   visa: visa,
   visa1: visa1,
+  google: google,
+  facebookColor: facebookColor,
 };
 
 /* function importAll(r) {

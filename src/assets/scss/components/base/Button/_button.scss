@@ -1,5 +1,7 @@
 .button {
-    height: 46rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10rem 20rem;
     gap: 15rem;
     flex-shrink: 0;
@@ -19,11 +21,53 @@
 
     // .button__icon
 
-    &__icon{
+    &__icon {
         width: 20rem;
+        transition: all 0.2s ease-in-out;
+
+        &_arrow_right {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &_oauth{
+            width: 40rem;
+            height: 40rem;
+       }
     }
 
-    &:hover{
+    &:hover {
+        @include button__icon_arrow_hover;
         background: $dark;
+    }
+
+    // .button_white
+
+    &_white {
+        background: #FFF;
+        border: 1px solid $accent;
+
+        .button__text {
+            color: $accent;
+        }
+
+        &:hover {
+            background: #F1E6FF;
+        }
+    }
+
+    // .button_oauth
+
+    &_oauth {
+        background: #F5F5F5;
+        flex-direction: row-reverse;
+
+        .button__text {
+            color: #000;
+        }
+
+        &:hover {
+            background: #F1E6FF;
+        }
     }
 }

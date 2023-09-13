@@ -1,0 +1,45 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $border-radius;
+    background: #FFF;
+    box-shadow: 0rem 4rem 30rem 0rem rgba(0, 0, 0, 0.25);
+    z-index: 12;
+    transition: all 0.2s ease-in-out;
+
+    // .modal__header
+
+    &__header {
+        padding: 40rem 50rem;
+    }
+
+    hr {
+        border: 1rem solid $light-grey;
+        width: 100%;
+    }
+
+    // .modal__container
+
+    &__container {
+        padding: 50rem 40rem;
+        display: grid;
+        gap: 20rem 43rem;
+        grid-template-areas:
+            "modal__form oauth";
+        transition: all 0.2s ease-in-out;
+    }
+
+    .close {
+
+        // .close__icon
+
+        &__icon {
+            border-radius: 50%;
+            width: 47rem;
+            height: 47rem;
+            cursor: pointer;
+        }
+    }
+}

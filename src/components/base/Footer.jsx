@@ -1,5 +1,6 @@
 import React from "react";
 import images from "@imports/ImagesImport";
+import Button from "./Button";
 
 const Footer = () => {
   return (
@@ -30,9 +31,7 @@ const Footer = () => {
               type="text"
               placeholder="Your e-mail"
             />
-            <button className="button button__text footer__promo__button">
-              Subscribe
-            </button>
+            <Button type="button" className="footer__promo__button" value="Subscribe"/>
           </form>
         </div>
       </div>

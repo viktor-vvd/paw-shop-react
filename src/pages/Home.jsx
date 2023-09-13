@@ -4,6 +4,7 @@ import Promo from "@components/Home/Promo";
 import PopularProducts from "@components/Home/PopularProducts";
 import Reviews from "@components/Home/Reviews";
 import About from "@components/Home/About";
+import AuthModal from "components/modals/AuthModal/AuthModal";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <PopularProducts />
       <Reviews />
       <About />
+      <AuthModal/>
     </main>
   );
 };
