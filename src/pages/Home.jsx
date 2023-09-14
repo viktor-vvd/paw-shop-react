@@ -14,7 +14,8 @@ const Home = () => {
       <PopularProducts />
       <Reviews />
       <About />
-      <AuthModal/>
+      {/* modals */}
+      <AuthModal />
     </main>
   );
 };

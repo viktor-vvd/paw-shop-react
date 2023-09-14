@@ -8,6 +8,8 @@ const Menu = () => {
       <div className="menu__button" onClick={() => setshowMenu(true)}>
         <img src={images["menu"]} alt="cart" width="37" height="21" />
       </div>
+      <div className={showMenu?"overlay show":"overlay hide"} ></div>
+
       <div
         className={
           showMenu

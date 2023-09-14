@@ -5,8 +5,13 @@ import SignIn from "./SignIn";
 import Button from "components/base/Button";
 import images from "imports/ImagesImport";
 import ResetPasswordModal from "./ResetPasswordModal";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuthModal } from "redux/reducers/modalsSlice";
 
 const AuthModal = () => {
+  const dispatch = useDispatch();
+  const authModalVisible = useSelector((state) => state.modals.authModal);
+  console.log(authModalVisible);
   const [isRegistered, setisRegistered] = useState(true);
   const [forgotPassword, setForgotPassword] = useState(false);
   return (
@@ -19,6 +24,8 @@ const AuthModal = () => {
               : "Sign in"
             : "Register"
         }
+        setModalVisible={() => dispatch(setAuthModal(false))}
+        isVisible={authModalVisible}
       >
         {isRegistered ? (
           forgotPassword ? (

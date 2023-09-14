@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "components/base/Button";
 import images from "imports/ImagesImport";
 import { useForm } from "react-hook-form";
@@ -6,21 +6,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 const SignIn = ({ setisRegistered, setForgotPassword }) => {
-  const schema = yup
-    .object({
-      email: yup
-        .string()
-        .required("E-mail is a required field")
-        .email("Please enter a valid email address")
-        .matches(/@[^.]*\./),
-      password: yup
-        .string()
-        .required("Password is a required field")
-        .min(8, "Password is too short - should be 8 chars minimum.")
-        .matches(/[a-z]/, "Password requires a lowercase letter")
-        .matches(/[A-Z]/, "Password requires an uppercase letter")
-        .matches(/[0-9]/, "Password requires a number"),
-    });
+  const schema = yup.object({
+    email: yup
+      .string()
+      .required("E-mail is a required field")
+      .email("Please enter a valid email address")
+      .matches(/@[^.]*\./),
+    password: yup
+      .string()
+      .required("Password is a required field")
+      .min(8, "Password is too short - should be 8 chars minimum.")
+      .matches(/[a-z]/, "Password requires a lowercase letter")
+      .matches(/[A-Z]/, "Password requires an uppercase letter")
+      .matches(/[0-9]/, "Password requires a number"),
+  });
   const {
     register,
     handleSubmit,

@@ -1,5 +1,10 @@
 .modal {
 
+	&__container {
+        grid-template-areas:
+            "modal__form oauth";
+    }
+
 	// .modal__form
 
 	&__form {
@@ -13,7 +18,7 @@
 
 			&__input {
 				width: 100%;
-				padding: 26rem 30rem 26rem;
+				padding: 26rem 30rem;
 				border-radius: $border-radius;
 				border: 1px solid $input;
 
@@ -37,9 +42,11 @@
 			&__text-button {
 				color: $accent;
 				text-align: center;
+				transition: all 0.2s ease-in-out;
 
 				&:hover{
 					color: $dark;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -86,8 +93,6 @@
 			border-radius: 50%;
 			background: $accent;
 		}
-
-		.arrow-icon {}
 	}
 
 	.button {

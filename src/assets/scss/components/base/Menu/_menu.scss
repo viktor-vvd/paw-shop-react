@@ -6,6 +6,7 @@
     background: #fff;
     border-radius: 0 0 $border-radius $border-radius;
     transition: all 0.5s ease-in-out;
+    z-index: 12;
 
     &.show {
         transform: translateY(389rem);

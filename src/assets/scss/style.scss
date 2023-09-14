@@ -38,6 +38,18 @@ html {
    pointer-events:none;
    background: #0000004a;
    z-index:11;
+   transition: all 0.2s ease-in-out;
+
+   &.show{
+      opacity: 1;
+      visibility: visible;
+  }
+
+  &.hide{
+      opacity: 0;
+      visibility: hidden;
+  }
+
 }
 
 .logo__text {
@@ -177,3 +189,5 @@ html {
 @import 'components/base/ReviewCard/review_card_media';
 @import 'components/Home/About/about_media';
 @import 'components/base/Footer/footer_media';
+@import 'components/modals/ModalLayout/modal_layout_media';
+@import 'components/modals/AuthModal/auth_modal_media';

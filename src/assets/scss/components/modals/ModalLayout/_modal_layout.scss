@@ -8,9 +8,20 @@
     box-shadow: 0rem 4rem 30rem 0rem rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease-in-out;
 
+    &.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.hide{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
     // .modal__header
 
-    &__header {
+    &__header, &__container {
         padding: 40rem 50rem;
     }
 
@@ -22,11 +33,8 @@
     // .modal__container
 
     &__container {
-        padding: 50rem 40rem;
         display: grid;
         gap: 20rem 43rem;
-        grid-template-areas:
-            "modal__form oauth";
         transition: all 0.2s ease-in-out;
     }
 

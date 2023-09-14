@@ -1,0 +1,87 @@
+@include md {
+    .modal {    
+        // .modal__form
+    
+        &__form {
+            width: 312rem;
+        }
+    
+    
+        .oauth {
+            width: 278rem;
+        }
+    }
+}
+
+@include sm {
+    .modal {
+
+        &__container {
+            grid-template-areas:
+                "modal__form"
+                "oauth";
+        }
+    
+        // .modal__form
+    
+        &__form {
+            width: 284rem;
+    
+            .form {
+    
+                // .form__input
+    
+                &__input {
+                    padding: 16rem 25rem;
+                }
+    
+                // .form__text-button
+    
+                &__text-button {
+                    font-size: 13rem;
+                }
+            }
+    
+            .checkbox {
+                
+                gap: 12rem;
+        
+                // .checkbox__label
+    
+                &__label {
+                    font-size: 13rem;
+                }
+            }
+    
+            .checkmark {
+                width: 18rem;
+                height: 18rem;
+            }
+    
+            .checkbox__input:checked+.checkmark::after {
+                width: 12rem;
+                height: 12rem;
+            }
+        }
+    
+        .button {
+            &_oauth{
+                width: fit-content;
+                padding: 10rem;
+            }
+            
+            &__text{
+                font-size: 13rem;
+            }
+        }
+    
+    
+        .oauth {
+            flex-direction: row;
+            width: 284rem;
+            gap:15rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

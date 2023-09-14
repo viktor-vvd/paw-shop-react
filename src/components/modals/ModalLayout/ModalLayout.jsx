@@ -6,11 +6,12 @@ const ModalLayout = ({
   zIndex = 13,
   setModalVisible,
   children,
+  isVisible
 }) => {
   return (
     <>
-      <div className="overlay" style={{ zIndex: zIndex }}></div>
-      <div className="modal" style={{ zIndex: zIndex }}>
+      <div className={isVisible?"overlay show":"overlay hide"} style={{ zIndex: zIndex }}></div>
+      <div className={isVisible?"modal show":"modal hide"} style={{ zIndex: zIndex }}>
         <div className="container-horisontal modal__header">
           <h2 className="title">{name}</h2>
           <img
@@ -20,7 +21,7 @@ const ModalLayout = ({
             alt="close"
             width="32"
             height="32"
-            /* onClick={() => setshowMenu(false)} */
+            onClick={setModalVisible}
           />
         </div>
         <hr />
