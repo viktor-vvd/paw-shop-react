@@ -22,6 +22,10 @@
 				}
 			}
 
+			&__error{
+				color:red;
+			}
+
 			// .form__middle
 
 			&__middle__container {
@@ -94,14 +98,6 @@
 		&__text{
 			font-size: 14rem;
 		}
-
-		// .button_white
-
-		&_white {}
-
-		// .button_oauth
-
-		&_oauth {}
 	}
 
 

@@ -29,6 +29,17 @@ html {
    justify-content: space-between;
 }
 
+.overlay{
+   position: fixed;
+   top:0;
+   bottom:0;
+   left:0;
+   right: 0;
+   pointer-events:none;
+   background: #0000004a;
+   z-index:11;
+}
+
 .logo__text {
    font-family: Amatic SC;
    font-size: 28rem;

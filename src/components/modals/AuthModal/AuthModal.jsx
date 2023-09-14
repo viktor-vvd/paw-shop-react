@@ -4,14 +4,31 @@ import Register from "./Register";
 import SignIn from "./SignIn";
 import Button from "components/base/Button";
 import images from "imports/ImagesImport";
+import ResetPasswordModal from "./ResetPasswordModal";
 
 const AuthModal = () => {
   const [isRegistered, setisRegistered] = useState(true);
+  const [forgotPassword, setForgotPassword] = useState(false);
   return (
     <>
-      <ModalLayout name={isRegistered ? "Sign in" : "Register"}>
+      <ModalLayout
+        name={
+          isRegistered
+            ? forgotPassword
+              ? "Reset password"
+              : "Sign in"
+            : "Register"
+        }
+      >
         {isRegistered ? (
-          <SignIn setisRegistered={setisRegistered} />
+          forgotPassword ? (
+            <ResetPasswordModal setForgotPassword={setForgotPassword} />
+          ) : (
+            <SignIn
+              setisRegistered={setisRegistered}
+              setForgotPassword={setForgotPassword}
+            />
+          )
         ) : (
           <Register setisRegistered={setisRegistered} />
         )}
