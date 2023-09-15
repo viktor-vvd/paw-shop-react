@@ -48,7 +48,7 @@ const Promo = () => {
           <swiper-slide class="container PC" key={"slide" + i}>
             <Image
               className="promo__slider__item PC"
-              src={images["promoImagePC"]}
+              src={images["promoimgPC"]}
               loading="lazy" alt="promo Image"
               key={"Image" + i}
               width="1168"
@@ -60,7 +60,7 @@ const Promo = () => {
           <swiper-slide class="container MD" key={"slide" + i}>
             <Image
               className="promo__slider__item MD"
-              src={images["promoImageMD"]}
+              src={images["promoimgMD"]}
               loading="lazy" alt="promo Image"
               key={"Image" + i}
               width="768"
@@ -72,7 +72,7 @@ const Promo = () => {
           <swiper-slide class="container SM" key={"slide" + i}>
             <Image
               className="promo__slider__item SM"
-              src={images["promoImageSM"]}
+              src={images["promoimgSM"]}
               loading="lazy" alt="promo Image"
               key={"Image" + i}
               width="360"
