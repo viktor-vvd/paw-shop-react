@@ -1,14 +1,13 @@
 import 'assets/scss/style.scss';
-import Footer from '@components/base/Footer';
-import Header from '@components/base/Header/Header';
 import Home from '@pages/Home';
+import DefaultLayout from 'layouts/DefaultLayout';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Home/>
-      <Footer/>
+      <DefaultLayout>
+        <Home/>
+      </DefaultLayout>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import images from "@imports/ImagesImport";
+import Image from "./Image";
 
 const ReviewCard = ({ item }) => {
   const [maxImages, setMaxImages] = useState(3);
@@ -22,7 +23,7 @@ const ReviewCard = ({ item }) => {
         <div className="container-horisontal review-card__stars">
           {item.rate &&
             [...Array(item.rate)].map((e, i) => (
-              <img
+              <Image
                 className="review-card__stars__item"
                 src={images["star"]}
                 loading="lazy" alt="star"
@@ -39,10 +40,10 @@ const ReviewCard = ({ item }) => {
           {item.images.map(
             (imageItem, index) =>
               index < maxImages && (
-                <img
+                <Image
                   className="review-card__photos__item"
                   src={imageItem}
-                  loading="lazy" alt="review img"
+                  loading="lazy" alt="review Image"
                   key={"picture" + index}
                   width="64"
                   height="66"
@@ -63,7 +64,7 @@ const ReviewCard = ({ item }) => {
         href="/"
       >
         See the product{" "}
-        <img
+        <Image
           className="review-card__link__icon"
           src={images["topRightPurpleArrow"]}
           loading="lazy" alt="arrow"

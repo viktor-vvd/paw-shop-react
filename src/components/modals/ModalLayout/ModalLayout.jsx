@@ -1,5 +1,6 @@
 import React from "react";
 import images from "@imports/ImagesImport";
+import Image from "components/base/Image";
 
 const ModalLayout = ({
   name = "Modal",
@@ -22,7 +23,7 @@ const ModalLayout = ({
         <div className="container-horisontal modal__top">
           <div className="container-horisontal modal__header">
             {icon && (
-              <img
+              <Image
                 className="modal__icon"
                 src={icon}
                 loading="lazy"
@@ -33,7 +34,7 @@ const ModalLayout = ({
             )}
             <h2 className="title">{name}</h2>
           </div>
-          <img
+          <Image
             className="modal__icon close__icon"
             src={images["closePurple"]}
             loading="lazy"

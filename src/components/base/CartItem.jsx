@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import images from "imports/ImagesImport";
+import Image from "./Image";
 
 const CartItem = ({ item }) => {
   const [quantity, setQuantity] = useState(item.quantity);
@@ -15,7 +16,7 @@ const CartItem = ({ item }) => {
   return (
     <div className="container-horisontal cart__item">
       <div className="container-horisontal item__image">
-        <img
+        <Image
           src={item.image}
           loading="lazy"
           alt="close"
@@ -45,7 +46,7 @@ const CartItem = ({ item }) => {
         </div>
       </div>
       <button type="button">
-        <img
+        <Image
           className="item__delete"
           src={images["deleteIcon"]}
           loading="lazy"

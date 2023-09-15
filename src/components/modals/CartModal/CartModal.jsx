@@ -1,5 +1,6 @@
 import Button from "components/base/Button";
 import CartItem from "components/base/CartItem";
+import Image from "components/base/Image";
 import images from "imports/ImagesImport";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -42,7 +43,7 @@ const CartModal = ({ subtotal = 0 }) => {
       >
         <div className="container-horisontal cart__top">
           <div className="container-horisontal cart__header">
-            <img
+            <Image
               className="cart__icon"
               src={images["cartPurple"]}
               loading="lazy"
@@ -52,7 +53,7 @@ const CartModal = ({ subtotal = 0 }) => {
             />
             <h2 className="title">Cart</h2>
           </div>
-          <img
+          <Image
             className="cart__icon close__icon"
             src={images["closePurple"]}
             loading="lazy"
@@ -74,10 +75,10 @@ const CartModal = ({ subtotal = 0 }) => {
           </span>
           <div className="container-horisontal buttons__container">
             <Button
-              type="submit"
+              type="button"
               className="button_white"
               value="Keep shopping"
-              /* onClick={() => setisRegistered(true)} */
+              onClick={()=>dispatch(setCartModal(false))}
             />
             <Button type="submit" value="Buy" />
           </div>

@@ -3,6 +3,7 @@ import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
 import { useDispatch } from "react-redux";
 import { setAuthModal, setCartModal } from "redux/reducers/modalsSlice";
+import Image from "../Image";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Header = () => {
     <header className="container-horisontal outer__container header">
       <div className="container-horisontal container header__container">
         <div className="container-horisontal header__logo">
-          <img
+          <Image
             className="logo__icon"
             src={images["logo"]}
             alt="logo"
@@ -45,7 +46,7 @@ const Header = () => {
         </a>
         <div className="container-horisontal header__buttons">
           <div>
-            <img
+            <Image
               className="profile"
               src={images["user"]}
               loading="lazy"
@@ -60,7 +61,7 @@ const Header = () => {
               className="container-horisontal header__cart__button"
               onClick={() => dispatch(setCartModal(true))}
             >
-              <img
+              <Image
                 className="header__cart__icon"
                 src={images["basket"]}
                 loading="lazy"

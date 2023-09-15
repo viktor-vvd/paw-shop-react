@@ -1,29 +1,30 @@
 import React from "react";
 import images from "@imports/ImagesImport";
+import Image from "components/base/Image";
 
 const Banner = () => {
   return (
     <section className="container-vertical banner ">
       {/* <div className="container-horisontal background">
-        <img
+        <Image
           className="background__pattern"
           src={images["bg1"]}
           loading="lazy" alt="pattern"
         />
-        <img
+        <Image
           className="background__pattern"
           src={images["bg2"]}
           loading="lazy" alt="pattern"
         />
       </div> */}
-      <img
+      <Image
         className="cat-image"
         src={images["cat"]}
         alt="cat"
         width="652"
         height="689"
       />
-      <img
+      <Image
         className="dog-image"
         src={images["dog"]}
         alt="dog"
@@ -32,14 +33,14 @@ const Banner = () => {
       />
       <div className="container-vertical container outer__container banner__middle-container">
         <div className="container-vertical banner__headline">
-          <img
+          <Image
             className="headline__image headline__image_ball"
             src={images["ball"]}
             loading="lazy" alt="ball"
             width="188"
             height="188"
           />
-          <img
+          <Image
             className="headline__image headline__image_bone"
             src={images["bone"]}
             loading="lazy" alt="bone"
@@ -55,7 +56,7 @@ const Banner = () => {
         </div>
         <div className="container-horisontal banner__buttons">
           <button className="container-horisontal banner__button banner__button_cat">
-            <img
+            <Image
               className="button__icon_arrow"
               src={images["topLeftArrow"]}
               loading="lazy" alt="arrow"
@@ -73,7 +74,7 @@ const Banner = () => {
             <span className="text__button">
               For <span className="text__button dog">DOG</span>
             </span>
-            <img
+            <Image
               className="button__icon_arrow button__icon_arrow_right"
               src={images["topRightArrow"]}
               loading="lazy" alt="arrow"
@@ -85,7 +86,7 @@ const Banner = () => {
       </div>
       <ul className="container-horisontal benefits">
         <li className="container-horisontal benefits__item">
-          <img
+          <Image
             className="benefits__item__icon"
             src={images["star"]}
             loading="lazy" alt="star"
@@ -97,7 +98,7 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <img
+          <Image
             className="benefits__item__icon"
             src={images["support"]}
             loading="lazy" alt="support"
@@ -109,7 +110,7 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <img
+          <Image
             className="benefits__item__icon"
             src={images["returnIcon"]}
             loading="lazy" alt="return"
@@ -121,7 +122,7 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <img
+          <Image
             className="benefits__item__icon"
             src={images["checkmark"]}
             loading="lazy" alt="checkmark"

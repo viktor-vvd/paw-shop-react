@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
+import Image from "components/base/Image";
 
 const Promo = () => {
   const swiperElRef = useRef(null);
@@ -29,7 +30,7 @@ const Promo = () => {
   }, []);
   return (
     <section className="container-horisontal section-promo">
-      <img
+      <Image
         className="slider__button"
         src={images["leftButtonArrow"]}
         loading="lazy" alt="previous"
@@ -45,11 +46,11 @@ const Promo = () => {
       >
         {[...Array(3)].map((e, i) => (
           <swiper-slide class="container PC" key={"slide" + i}>
-            <img
+            <Image
               className="promo__slider__item PC"
-              src={images["promoimgPC"]}
-              loading="lazy" alt="promo img"
-              key={"img" + i}
+              src={images["promoImagePC"]}
+              loading="lazy" alt="promo Image"
+              key={"Image" + i}
               width="1168"
               height="425"
             />
@@ -57,11 +58,11 @@ const Promo = () => {
         ))}
         {[...Array(3)].map((e, i) => (
           <swiper-slide class="container MD" key={"slide" + i}>
-            <img
+            <Image
               className="promo__slider__item MD"
-              src={images["promoimgMD"]}
-              loading="lazy" alt="promo img"
-              key={"img" + i}
+              src={images["promoImageMD"]}
+              loading="lazy" alt="promo Image"
+              key={"Image" + i}
               width="768"
               height="272"
             />
@@ -69,28 +70,28 @@ const Promo = () => {
         ))}
         {[...Array(3)].map((e, i) => (
           <swiper-slide class="container SM" key={"slide" + i}>
-            <img
+            <Image
               className="promo__slider__item SM"
-              src={images["promoimgSM"]}
-              loading="lazy" alt="promo img"
-              key={"img" + i}
+              src={images["promoImageSM"]}
+              loading="lazy" alt="promo Image"
+              key={"Image" + i}
               width="360"
               height="304"
             />
           </swiper-slide>
         ))}
-        {/* <img
+        {/* <Image
             className="promo__slider__item MD"
-            src={images["promoimgMD"]}
-            loading="lazy" alt="promo img"
+            src={images["promoImageMD"]}
+            loading="lazy" alt="promo Image"
           />
-          <img
+          <Image
             className="promo__slider__item SM"
-            src={images["promoimgSM"]}
-            loading="lazy" alt="promo img"
+            src={images["promoImageSM"]}
+            loading="lazy" alt="promo Image"
           /> */}
       </swiper-container>
-      <img
+      <Image
         className="slider__button"
         src={images["rightButtonArrow"]}
         loading="lazy" alt="next"
@@ -100,26 +101,26 @@ const Promo = () => {
       />
     </section>
     /* <section className="container-horisontal section-promo">
-          <img
+          <Image
             className="slider__button"
             src={images["leftbuttonarrow"]}
             loading="lazy" alt="left"
           />
           <div className="container promo__slider">
-            <img
+            <Image
               className="promo__slider__item PC"
-              src={images["promoimgPC"]}
-              loading="lazy" alt="promo img"
+              src={images["promoImagePC"]}
+              loading="lazy" alt="promo Image"
             />
-            <img
+            <Image
               className="promo__slider__item MD"
-              src={images["promoimgMD"]}
-              loading="lazy" alt="promo img"
+              src={images["promoImageMD"]}
+              loading="lazy" alt="promo Image"
             />
-            <img
+            <Image
               className="promo__slider__item SM"
-              src={images["promoimgSM"]}
-              loading="lazy" alt="promo img"
+              src={images["promoImageSM"]}
+              loading="lazy" alt="promo Image"
             />
           </div>
           <ul className="slider__dots">
@@ -127,7 +128,7 @@ const Promo = () => {
             <li className="slider__dots__item"></li>
             <li className="slider__dots__item"></li>
           </ul>
-          <img
+          <Image
             className="slider__button"
             src={images["rightbuttonarrow"]}
             loading="lazy" alt="right"

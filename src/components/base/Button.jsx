@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "./Image";
 
 const Button = ({
   icon = null,
   value,
   title = value,
   onClick = null,
-  type = null,
+  type = "button",
   className = null,
   iconClassName=null,
 }) => {
@@ -17,7 +18,7 @@ const Button = ({
       onClick={onClick}
     >
       <span className="text__button">{value}</span>
-      {icon && <img className={iconClassName ? "button__icon " + iconClassName : "button__icon"} src={icon} alt="icon" width="20" height="20"/>}
+      {icon && <Image className={iconClassName ? "button__icon " + iconClassName : "button__icon"} src={icon} alt="icon" width="20" height="20"/>}
     </button>
   );
 };

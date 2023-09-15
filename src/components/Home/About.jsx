@@ -1,17 +1,18 @@
 import React from "react";
 import images from "@imports/ImagesImport";
+import Image from "components/base/Image";
 
 const About = () => {
   return (
     <section className="container-horisontal outer__container section-about">
-      <img
+      <Image
         className="section-about__background section-about__background_first"
         src={images["paws1"]}
         loading="lazy" alt="paws"
         width="285"
         height="526"
       />
-      <img
+      <Image
         className="section-about__background section-about__background_second"
         src={images["paws2"]}
         loading="lazy" alt="paws"
@@ -23,10 +24,10 @@ const About = () => {
         <div className="container-vertical about__container">
           <div className="container-horisontal about__content__container">
             <div className="container-horisontal about__content about__content_left">
-              <img
+              <Image
                 className="about__image"
                 src={images["aboutimage1"]}
-                loading="lazy" alt="img"
+                loading="lazy" alt="Image"
                 width="682"
                 height="525"
               />
@@ -90,10 +91,10 @@ const About = () => {
               </p>
             </div>
             <div className="container-horisontal about__content">
-              <img
+              <Image
                 className="about__image"
                 src={images["aboutimage2"]}
-                loading="lazy" alt="img"
+                loading="lazy" alt="Image"
                 width="682"
                 height="525"
               />

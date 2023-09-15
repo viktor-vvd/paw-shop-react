@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import images from "@imports/ImagesImport";
+import Image from "../Image";
 
 const Menu = () => {
   const [showMenu, setshowMenu] = useState(false);
   return (
     <div className="menu__container">
       <div className="menu__button" onClick={() => setshowMenu(true)}>
-        <img src={images["menu"]} alt="cart" width="37" height="21" />
+        <Image src={images["menu"]} alt="cart" width="37" height="21" />
       </div>
       <div className={showMenu?"overlay show":"overlay hide"} ></div>
 
@@ -19,7 +20,7 @@ const Menu = () => {
       >
         <div className="container-horisontal menu__header">
           <h2 className="title">Menu</h2>
-          <img
+          <Image
             className="close__icon"
             src={images["closePurple"]}
             loading="lazy" alt="close"

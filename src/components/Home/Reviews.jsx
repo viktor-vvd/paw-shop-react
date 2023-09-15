@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import images from "@imports/ImagesImport";
 import ReviewCard from "@components/base/ReviewCard";
 import { register } from "swiper/element/bundle";
+import Image from "components/base/Image";
 
 const Reviews = () => {
   const data = [
@@ -81,17 +82,17 @@ const Reviews = () => {
 
   return (
     <section className="container-vertical outer__container reviews">
-      {/* <img
+      {/* <Image
         className="reviews__background PC"
         src={images["dogpurplebg"]}
         loading="lazy" alt="bg"
       />
-      <img
+      <Image
         className="reviews__background MD"
         src={images["dogpurplebgMD"]}
         loading="lazy" alt="bg"
       />
-      <img
+      <Image
         className="reviews__background SM"
         src={images["dogpurplebgSM"]}
         loading="lazy" alt="bg"
@@ -102,7 +103,7 @@ const Reviews = () => {
           <h2 className="title reviews__title">Reviews</h2>
         </div>
         <div className="container-horisontal reviews__slider__container">
-          <img
+          <Image
             className="slider__button"
             src={images["leftButtonArrow"]}
             loading="lazy" alt="left"
@@ -135,7 +136,7 @@ const Reviews = () => {
                 </swiper-slide>
               ))}
           </swiper-container>
-          <img
+          <Image
             className="slider__button"
             src={images["rightButtonArrow"]}
             loading="lazy" alt="right"

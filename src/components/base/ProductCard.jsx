@@ -1,5 +1,7 @@
 import React from "react";
 import images from "@imports/ImagesImport";
+import Button from "./Button";
+import Image from "./Image";
 
 const ProductCard = ({ item }) => {
   return (
@@ -9,12 +11,13 @@ const ProductCard = ({ item }) => {
           <span className="tag tag_discount">-{item.discount}%</span>
         )}
         {item.new && <span className="tag tag_new">New</span>}
-        <img
+        <Image
           className="image"
           width="230"
           height="194"
           src={item.image}
-          loading="lazy" alt="product img"
+          loading="lazy"
+          alt="product Image"
         />
       </div>
       <h3 className="text product-card__title">{item.name}</h3>
@@ -22,10 +25,11 @@ const ProductCard = ({ item }) => {
         <div className="container-horisontal rate__stars">
           {item.rate &&
             [...Array(item.rate)].map((e, i) => (
-              <img
+              <Image
                 className="stars__item"
                 src={images["star"]}
-                loading="lazy" alt="star"
+                loading="lazy"
+                alt="star"
                 key={"star" + i}
                 width="13"
                 height="13"
@@ -48,16 +52,7 @@ const ProductCard = ({ item }) => {
             ${item.price}
           </span>
         </div>
-        <div className="container-horisontal button">
-          <span className="button__text">+</span>
-          <img
-            className="button__icon"
-            src={images["basket"]}
-            loading="lazy" alt="basket"
-            width="20"
-            height="20"
-          />
-        </div>
+        <Button value="+" title="Add to cart" icon={images["basket"]} />
       </div>
     </div>
   );

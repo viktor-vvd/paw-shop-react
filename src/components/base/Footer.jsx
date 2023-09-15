@@ -1,23 +1,24 @@
 import React from "react";
 import images from "@imports/ImagesImport";
 import Button from "./Button";
+import Image from "./Image";
 
 const Footer = () => {
   return (
     <footer className="container-vertical footer">
       <div className="container-horisontal outer__container footer_top">
         <div className="container-horisontal container footer__promo">
-          <img
+          <Image
             className="footer__background_toy"
             src={images["footerbg1"]}
-            loading="lazy" alt="img"
+            loading="lazy" alt="Image"
             width="280"
             height="180"
           />
-          <img
+          <Image
             className="footer__background_ball"
             src={images["footerbg2"]}
-            loading="lazy" alt="img"
+            loading="lazy" alt="Image"
             width="116"
             height="232"
           />
@@ -39,7 +40,7 @@ const Footer = () => {
         <div className="container-horisontal container footer__info__container">
           <div className="container-vertical footer__contacts__wrapper">
             <div className="container-horisontal footer__logo__container">
-              <img
+              <Image
                 className="footer__logo"
                 src={images["logoWhite"]}
                 loading="lazy" alt="logo"
@@ -49,7 +50,7 @@ const Footer = () => {
               <h2 className="logo__text footer__logo__text">PawShop</h2>
             </div>
             <div className="container-horisontal footer__phone__wrapper">
-              <img
+              <Image
                 className="footer__phone__logo"
                 src={images["phone"]}
                 loading="lazy" alt="logo"
@@ -62,7 +63,7 @@ const Footer = () => {
             </div>
             <div className="container-horisontal footer__socials">
               <div className="container-horisontal social">
-                <img
+                <Image
                   className="social__icon"
                   src={images["insta"]}
                   loading="lazy" alt="logo"
@@ -71,7 +72,7 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <img
+                <Image
                   className="social__icon"
                   src={images["facebook"]}
                   loading="lazy" alt="logo"
@@ -80,7 +81,7 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <img
+                <Image
                   className="social__icon social__icon_twitter"
                   src={images["twitter"]}
                   loading="lazy" alt="logo"
@@ -131,35 +132,35 @@ const Footer = () => {
           <hr className="container footer__divider" />
           <div className="container-horisontal container footer__payment-copyright__wrapper">
             <div className="container-horisontal footer__payment">
-              <img
+              <Image
                 className="footer__payment__icon"
                 src={images["googlepay"]}
                 loading="lazy" alt="payment"
                 width="100%"
                 height="100%"
               />
-              <img
+              <Image
                 className="footer__payment__icon"
                 src={images["applepay"]}
                 loading="lazy" alt="payment"
                 width="62"
                 height="35"
               />
-              <img
+              <Image
                 className="footer__payment__icon"
                 src={images["mastercard"]}
                 loading="lazy" alt="payment"
                 width="62"
                 height="35"
               />
-              <img
+              <Image
                 className="footer__payment__icon"
                 src={images["visa"]}
                 loading="lazy" alt="payment"
                 width="62"
                 height="35"
               />
-              <img
+              <Image
                 className="footer__payment__icon"
                 src={images["visa1"]}
                 loading="lazy" alt="payment"
