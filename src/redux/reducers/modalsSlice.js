@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   authModal: false,
+  cartModal: false,
 };
 
 export const modalsSlice = createSlice({
@@ -11,8 +12,11 @@ export const modalsSlice = createSlice({
     setAuthModal(state, action) {
       state.authModal = action.payload;
     },
+    setCartModal(state, action) {
+      state.cartModal = action.payload;
+    },
   },
 });
 
-export const { setAuthModal } = modalsSlice.actions;
+export const { setAuthModal, setCartModal } = modalsSlice.actions;
 export default modalsSlice.reducer;

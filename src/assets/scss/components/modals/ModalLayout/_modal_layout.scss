@@ -18,10 +18,19 @@
         visibility: hidden;
     }
 
+    &__header{
+        gap:33rem;
+    }
 
-    // .modal__header
+    &__icon{
+        width: 47rem;
+        height: 47rem;
+        cursor: pointer;
+    }
 
-    &__header, &__container {
+    // .modal__top
+
+    &__top, &__container {
         padding: 40rem 50rem;
     }
 
@@ -44,9 +53,6 @@
 
         &__icon {
             border-radius: 50%;
-            width: 47rem;
-            height: 47rem;
-            cursor: pointer;
         }
     }
 }

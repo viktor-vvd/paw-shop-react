@@ -1,0 +1,79 @@
+@include md {
+    .cart {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+@include sm {
+    .cart {
+        box-shadow: none;
+
+        // .cart__top
+    
+        &__top,
+        &__list,
+        &__bottom {
+            padding: 20rem 20rem 30rem;
+        }
+    
+        // .cart__header
+    
+        &__header {
+            gap: 8rem;
+        }
+    
+        // .cart__icon
+    
+        &__icon {
+            width: 32rem;
+            height: 32rem;
+        }
+    
+        // .cart__container
+    
+        &__list {
+            gap: 26rem;
+        }
+    
+        // .cart__bottom
+    
+        &__bottom {
+            gap:19rem;
+    
+            .text{
+                font-size: 16rem;
+                line-height: 20rem;
+    
+                b{
+                    font-size: 20rem;
+                }
+            }
+    
+            .buttons {
+    
+                // .buttons__container
+    
+                &__container {
+                    gap:13rem;
+    
+                    .button{
+                        padding: 16.5rem;
+                    }
+                }
+            }
+        }
+    
+    
+        .close {
+    
+            // .close__icon
+    
+            &__icon {
+                width: 32rem;
+                height: 32rem;
+            }
+        }
+    
+    }
+}

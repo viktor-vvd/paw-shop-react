@@ -1,0 +1,48 @@
+@include sm {
+    .cart__item {
+        min-height: 56rem;
+        gap: 15rem;
+    
+        .item {
+    
+            // .item__image
+    
+            &__image {
+                height: 56rem;
+                width: 56rem;
+            }
+    
+            // .item__controls
+    
+            &__controls {
+                min-height: 56rem;
+                gap:7rem;
+            }
+        
+            // .item__buttons
+    
+            &__buttons {
+                gap: 5rem;
+    
+                .button {
+                    width: 27rem;
+                    height: 27rem;
+                    padding: 0;
+                }
+            }
+    
+            // .item__quantity
+    
+            &__quantity, &__total {
+                font-size: 16rem;
+                line-height: 20rem;
+            }    
+        }
+    
+        // .item__delete
+    
+        &__delete {
+            width: 15rem;
+        }
+    }
+}

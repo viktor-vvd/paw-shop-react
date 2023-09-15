@@ -16,7 +16,7 @@ const Button = ({
       title={title}
       onClick={onClick}
     >
-      <span className="button__text">{value}</span>
+      <span className="text__button">{value}</span>
       {icon && <img className={iconClassName ? "button__icon " + iconClassName : "button__icon"} src={icon} alt="icon" width="20" height="20"/>}
     </button>
   );

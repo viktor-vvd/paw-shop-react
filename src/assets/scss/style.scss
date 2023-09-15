@@ -172,6 +172,8 @@ html {
 @import 'components/base/Footer/footer';
 @import 'components/modals/ModalLayout/modal_layout';
 @import 'components/modals/AuthModal/auth_modal';
+@import 'components/modals/CartModal/cart_modal';
+@import 'components/base/CartItem/cart_item';
 
 /* media */
 
@@ -191,3 +193,5 @@ html {
 @import 'components/base/Footer/footer_media';
 @import 'components/modals/ModalLayout/modal_layout_media';
 @import 'components/modals/AuthModal/auth_modal_media';
+@import 'components/modals/CartModal/cart_modal_media';
+@import 'components/base/CartItem/cart_item_media';

@@ -2,7 +2,7 @@ import React from "react";
 import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
 import { useDispatch } from "react-redux";
-import { setAuthModal } from "redux/reducers/modalsSlice";
+import { setAuthModal, setCartModal } from "redux/reducers/modalsSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -55,19 +55,22 @@ const Header = () => {
               onClick={() => dispatch(setAuthModal(true))}
             />
           </div>
-          <div className="container-horisontal cart">
-            <div className="container-horisontal cart__button">
+          <div className="container-horisontal header__cart">
+            <div
+              className="container-horisontal header__cart__button"
+              onClick={() => dispatch(setCartModal(true))}
+            >
               <img
-                className="cart__icon"
+                className="header__cart__icon"
                 src={images["basket"]}
                 loading="lazy"
                 alt="cart"
                 width="26"
                 height="26"
               />
-              <span className="cart__number">2</span>
+              <span className="header__cart__number">2</span>
             </div>
-            <span className="cart__sum">$8</span>
+            <span className="header__cart__sum">$8</span>
           </div>
           <Menu />
         </div>

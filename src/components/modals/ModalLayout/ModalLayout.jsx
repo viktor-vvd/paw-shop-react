@@ -6,16 +6,35 @@ const ModalLayout = ({
   zIndex = 13,
   setModalVisible,
   children,
-  isVisible
+  isVisible,
+  icon=null,
 }) => {
   return (
     <>
-      <div className={isVisible?"overlay show":"overlay hide"} style={{ zIndex: zIndex }}></div>
-      <div className={isVisible?"modal show":"modal hide"} style={{ zIndex: zIndex }}>
-        <div className="container-horisontal modal__header">
-          <h2 className="title">{name}</h2>
+      <div
+        className={isVisible ? "overlay show" : "overlay hide"}
+        style={{ zIndex: zIndex }}
+      ></div>
+      <div
+        className={isVisible ? "modal show" : "modal hide"}
+        style={{ zIndex: zIndex }}
+      >
+        <div className="container-horisontal modal__top">
+          <div className="container-horisontal modal__header">
+            {icon && (
+              <img
+                className="modal__icon"
+                src={icon}
+                loading="lazy"
+                alt="icon"
+                width="32"
+                height="32"
+              />
+            )}
+            <h2 className="title">{name}</h2>
+          </div>
           <img
-            className="close__icon"
+            className="modal__icon close__icon"
             src={images["closePurple"]}
             loading="lazy"
             alt="close"

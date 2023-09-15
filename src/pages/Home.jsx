@@ -5,6 +5,7 @@ import PopularProducts from "@components/Home/PopularProducts";
 import Reviews from "@components/Home/Reviews";
 import About from "@components/Home/About";
 import AuthModal from "components/modals/AuthModal/AuthModal";
+import CartModal from "components/modals/CartModal/CartModal";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <About />
       {/* modals */}
       <AuthModal />
+      <CartModal/>
     </main>
   );
 };

@@ -1,24 +1,23 @@
 @include sm {
     .modal {
         
-        &__header, &__container {
+        &__top, &__container {
             padding: 20rem;
         }
-        
+
+        &__header{
+            gap:10rem;
+        }
+
+        &__icon{
+            width: 32rem;
+            height: 32rem;
+        }
+            
         // .modal__container
     
         &__container {
             gap: 20rem;
-        }
-    
-        .close {
-    
-            // .close__icon
-    
-            &__icon {
-                width: 32rem;
-                height: 32rem;
-            }
         }
     }
 }

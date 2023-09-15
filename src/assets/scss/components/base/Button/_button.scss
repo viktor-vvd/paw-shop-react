@@ -12,11 +12,8 @@
 
     // .button__text
 
-    &__text {
+    .text__button {
         color: #FFF;
-        font-family: Montserrat Alternates;
-        font-size: 24rem;
-        font-weight: 400;
     }
 
     // .button__icon
@@ -47,7 +44,7 @@
         background: #FFF;
         border: 1px solid $accent;
 
-        .button__text {
+        .text__button {
             color: $accent;
         }
 
@@ -62,7 +59,7 @@
         background: #F5F5F5;
         flex-direction: row-reverse;
 
-        .button__text {
+        .text__button {
             color: #000;
         }
 

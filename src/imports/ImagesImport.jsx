@@ -49,6 +49,8 @@ import visa from "@public/images/visa.webp";
 import visa1 from "@public/images/visa1.webp";
 import google from "@public/images/google.svg";
 import facebookColor from "@public/images/facebookColor.svg";
+import cartPurple from "@public/images/cartPurple.svg";
+import deleteIcon from "@public/images/delete.svg";
 
 const images = {
   logo: logo,
@@ -102,6 +104,8 @@ const images = {
   visa1: visa1,
   google: google,
   facebookColor: facebookColor,
+  cartPurple: cartPurple,
+  deleteIcon: deleteIcon,
 };
 
 /* function importAll(r) {
