@@ -7,13 +7,13 @@ import About from "@components/Home/About";
 
 const Home = () => {
   return (
-    <main className="main container-vertical">
+    <>
       <Banner />
       <Promo />
       <PopularProducts />
       <Reviews />
       <About />
-    </main>
+    </>
   );
 };
 

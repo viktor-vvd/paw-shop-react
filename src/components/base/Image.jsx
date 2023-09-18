@@ -1,7 +1,7 @@
 import images from 'imports/ImagesImport';
 import React from 'react'
 
-const Image = ({src, className, width, height, alt, onClick, loading, key }) => {
+const Image = ({src, className, width, height, alt, onClick, loading }) => {
 
   const handleImageError = (event) => {
     event.target.src = images["defaultImg"];
@@ -16,7 +16,6 @@ const Image = ({src, className, width, height, alt, onClick, loading, key }) => 
         loading={loading}
         onClick={onClick}
         alt={alt}
-        key={key}
         onError={handleImageError}
       />
   )

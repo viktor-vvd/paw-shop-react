@@ -24,7 +24,7 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="container-horisontal nav__list">
             <li className="nav__list__item">
-              <a href="/">
+              <a href="/catalog">
                 For <b>CAT</b>
               </a>
             </li>

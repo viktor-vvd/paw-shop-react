@@ -11,7 +11,6 @@ import { setAuthModal } from "redux/reducers/modalsSlice";
 const AuthModal = () => {
   const dispatch = useDispatch();
   const authModalVisible = useSelector((state) => state.modals.authModal);
-  console.log(authModalVisible);
   const [isRegistered, setisRegistered] = useState(true);
   const [forgotPassword, setForgotPassword] = useState(false);
   return (

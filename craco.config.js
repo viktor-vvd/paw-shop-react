@@ -12,7 +12,7 @@ module.exports = {
       "@public": resolvePath("./src/public"),
       "@imports": resolvePath("./src/imports"),
     },
-    configure: (webpackConfig) => {
+    /* configure: (webpackConfig) => {
       webpackConfig.optimization.minimize = true;
       webpackConfig.optimization.minimizer.push(
         new ImageMinimizerPlugin({
@@ -34,6 +34,6 @@ module.exports = {
         })
       );
       return webpackConfig;
-    },
+    }, */
   },
 };

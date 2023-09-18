@@ -36,7 +36,7 @@ const Menu = () => {
                 <a href="/">Home</a>
               </li>
               <li className="nav__list__item">
-                <a href="/">
+                <a href="/catalog">
                   For <b className="cat">CAT</b>
                 </a>
               </li>

@@ -1,0 +1,17 @@
+.breadcrumbs {
+    gap:6rem;
+    justify-content: center;
+
+		// .breadcrumbs__item
+
+		&__item {
+            color: $grey;
+            &_active{
+                color: $dark-grey;
+            }
+
+            &:hover{
+                color:#000;
+            }
+		}
+}

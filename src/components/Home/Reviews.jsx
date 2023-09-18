@@ -103,14 +103,15 @@ const Reviews = () => {
           <h2 className="title reviews__title">Reviews</h2>
         </div>
         <div className="container-horisontal reviews__slider__container">
-          <Image
-            className="slider__button"
-            src={images["leftButtonArrow"]}
-            loading="lazy" alt="left"
-            ref={prevRef}
-            width="59"
-            height="59"
-          />
+          <div className="slider__button" ref={prevRef}>
+            <Image
+              src={images["leftButtonArrow"]}
+              loading="lazy"
+              alt="left"
+              width="59"
+              height="59"
+            />
+          </div>
           {/* <div className="container-horisontal container reviews__slider"> */}
           <swiper-container
             class="container-horisontal container slider reviews__slider"
@@ -136,14 +137,15 @@ const Reviews = () => {
                 </swiper-slide>
               ))}
           </swiper-container>
-          <Image
-            className="slider__button"
-            src={images["rightButtonArrow"]}
-            loading="lazy" alt="right"
-            width="59"
-            height="59"
-            ref={nextRef}
-          />
+          <div className="slider__button" ref={nextRef}>
+            <Image
+              src={images["rightButtonArrow"]}
+              loading="lazy"
+              alt="right"
+              width="59"
+              height="59"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -30,14 +30,15 @@ const Promo = () => {
   }, []);
   return (
     <section className="container-horisontal section-promo">
-      <Image
-        className="slider__button"
-        src={images["leftButtonArrow"]}
-        loading="lazy" alt="previous"
-        ref={prevRef}
-        width="59"
-        height="59"
-      />
+      <div className="slider__button" ref={prevRef}>
+        <Image
+          src={images["leftButtonArrow"]}
+          loading="lazy"
+          alt="left"
+          width="59"
+          height="59"
+        />
+      </div>
       {/*         <div className="container promo__slider"> */}
       <swiper-container
         class="container slider promo__slider"
@@ -49,7 +50,8 @@ const Promo = () => {
             <Image
               className="promo__slider__item PC"
               src={images["promoimgPC"]}
-              loading="lazy" alt="promo Image"
+              loading="lazy"
+              alt="promo Image"
               key={"Image" + i}
               width="1168"
               height="425"
@@ -61,7 +63,8 @@ const Promo = () => {
             <Image
               className="promo__slider__item MD"
               src={images["promoimgMD"]}
-              loading="lazy" alt="promo Image"
+              loading="lazy"
+              alt="promo Image"
               key={"Image" + i}
               width="768"
               height="272"
@@ -73,7 +76,8 @@ const Promo = () => {
             <Image
               className="promo__slider__item SM"
               src={images["promoimgSM"]}
-              loading="lazy" alt="promo Image"
+              loading="lazy"
+              alt="promo Image"
               key={"Image" + i}
               width="360"
               height="304"
@@ -91,14 +95,15 @@ const Promo = () => {
             loading="lazy" alt="promo Image"
           /> */}
       </swiper-container>
-      <Image
-        className="slider__button"
-        src={images["rightButtonArrow"]}
-        loading="lazy" alt="next"
-        ref={nextRef}
-        width="59"
-        height="59"
-      />
+      <div className="slider__button" ref={nextRef}>
+        <Image
+          src={images["rightButtonArrow"]}
+          loading="lazy"
+          alt="right"
+          width="59"
+          height="59"
+        />
+      </div>
     </section>
     /* <section className="container-horisontal section-promo">
           <Image
