@@ -57,6 +57,16 @@ input, textarea, button, select {
     background-color: transparent;
 }
 
+select {
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+  }
+
 input::-ms-clear {
 	display: none;
 }

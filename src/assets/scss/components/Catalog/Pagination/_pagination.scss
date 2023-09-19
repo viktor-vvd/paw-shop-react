@@ -1,0 +1,55 @@
+.pagination {
+    gap: 10rem;
+    list-style-type: none;
+
+    &__item {
+        justify-content: center;
+        padding: 15rem 25rem;
+        flex-shrink: 0;
+        border-radius: $border-radius;
+        border: 1px solid $light-grey;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+
+        &:hover {
+            border: 1px solid $accent;
+        }
+
+        &_active &__link{
+            background: $light-purple;
+            border: 1px solid $accent;
+        }
+
+        &__link {
+            text-decoration: none;
+        }
+    }
+
+    &__button {
+        display: block;
+        cursor: pointer;
+
+
+        &__link {
+            display: block;
+            width: 41rem;
+            height: 41rem;
+            background: url("../../../../../public/images/arrowRight.svg");
+            background-size: 100%;
+            cursor: pointer;
+
+
+            &_previous {
+                rotate: 180deg;
+            }
+        }
+
+        &_disabled {
+            .pagination__button__link {
+                background: url("../../../../../public/images/arrowDisabled.svg");
+                background-size: 100%;
+            }
+        }
+    }
+}

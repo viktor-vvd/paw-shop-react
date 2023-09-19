@@ -52,6 +52,7 @@ import facebookColor from "@public/images/facebookColor.svg";
 import cartPurple from "@public/images/cartPurple.svg";
 import deleteIcon from "@public/images/delete.svg";
 import defaultImg from "@public/images/default.webp";
+import filterArrowTop from "@public/images/filterArrowTop.svg";
 
 const images = {
   logo: logo,
@@ -108,6 +109,7 @@ const images = {
   cartPurple: cartPurple,
   deleteIcon: deleteIcon,
   defaultImg: defaultImg,
+  filterArrowTop: filterArrowTop,
 };
 
 /* function importAll(r) {

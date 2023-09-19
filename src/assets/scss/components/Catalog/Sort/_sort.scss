@@ -1,0 +1,26 @@
+.sort {
+    outline: none;
+    font-size: 16rem;
+
+    &__container {
+        gap: 10rem;
+    }
+
+    &__text {
+        font-size: 16rem;
+        color: $dark-grey;
+    }
+
+    &__wrapper {
+        gap: 4rem;
+
+        &::after {
+            content: "";
+            width: 8rem;
+            height: 5rem;
+            background: url("../../../../../public/images/filterArrowTop.svg");
+            background-size: cover;
+        }
+
+    }
+}

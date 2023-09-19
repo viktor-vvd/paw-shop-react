@@ -4,6 +4,7 @@ import Menu from "@components/base/Header/Menu";
 import { useDispatch } from "react-redux";
 import { setAuthModal, setCartModal } from "redux/reducers/modalsSlice";
 import Image from "../Image";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -11,16 +12,18 @@ const Header = () => {
   return (
     <header className="container-horisontal outer__container header">
       <div className="container-horisontal container header__container">
-        <div className="container-horisontal header__logo">
-          <Image
-            className="logo__icon"
-            src={images["logo"]}
-            alt="logo"
-            width="37"
-            height="43"
-          />
-          <h1 className="logo__text">PawShop</h1>
-        </div>
+        <Link to="/">
+          <div className="container-horisontal header__logo">
+            <Image
+              className="logo__icon"
+              src={images["logo"]}
+              alt="logo"
+              width="37"
+              height="43"
+            />
+            <h1 className="logo__text">PawShop</h1>
+          </div>
+        </Link>
         <nav className="header__nav">
           <ul className="container-horisontal nav__list">
             <li className="nav__list__item">

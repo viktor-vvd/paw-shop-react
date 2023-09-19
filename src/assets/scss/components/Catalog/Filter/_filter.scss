@@ -1,0 +1,28 @@
+.filter {
+    gap: 20rem;
+    justify-content: flex-start;
+
+    // .filter__item
+
+    &__item {
+        padding: 16px 30px;
+        border-radius: $border-radius;
+        background: #fff;
+        border: 1px solid $light-grey;
+        transition: all 0.2s ease-in-out;
+    }
+    &__input:checked+&__item{
+        background: $light-purple;
+        border: 1px solid $accent;
+    }
+
+    // .filter__input
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+.text {}

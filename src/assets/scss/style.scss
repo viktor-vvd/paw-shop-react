@@ -158,6 +158,11 @@ html {
    min-height: 100vh;
 }
 
+.page-container {
+   padding: 125rem 0 80rem;
+   width: 100%;
+}
+
 @import 'components/base/Header/header';
 @import 'components/base/Menu/menu';
 @import 'components/Home/Banner/banner';
@@ -178,6 +183,9 @@ html {
 @import 'components/Catalog/catalog';
 @import 'components/base/Breadcrumbs/breadcrumbs';
 @import 'components/Catalog/Category/category';
+@import 'components/Catalog/Filter/filter';
+@import 'components/Catalog/Sort/sort';
+@import 'components/Catalog/Pagination/pagination';
 
 /* media */
 

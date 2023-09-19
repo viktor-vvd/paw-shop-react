@@ -2,6 +2,7 @@ import React from "react";
 import images from "@imports/ImagesImport";
 import Button from "./Button";
 import Image from "./Image";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
@@ -11,16 +12,18 @@ const ProductCard = ({ item }) => {
           <span className="tag tag_discount">-{item.discount}%</span>
         )}
         {item.new && <span className="tag tag_new">New</span>}
-        <Image
-          className="image"
-          width="230"
-          height="194"
-          src={item.image}
-          loading="lazy"
-          alt="product Image"
-        />
+        <Link to={"/catalog/product/" + item.id}>
+          <Image
+            className="image"
+            width="230"
+            height="194"
+            src={item.image}
+            loading="lazy"
+            alt="product Image"
+          />
+        </Link>
       </div>
-      <h3 className="text product-card__title">{item.name}</h3>
+      <Link to={"/catalog/product/" + item.id} className="text product-card__title">{item.name}</Link>
       <div className="container-horisontal rate">
         <div className="container-horisontal rate__stars">
           {item.rate &&
