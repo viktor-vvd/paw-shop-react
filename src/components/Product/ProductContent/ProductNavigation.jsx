@@ -1,6 +1,9 @@
 import React from "react";
 
-const ProductNavigation = () => {
+const ProductNavigation = ({tab, setTab}) => {
+  const handleOptionChange = (changeEvent) => {
+    setTab(changeEvent.target.value);
+  };
   return (
     <>
       <div className="container-horisontal outer-container product__navigation">
@@ -8,8 +11,9 @@ const ProductNavigation = () => {
           <input
             type="radio"
             name="tab"
-            value="description"
-            defaultChecked={true}
+            value={1}
+            checked={tab==1}
+            onChange={handleOptionChange}
             className="navigation__input"
           />
           <span className="container-horisontal subtitle navigation__item">
@@ -20,7 +24,9 @@ const ProductNavigation = () => {
           <input
             type="radio"
             name="tab"
-            value="reviews"
+            value={2}
+            checked={tab==2}
+            onChange={handleOptionChange}
             className="navigation__input"
           />
           <span className="container-horisontal subtitle navigation__item">
@@ -31,7 +37,9 @@ const ProductNavigation = () => {
           <input
             type="radio"
             name="tab"
-            value="addReview"
+            value={3}
+            checked={tab==3}
+            onChange={handleOptionChange}
             className="navigation__input"
           />
           <span className="container-horisontal subtitle navigation__item accent">

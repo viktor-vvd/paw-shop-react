@@ -1,3 +1,4 @@
+import PopularProducts from "components/Home/PopularProducts";
 import ProductContent from "components/Product/ProductContent/ProductContent";
 import ProductOptions from "components/Product/ProductOptions";
 import ProductPhotos from "components/Product/ProductPhotos";
@@ -61,6 +62,7 @@ const Product = () => {
       <section className="container-vertical product__middle">
         <ProductContent item={item} />
       </section>
+      <PopularProducts title="You can like this" buttons={false} className="product__recommendations"/>
     </div>
   );
 };

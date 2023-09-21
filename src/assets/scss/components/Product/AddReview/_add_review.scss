@@ -35,6 +35,7 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 display: block;
+                transition: all 0.2s ease-in-out;
             }
 
             &__rating>input {
@@ -61,6 +62,7 @@
             }
 
             &__wrapper {
+                background: #fff;
                 width: 100%;
                 padding: 20rem;
                 gap: 20rem;

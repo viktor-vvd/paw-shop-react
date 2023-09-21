@@ -12,7 +12,7 @@ const ProductCard = ({ item }) => {
           <span className="tag tag_discount">-{item.discount}%</span>
         )}
         {item.new && <span className="tag tag_new">New</span>}
-        <Link to={"/catalog/product/" + item.id}>
+        <Link to={"/catalog/2/product/" + item.id}>
           <Image
             className="image"
             width="230"
@@ -23,7 +23,7 @@ const ProductCard = ({ item }) => {
           />
         </Link>
       </div>
-      <Link to={"/catalog/product/" + item.id} className="text product-card__title">{item.name}</Link>
+      <Link to={"/catalog/2/product/" + item.id} className="text product-card__title">{item.name}</Link>
       <div className="container-horisontal rate">
         <div className="container-horisontal rate__stars">
           {item.rate &&
