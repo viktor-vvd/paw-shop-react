@@ -1,0 +1,35 @@
+.product{
+    &__reviews{
+        width: 100%;
+        gap:40rem;
+        &__rate{
+            gap: 20rem;
+            align-items: center;
+
+            .rate{
+                &__stars{
+                    gap:18rem;
+
+                    .stars__item{
+                        width: 47rem;
+                        height: 47rem;
+                    }
+                }
+
+                &__text{
+                    font-size:36rem;
+                }
+            }
+        }
+
+        &__list{
+            gap:30rem;
+            justify-content: flex-start;
+
+            .review-card{
+                width: 100%;
+                box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+}

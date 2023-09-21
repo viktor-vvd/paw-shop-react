@@ -6,10 +6,9 @@ const Breadcrumbs = () => {
   let crumbs = matches
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.data));
-  console.log(crumbs);
 
   return (
-    <ul className="container-horisontal outer__container breadcrumbs">
+    <ul className="container-horisontal breadcrumbs">
       {crumbs.map((crumb, index) => (
         <React.Fragment key={index}>
           {index < crumbs.length - 1 ? (

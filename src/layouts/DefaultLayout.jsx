@@ -7,15 +7,16 @@ import { Outlet } from "react-router-dom";
 
 const DefaultLayout = () => {
   return (
-    <main className="main container-vertical">
-
+    <>
       <Header />
-      <Outlet />
+      <main className="main container-vertical">
+        <Outlet />
+      </main>
       <Footer />
       {/* modals */}
       <AuthModal />
       <CartModal />
-    </main>
+    </>
   );
 };
 

@@ -33,8 +33,7 @@ const router = createBrowserRouter(
           path="product/:id"
           element={<Product />}
           handle={{
-            crumb: () => 
-              ({ name: "Product", path: "/product" })
+            crumb: () => ({ name: "Product", path: "/product" }),
           }}
         />
       </Route>

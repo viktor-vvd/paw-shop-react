@@ -1,0 +1,106 @@
+.add-review {
+    width: 100%;
+    gap: 30rem;
+
+    &__form {
+        width: 100%;
+        align-items: center;
+        gap: 30rem;
+
+        .form {
+            gap: 30rem;
+
+            &__rating {
+                background: #fff;
+                padding: 33rem 19rem;
+                border-radius: $border-radius;
+                box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+                border: none;
+                justify-content: center;
+                flex-direction: row-reverse;
+                gap: 20rem;
+                width: fit-content;
+            }
+
+            &__rating>label {
+                color: #90A0A3;
+            }
+
+            &__rating>label:before {
+                content: "";
+                width: 46rem;
+                height: 46rem;
+                background: url("../../../../../public/images/starDisabled.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: block;
+            }
+
+            &__rating>input {
+                display: none;
+            }
+
+            &__rating>input:checked~label:before,
+            &__rating:not(:checked)>label:hover:before,
+            &__rating:not(:checked)>label:hover~label:before {
+                background: url("../../../../../public/images/star.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &__rating>input:checked+label:hover,
+            &__rating>input:checked~label:hover,
+            &__rating>label:hover~input:checked~label:before,
+            &__rating>input:checked~label:hover~label:before {
+                background: url("../../../../../public/images/star.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &__wrapper {
+                width: 100%;
+                padding: 20rem;
+                gap: 20rem;
+                border-radius: $border-radius;
+                box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+            }
+
+            &__input {
+                width: 100%;
+                padding: 30rem;
+                border-radius: $border-radius;
+                border: 1px solid var(--input, #D7D7D7);
+                color: #000;
+                text-overflow: ellipsis;
+                resize: none;
+
+                &::placeholder {
+                    color: $dark-grey;
+                }
+            }
+
+            &__add-file {
+                width: 100%;
+
+                &__input {
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                }
+
+                &__button {
+                    width: 100%;
+                    padding: 20rem;
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            padding: 20rem;
+        }
+    }
+}

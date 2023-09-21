@@ -40,7 +40,7 @@ const CartItem = ({ item }) => {
             className="button_white"
             value="+"
             title="Add 1"
-            onClick={() => plusQuantity(true)}
+            onClick={() => plusQuantity()}
           />
           <span className="text item__total">${quantity*item.price}</span>
         </div>

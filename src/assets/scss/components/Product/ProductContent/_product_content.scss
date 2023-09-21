@@ -1,0 +1,14 @@
+.product{
+    
+    &__content {
+
+        &__container {
+            width: 100%;
+            gap:40rem;
+            justify-content: center;
+            padding: 69rem 16rem 95rem;
+            background: linear-gradient(90deg, #FAF5FF 0.29%, #FFF 45.9%, #F5ECFF 99.79%);
+        }
+    }
+
+}

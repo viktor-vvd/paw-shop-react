@@ -21,7 +21,7 @@ const Reviews = () => {
       ],
     },
     {
-      id: 2,
+      id: 1,
       date: "15.07.2022",
       name: "Richard",
       rate: 5,
@@ -82,21 +82,6 @@ const Reviews = () => {
 
   return (
     <section className="container-vertical outer__container reviews">
-      {/* <Image
-        className="reviews__background PC"
-        src={images["dogpurplebg"]}
-        loading="lazy" alt="bg"
-      />
-      <Image
-        className="reviews__background MD"
-        src={images["dogpurplebgMD"]}
-        loading="lazy" alt="bg"
-      />
-      <Image
-        className="reviews__background SM"
-        src={images["dogpurplebgSM"]}
-        loading="lazy" alt="bg"
-      /> */}
       <div className="container-vertical reviews__container">
         <div className="reviews__title__container">
           <span className="title reviews__title_dark">Reviews</span>
@@ -112,7 +97,6 @@ const Reviews = () => {
               height="59"
             />
           </div>
-          {/* <div className="container-horisontal container reviews__slider"> */}
           <swiper-container
             class="container-horisontal container slider reviews__slider"
             init="false"

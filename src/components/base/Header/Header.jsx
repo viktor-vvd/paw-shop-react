@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
 import { useDispatch } from "react-redux";
@@ -8,9 +8,24 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setOffset(window.scrollY);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="container-horisontal outer__container header">
+    <header
+      className={
+        offset > 3
+          ? "container-horisontal outer__container header header_scrolled"
+          : "container-horisontal outer__container header"
+      }
+    >
       <div className="container-horisontal container header__container">
         <Link to="/">
           <div className="container-horisontal header__logo">

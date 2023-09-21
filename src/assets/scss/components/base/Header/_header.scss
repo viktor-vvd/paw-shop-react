@@ -5,6 +5,12 @@
     padding-top: 12rem;
     padding-bottom: 12rem;
     z-index: 11;
+    transition: all 0.1s ease-in-out;
+
+    &_scrolled {
+        background: #fff;
+    }
+
     // .header__container
 
     &__container {
@@ -22,8 +28,8 @@
 
     .logo {
 
-        &__text{
-            color:#000;
+        &__text {
+            color: #000;
         }
 
         // .logo__icon

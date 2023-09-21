@@ -28,6 +28,7 @@ import mastercard from "@public/images/mastercard.webp";
 import menu from "@public/images/menu.svg";
 import paws1 from "@public/images/paws1.webp";
 import paws2 from "@public/images/paws2.webp";
+import paws3 from "@public/images/paws3.webp";
 import phone from "@public/images/phone.svg";
 import product1 from "@public/images/product1.png?as=webp";
 import product2 from "@public/images/product2.png?as=webp";
@@ -53,6 +54,10 @@ import cartPurple from "@public/images/cartPurple.svg";
 import deleteIcon from "@public/images/delete.svg";
 import defaultImg from "@public/images/default.webp";
 import filterArrowTop from "@public/images/filterArrowTop.svg";
+import telegramColor from "@public/images/telegramColor.svg";
+import facebookColorMini from "@public/images/facebookColorMini.svg";
+import twitterColor from "@public/images/twitterColor.svg";
+import gallery from "@public/images/gallery.svg";
 
 const images = {
   logo: logo,
@@ -85,6 +90,7 @@ const images = {
   menu: menu,
   paws1: paws1,
   paws2: paws2,
+  paws3: paws3,
   phone: phone,
   product1: product1,
   product2: product2,
@@ -110,6 +116,10 @@ const images = {
   deleteIcon: deleteIcon,
   defaultImg: defaultImg,
   filterArrowTop: filterArrowTop,
+  telegramColor: telegramColor,
+  facebookColorMini: facebookColorMini,
+  twitterColor: twitterColor,
+  gallery: gallery,
 };
 
 /* function importAll(r) {

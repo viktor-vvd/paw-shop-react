@@ -3,12 +3,12 @@ import Image from "./Image";
 
 const Button = ({
   icon = null,
-  value,
+  value = null,
   title = value,
   onClick = null,
   type = "button",
   className = null,
-  iconClassName=null,
+  iconClassName = null,
 }) => {
   return (
     <button
@@ -17,8 +17,18 @@ const Button = ({
       title={title}
       onClick={onClick}
     >
-      <span className="text__button">{value}</span>
-      {icon && <Image className={iconClassName ? "button__icon " + iconClassName : "button__icon"} src={icon} alt="icon" width="20" height="20"/>}
+      {value && <span className="text__button">{value}</span>}
+      {icon && (
+        <Image
+          className={
+            iconClassName ? "button__icon " + iconClassName : "button__icon"
+          }
+          src={icon}
+          alt="icon"
+          width="20"
+          height="20"
+        />
+      )}
     </button>
   );
 };
