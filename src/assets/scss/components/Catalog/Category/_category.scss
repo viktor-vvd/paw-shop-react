@@ -8,6 +8,12 @@
         justify-content: center;
     }
 
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
     // .category__button
 
     &__button {
@@ -23,6 +29,7 @@
             position: absolute;
             width: 177rem;
             height: 0;
+            opacity: 0;
             bottom: -1rem;
             background: #000;
             transition: all 0.2s ease-in-out;
@@ -44,8 +51,8 @@
         &:hover {
             &::after {
                 height: 1rem;
+                opacity: 1;
             }
-
         }
 
         .text__button {
@@ -61,10 +68,11 @@
 
     }
 
-    .active {
+    &__input:checked+&__button {
         &::after {
             content: "";
             height: 2rem;
+            opacity: 1;
         }
 
         .text__button {

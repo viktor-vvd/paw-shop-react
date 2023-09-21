@@ -22,7 +22,7 @@ const router = createBrowserRouter(
     >
       <Route index element={<Home />} />
       <Route
-        path="catalog"
+        path="catalog/:categoryId"
         element={<Outlet />}
         handle={{
           crumb: () => ({ name: "Catalog", path: "/catalog" }),

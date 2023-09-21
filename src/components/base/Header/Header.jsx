@@ -42,14 +42,14 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="container-horisontal nav__list">
             <li className="nav__list__item">
-              <a href="/catalog">
+              <Link to="/catalog/1">
                 For <b>CAT</b>
-              </a>
+              </Link>
             </li>
             <li className="nav__list__item">
-              <a href="/">
+              <Link to="/catalog/2">
                 For <b>DOG</b>
-              </a>
+              </Link>
             </li>
             <li className="nav__list__item">
               <a href="/">Contacts</a>

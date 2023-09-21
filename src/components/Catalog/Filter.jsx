@@ -5,10 +5,10 @@ const Filter = () => {
     <div className="container-horisontal">
       <ul className="container-horisontal filter">
         <li className="container-horisontal">
-          <label className="container-horisontal text" name="category">
+          <label className="container-horisontal text" name="filter">
             <input
               type="radio"
-              name="category"
+              name="filter"
               value="All"
               defaultChecked={true}
               className="filter__input"
@@ -18,10 +18,10 @@ const Filter = () => {
           </label>
         </li>
         <li className="container-horisontal">
-          <label className="container-horisontal text" name="category">
+          <label className="container-horisontal text" name="filter">
             <input
               type="radio"
-              name="category"
+              name="filter"
               value="Balls"
               className="filter__input"
             />
@@ -29,10 +29,10 @@ const Filter = () => {
           </label>
         </li>
         <li className="container-horisontal">
-          <label className="container-horisontal text" name="category">
+          <label className="container-horisontal text" name="filter">
             <input
               type="radio"
-              name="category"
+              name="filter"
               value="Balls"
               className="filter__input"
             />
