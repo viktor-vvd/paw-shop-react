@@ -6,6 +6,7 @@ import Breadcrumbs from "components/base/Breadcrumbs";
 import Image from "components/base/Image";
 import images from "imports/ImagesImport";
 import React from "react";
+import { Rating } from "react-simple-star-rating";
 
 const Product = () => {
   const item = {
@@ -62,7 +63,11 @@ const Product = () => {
       <section className="container-vertical product__middle">
         <ProductContent item={item} />
       </section>
-      <PopularProducts title="You can like this" buttons={false} className="product__recommendations"/>
+      <PopularProducts
+        title="You can like this"
+        buttons={false}
+        className="product__recommendations"
+      />
     </div>
   );
 };
