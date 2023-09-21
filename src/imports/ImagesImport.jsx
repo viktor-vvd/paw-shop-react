@@ -58,6 +58,7 @@ import telegramColor from "@public/images/telegramColor.svg";
 import facebookColorMini from "@public/images/facebookColorMini.svg";
 import twitterColor from "@public/images/twitterColor.svg";
 import gallery from "@public/images/gallery.svg";
+import closeMini from "@public/images/closeMini.svg";
 
 const images = {
   logo: logo,
@@ -120,6 +121,7 @@ const images = {
   facebookColorMini: facebookColorMini,
   twitterColor: twitterColor,
   gallery: gallery,
+  closeMini: closeMini,
 };
 
 /* function importAll(r) {

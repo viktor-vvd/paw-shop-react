@@ -8,7 +8,6 @@
         gap: 30rem;
 
         .form {
-            gap: 30rem;
 
             &__rating {
                 background: #fff;
@@ -103,6 +102,25 @@
         .button {
             width: 100%;
             padding: 20rem;
+        }
+
+        .images {
+            &__list {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 20rem
+            }
+
+            &__item {
+                gap: 5rem;
+
+                &__icon {
+                    width: 12rem;
+                    height: 12rem;
+                    cursor: pointer;
+                }
+            }
+
         }
     }
 }
