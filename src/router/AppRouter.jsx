@@ -27,7 +27,7 @@ const router = createBrowserRouter(
         handle={{
           crumb: (data) => ({
             name: "Catalog",
-            path: `/catalog/${data?.path}`,
+            path: `${data?.path}`,
           }),
         }}
       >
@@ -38,7 +38,7 @@ const router = createBrowserRouter(
           handle={{
             crumb: (data) => ({
               name: data?.name,
-              path: `/product/${data?.path}`,
+              path: `${data?.path}`,
             }),
           }}
         />
