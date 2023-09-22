@@ -6,9 +6,8 @@ import Breadcrumbs from "components/base/Breadcrumbs";
 import Image from "components/base/Image";
 import images from "imports/ImagesImport";
 import React from "react";
-import { Rating } from "react-simple-star-rating";
 
-const Product = () => {
+const ProductPage = () => {
   const item = {
     id: 3,
     image: images["product4"],
@@ -72,4 +71,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage;

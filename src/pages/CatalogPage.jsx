@@ -8,7 +8,7 @@ import images from "imports/ImagesImport";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-const Catalog = () => {
+const CatalogPage = () => {
   const data = [
     {
       id: 0,
@@ -256,4 +256,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default CatalogPage;

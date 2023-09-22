@@ -1,7 +1,7 @@
 import DefaultLayout from "layouts/DefaultLayout";
-import Catalog from "pages/Catalog";
-import Home from "pages/Home";
-import Product from "pages/Product";
+import CatalogPage from "pages/CatalogPage";
+import HomePage from "pages/HomePage";
+import ProductPage from "pages/ProductPage";
 import React from "react";
 import {
   Outlet,
@@ -20,7 +20,7 @@ const router = createBrowserRouter(
         crumb: () => ({ name: "Main", path: "/" }),
       }}
     >
-      <Route index element={<Home />} />
+      <Route index element={<HomePage />} />
       <Route
         path="catalog/:id"
         element={<Outlet />}
@@ -31,10 +31,10 @@ const router = createBrowserRouter(
           }),
         }}
       >
-        <Route index element={<Catalog />} />
+        <Route index element={<CatalogPage />} />
         <Route
           path="product/:id"
-          element={<Product />}
+          element={<ProductPage />}
           handle={{
             crumb: (data) => ({
               name: data?.name,

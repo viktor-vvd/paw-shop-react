@@ -5,7 +5,7 @@ import PopularProducts from "@components/Home/PopularProducts";
 import Reviews from "@components/Home/Reviews";
 import About from "@components/Home/About";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Banner />
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
