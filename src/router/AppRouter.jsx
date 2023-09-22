@@ -22,10 +22,13 @@ const router = createBrowserRouter(
     >
       <Route index element={<Home />} />
       <Route
-        path="catalog/:categoryId"
+        path="catalog/:id"
         element={<Outlet />}
         handle={{
-          crumb: () => ({ name: "Catalog", path: "/catalog" }),
+          crumb: (data) => ({
+            name: "Catalog",
+            path: `/catalog/${data?.path}`,
+          }),
         }}
       >
         <Route index element={<Catalog />} />
@@ -33,7 +36,10 @@ const router = createBrowserRouter(
           path="product/:id"
           element={<Product />}
           handle={{
-            crumb: () => ({ name: "Product", path: "/product" }),
+            crumb: (data) => ({
+              name: data?.name,
+              path: `/product/${data?.path}`,
+            }),
           }}
         />
       </Route>

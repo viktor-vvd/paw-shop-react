@@ -32,6 +32,7 @@
         height: 13rem;
         border-radius: 50%;
         background: $transparent-white;
+        flex-shrink: 0;
     }
 
     swiper-container::part(bullet-active) {
@@ -39,4 +40,5 @@
         width: 13rem;
         height: 13rem;
         border-radius: 50%;
+        flex-shrink: 0;
     }

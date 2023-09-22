@@ -23,35 +23,35 @@ const AddReview = () => {
           <input type="radio" id="star5" name="rating" value="5" />
           <label
             className="star"
-            for="star5"
+            htmlFor="star5"
             title="Awesome"
             aria-hidden="true"
           ></label>
           <input type="radio" id="star4" name="rating" value="4" />
           <label
             className="star"
-            for="star4"
+            htmlFor="star4"
             title="Great"
             aria-hidden="true"
           ></label>
           <input type="radio" id="star3" name="rating" value="3" />
           <label
             className="star"
-            for="star3"
+            htmlFor="star3"
             title="Very good"
             aria-hidden="true"
           ></label>
           <input type="radio" id="star2" name="rating" value="2" />
           <label
             className="star"
-            for="star2"
+            htmlFor="star2"
             title="Good"
             aria-hidden="true"
           ></label>
           <input type="radio" id="star1" name="rating" value="1" />
           <label
             className="star"
-            for="star1"
+            htmlFor="star1"
             title="Bad"
             aria-hidden="true"
           ></label>

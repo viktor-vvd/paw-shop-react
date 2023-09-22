@@ -6,6 +6,7 @@ import Breadcrumbs from "components/base/Breadcrumbs";
 import ProductCard from "components/base/ProductCard";
 import images from "imports/ImagesImport";
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Catalog = () => {
   const data = [
@@ -211,14 +212,28 @@ const Catalog = () => {
     },
   ];
 
+  const catalogData=[
+    {
+      id:'1',
+      name:"For CAT"
+    },
+    {
+      id:'2',
+      name:"For DOG"
+    }
+  ]
+
+  const {id}=useParams();
+  const selectedCatalog = catalogData.find((catalog) => catalog.id === id);
+
   const [currentItems, setCurrentItems] = useState(null);
 
   return (
     <div className="container-vertical page-container catalog">
       <div className="container-vertical catalog__top">
-        <Breadcrumbs />
+        <Breadcrumbs item={selectedCatalog} />
         <h2 className="title">Catalog</h2>
-        <Category />
+        <Category item={selectedCatalog} />
       </div>
       <div className="container-vertical outer__container catalog__bottom">
         <div className="container-horisontal container filter-sort">

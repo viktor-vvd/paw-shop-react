@@ -30,7 +30,7 @@ const Product = () => {
     <div className="container-vertical page-container product">
       <section className="container-vertical outer-container">
         <div className="container-vertical container product__breadcrumbs">
-          <Breadcrumbs />
+          <Breadcrumbs item={item}/>
         </div>
         <div className="container product__top">
           <div className="product__header">

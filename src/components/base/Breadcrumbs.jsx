@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, useMatches } from "react-router-dom";
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ item }) => {
   let matches = useMatches();
   let crumbs = matches
-    .filter((match) => Boolean(match.handle?.crumb))
-    .map((match) => match.handle.crumb(match.data));
-
+  .filter((match) => Boolean(match.handle?.crumb))
+  .map((match) => match.handle.crumb({ path: item?.id, name: item?.name }));
+console.log(crumbs);
   return (
     <ul className="container-horisontal breadcrumbs">
       {crumbs.map((crumb, index) => (
