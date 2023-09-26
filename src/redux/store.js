@@ -1,24 +1,24 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { pageApi } from "../api/pageApi";
 import modalsSlice from "./reducers/modalsSlice";
+import pageSlice from "./reducers/pageSlice";
+import authSlice from "./reducers/authSlice";
+import { authApi } from "api/authApi";
 
 export const store = configureStore({
   reducer: {
     modals: modalsSlice,
-    /*notifications: notificationsSlice,
-      folded: sideNavBarSlice,
-      projects: projectsSlice,
-      gitHub: gitHubSlice,
-      [authApi.reducerPath]: authApi.reducer,
-      [notificationsApi.reducerPath]: notificationsApi.reducer,
-      [projectApi.reducerPath]: projectApi.reducer,
-      [gitHubIntegrationApi.reducerPath]: gitHubIntegrationApi.reducer,*/
+    page: pageSlice,
+    auth: authSlice,
+
+    //api reducers
+    
+    [pageApi.reducerPath]: pageApi.reducer,
+    [authApi.reducerPath]: authApi.reducer,
   },
-  /*     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({ serializableCheck: false }).concat([
-        authApi.middleware,
-        notificationsApi.middleware,
-        projectApi.middleware,
-        gitHubIntegrationApi.middleware,
-      ]),
- */
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }).concat([
+      authApi.middleware,
+      pageApi.middleware,
+    ]),
 });

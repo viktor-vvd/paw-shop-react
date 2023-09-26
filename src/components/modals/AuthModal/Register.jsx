@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "components/base/Button";
 import images from "imports/ImagesImport";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useRegisterUserMutation } from "api/authApi";
 
 const Register = ({ setisRegistered }) => {
   const schema = yup.object({
-    fullName: yup.string().required("Full name is a required field"),
+    name: yup.string().required("Full name is a required field"),
     email: yup
       .string()
       .required("E-mail is a required field")
@@ -20,7 +21,7 @@ const Register = ({ setisRegistered }) => {
       .matches(/[a-z]/, "Password requires a lowercase letter")
       .matches(/[A-Z]/, "Password requires an uppercase letter")
       .matches(/[0-9]/, "Password requires a number"),
-    confirmPassword: yup
+    password_confirmation: yup
       .string()
       .oneOf([yup.ref("password"), null], "Passwords must match"),
   });
@@ -34,9 +35,14 @@ const Register = ({ setisRegistered }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
-    console.log(data);
-    reset();
+  const [registerUser, { isError, error }] = useRegisterUserMutation();
+
+  const onSubmit = async (formData) => {
+    const result = await registerUser(formData);
+    if (result.data) {
+      setisRegistered(true);
+      reset();
+    }
   };
 
   return (
@@ -46,16 +52,14 @@ const Register = ({ setisRegistered }) => {
     >
       <input
         className="text_light form__input"
-        name="fullName"
+        name="name"
         type="text"
         placeholder="Full name"
-        {...register("fullName")}
+        {...register("name")}
       />
-          {errors.fullName && (
-            <span className="text_light form__error">
-              {errors.fullName?.message}
-            </span>
-          )}
+      {errors.name && (
+        <span className="text_light form__error">{errors.name?.message}</span>
+      )}
       <input
         className="text_light form__input"
         name="email"
@@ -63,11 +67,9 @@ const Register = ({ setisRegistered }) => {
         placeholder="E-mail"
         {...register("email")}
       />
-          {errors.email && (
-            <span className="text_light form__error">
-              {errors.email?.message}
-            </span>
-          )}
+      {errors.email && (
+        <span className="text_light form__error">{errors.email?.message}</span>
+      )}
       <input
         className="text_light form__input"
         name="password"
@@ -75,23 +77,26 @@ const Register = ({ setisRegistered }) => {
         placeholder="Password"
         {...register("password")}
       />
-          {errors.password && (
-            <span className="text_light form__error">
-              {errors.password?.message}
-            </span>
-          )}
+      {errors.password && (
+        <span className="text_light form__error">
+          {errors.password?.message}
+        </span>
+      )}
       <input
         className="text_light form__input"
-        name="confirmPassword"
+        name="password_confirmation"
         type="password"
         placeholder="Confirm password"
-        {...register("confirmPassword")}
+        {...register("password_confirmation")}
       />
-          {errors.confirmPassword && (
-            <span className="text_light form__error">
-              {errors.confirmPassword?.message}
-            </span>
-          )}
+      {errors.password_confirmation && (
+        <span className="text_light form__error">
+          {errors.password_confirmation?.message}
+        </span>
+      )}
+      {isError && (
+        <span className="text_light form__error">{error?.data.message}</span>
+      )}
       <Button type="submit" value="Register" />
       <Button
         type="submit"

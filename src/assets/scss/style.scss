@@ -35,7 +35,7 @@ html {
    bottom: 0;
    left: 0;
    right: 0;
-   pointer-events: none;
+   /* pointer-events: none; */
    background: #0000004a;
    z-index: 11;
    transition: all 0.2s ease-in-out;
@@ -147,10 +147,30 @@ html {
    line-height: 24rem;
 }
 
+.form__success {
+   color: #005c09;
+}
+
+.form__error {
+   color: red;
+}
+
 .button__icon_arrow {
    width: 9.5rem;
    height: 9.5rem;
    transition: all 0.2s ease-in-out;
+}
+
+.close__icon {
+   width: 47rem;
+   height: 47rem;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+
+   &:hover {
+      background-color: #F1E6FF;
+   }
 }
 
 .main {

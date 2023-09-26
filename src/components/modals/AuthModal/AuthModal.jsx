@@ -4,7 +4,7 @@ import Register from "./Register";
 import SignIn from "./SignIn";
 import Button from "components/base/Button";
 import images from "imports/ImagesImport";
-import ResetPasswordModal from "./ResetPasswordModal";
+import ForgotPassword from "./ForgotPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthModal } from "redux/reducers/modalsSlice";
 
@@ -28,7 +28,7 @@ const AuthModal = () => {
       >
         {isRegistered ? (
           forgotPassword ? (
-            <ResetPasswordModal setForgotPassword={setForgotPassword} />
+            <ForgotPassword setForgotPassword={setForgotPassword} />
           ) : (
             <SignIn
               setisRegistered={setisRegistered}

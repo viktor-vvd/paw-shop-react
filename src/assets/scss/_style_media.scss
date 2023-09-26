@@ -53,4 +53,15 @@
         font-size: 16rem;
         line-height: 20rem;
     }
+    
+    .close {
+    
+        // .close__icon
+
+        &__icon {
+            width: 32rem;
+            height: 32rem;
+        }
+    }
+
 }

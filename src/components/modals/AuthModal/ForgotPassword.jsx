@@ -4,8 +4,10 @@ import images from "imports/ImagesImport";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { useForgotPasswordMutation } from "api/authApi";
+import { useState } from "react";
 
-const ResetPasswordModal = ({ setForgotPassword }) => {
+const ForgotPassword = ({ setForgotPassword }) => {
   const schema = yup.object({
     email: yup
       .string()
@@ -23,9 +25,13 @@ const ResetPasswordModal = ({ setForgotPassword }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
-    console.log(data);
-    reset();
+  const [forgotPassword, { isError, error, isSuccess, data }] = useForgotPasswordMutation();
+
+  const onSubmit = async (formData) => {
+    const result = await forgotPassword(formData);
+    if (result.data) {
+      reset();
+    }
   };
 
   return (
@@ -46,6 +52,12 @@ const ResetPasswordModal = ({ setForgotPassword }) => {
             {errors.email?.message}
           </span>
         )}
+        {isError && (
+          <span className="text_light form__error">{error?.data.message}</span>
+        )}
+        {isSuccess && (
+          <span className="text_light form__success">{data?.message}</span>
+        )}
         <Button type="submit" value="Reset" />
         <Button
           type="submit"
@@ -60,4 +72,4 @@ const ResetPasswordModal = ({ setForgotPassword }) => {
   );
 };
 
-export default ResetPasswordModal;
+export default ForgotPassword;

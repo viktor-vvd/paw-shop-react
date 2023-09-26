@@ -4,8 +4,11 @@ import Promo from "@components/Home/Promo";
 import PopularProducts from "@components/Home/PopularProducts";
 import Reviews from "@components/Home/Reviews";
 import About from "@components/Home/About";
+import { usePageHomeGETQuery } from "api/pageApi";
 
 const HomePage = () => {
+  /* const { data } = usePageHomeGETQuery();
+  console.log(data); */
   return (
     <>
       <Banner />

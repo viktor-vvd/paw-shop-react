@@ -1,7 +1,7 @@
 import Button from "components/base/Button";
 import Image from "components/base/Image";
 import images from "imports/ImagesImport";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const AddReview = () => {
   const [imgs, setImgs] = useState([]);

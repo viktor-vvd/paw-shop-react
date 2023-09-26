@@ -1,18 +1,39 @@
 import React, { useEffect, useState } from "react";
 import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setAuthModal, setCartModal } from "redux/reducers/modalsSlice";
 import Image from "../Image";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useLogoutUserMutation } from "api/authApi";
+import { removeTokens } from "redux/reducers/authSlice";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [offset, setOffset] = useState(0);
+  const [access_token, setAccess_token] = useState(Cookies.get("access_token"));
+  const isAuth =
+    useSelector((state) => state.auth.isAuth) || access_token;
+
+  const [logout, { isError, error }] = useLogoutUserMutation();
+
+  const onLogout = async () => {
+    const result = await logout();
+    if (result.data) {
+      Cookies.remove("access_token", {
+        path: "/",
+        secure: true,
+      });
+      dispatch(removeTokens());
+      setAccess_token(Cookies.get("access_token"));
+      console.log(result.data);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setOffset(window.scrollY);
-    // clean up code
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -64,15 +85,28 @@ const Header = () => {
         </a>
         <div className="container-horisontal header__buttons">
           <div>
-            <Image
-              className="profile"
-              src={images["user"]}
-              loading="lazy"
-              alt="user"
-              width="26"
-              height="26"
-              onClick={() => dispatch(setAuthModal(true))}
-            />
+            {isAuth ? (
+              <IoLogOutOutline
+                className="profile"
+                loading="lazy"
+                alt="logout"
+                width="26"
+                height="26"
+                title="Logout"
+                onClick={onLogout}
+              />
+            ) : (
+              <Image
+                className="profile"
+                src={images["user"]}
+                loading="lazy"
+                alt="user"
+                width="26"
+                height="26"
+                title="Authorise"
+                onClick={() => dispatch(setAuthModal(true))}
+              />
+            )}
           </div>
           <div className="container-horisontal header__cart">
             <div

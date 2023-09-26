@@ -4,6 +4,13 @@ import images from "imports/ImagesImport";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Cookies from "js-cookie";
+import { setIsAuth, setTokens } from "redux/reducers/authSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useLoginUserMutation } from "api/authApi";
+import { setAuthModal } from "redux/reducers/modalsSlice";
+import { useState } from "react";
 
 const SignIn = ({ setisRegistered, setForgotPassword }) => {
   const schema = yup.object({
@@ -30,9 +37,23 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
-    console.log(data);
-    reset();
+  const dispatch = useDispatch();
+
+  const [login, { isError, error }] = useLoginUserMutation();
+
+  const onSubmit = async (formData) => {
+    const result = await login({
+      email: formData.email,
+      password: formData.password,
+    });
+    if (result.data) {
+      dispatch(setTokens(result.data.data));
+      Cookies.set("access_token", result.data.data.access_token);
+      dispatch(setIsAuth(true));
+      dispatch(setAuthModal(false));
+      reset();
+      console.log(result.data);
+    }
   };
 
   return (
@@ -84,6 +105,9 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
           I forgot password
         </button>
       </div>
+      {isError && (
+        <span className="text_light form__error">{error?.data.message}</span>
+      )}
       <Button type="submit" value="Sign in" />
       <Button
         type="submit"

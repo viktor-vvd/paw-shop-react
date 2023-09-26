@@ -1,5 +1,6 @@
 import DefaultLayout from "layouts/DefaultLayout";
 import CatalogPage from "pages/CatalogPage";
+import ErrorPage from "pages/ErrorPage";
 import HomePage from "pages/HomePage";
 import ProductPage from "pages/ProductPage";
 import React from "react";
@@ -15,12 +16,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path="/"
+      errorElement={<ErrorPage />}
       element={<DefaultLayout />}
       handle={{
         crumb: () => ({ name: "Main", path: "/" }),
       }}
     >
-      <Route index element={<HomePage />} />
+      <Route index element={<HomePage />} errorElement={<ErrorPage />} />
       <Route
         path="catalog/:id"
         element={<Outlet />}
@@ -30,8 +32,9 @@ const router = createBrowserRouter(
             path: `${data?.path}`,
           }),
         }}
+        errorElement={<ErrorPage />}
       >
-        <Route index element={<CatalogPage />} />
+        <Route index element={<CatalogPage />} errorElement={<ErrorPage />} />
         <Route
           path="product/:id"
           element={<ProductPage />}
@@ -41,6 +44,7 @@ const router = createBrowserRouter(
               path: `${data?.path}`,
             }),
           }}
+          errorElement={<ErrorPage />}
         />
       </Route>
     </Route>
