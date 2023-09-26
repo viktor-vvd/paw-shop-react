@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { pageApi } from "../../api/pageApi";
+import { promoApi } from "../../api/promoApi";
 
 const initialState = {};
-export const pageSlice = createSlice({
-  name: "page",
+export const promoSlice = createSlice({
+  name: "promo",
   initialState,
   reducers: {
     
@@ -18,5 +18,5 @@ export const pageSlice = createSlice({
   },
  */});
 
-export const {  } = pageSlice.actions;
-export default pageSlice.reducer;
+export const {  } = promoSlice.actions;
+export default promoSlice.reducer;

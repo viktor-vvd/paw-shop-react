@@ -60,6 +60,9 @@ const Register = ({ setisRegistered }) => {
       {errors.name && (
         <span className="text_light form__error">{errors.name?.message}</span>
       )}
+      {error?.data.errors.name && (
+        <span className="text_light form__error">{error.data.errors.name}</span>
+      )}
       <input
         className="text_light form__input"
         name="email"
@@ -69,6 +72,9 @@ const Register = ({ setisRegistered }) => {
       />
       {errors.email && (
         <span className="text_light form__error">{errors.email?.message}</span>
+      )}
+      {error?.data.errors.email && (
+        <span className="text_light form__error">{error.data.errors.email}</span>
       )}
       <input
         className="text_light form__input"
@@ -82,6 +88,9 @@ const Register = ({ setisRegistered }) => {
           {errors.password?.message}
         </span>
       )}
+      {error?.data.errors.password && (
+        <span className="text_light form__error">{error.data.errors.password}</span>
+      )}
       <input
         className="text_light form__input"
         name="password_confirmation"
@@ -94,8 +103,8 @@ const Register = ({ setisRegistered }) => {
           {errors.password_confirmation?.message}
         </span>
       )}
-      {isError && (
-        <span className="text_light form__error">{error?.data.message}</span>
+      {error?.data.errors.password_confirmation && (
+        <span className="text_light form__error">{error.data.errors.password_confirmation}</span>
       )}
       <Button type="submit" value="Register" />
       <Button

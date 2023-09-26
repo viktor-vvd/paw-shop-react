@@ -34,6 +34,12 @@
             background: #FFF;
             border-radius: $border-radius;
             padding: 8rem 8rem 8rem 20rem;
+
+            .form__error, .form__success{
+                position:absolute;
+                bottom: 8rem;
+                left: 28rem;
+            }
         }
 
         &__input {

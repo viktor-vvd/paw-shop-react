@@ -52,8 +52,10 @@ const ForgotPassword = ({ setForgotPassword }) => {
             {errors.email?.message}
           </span>
         )}
-        {isError && (
-          <span className="text_light form__error">{error?.data.message}</span>
+        {error?.data.errors.email && (
+          <span className="text_light form__error">
+            {errors?.data.errors.email}
+          </span>
         )}
         {isSuccess && (
           <span className="text_light form__success">{data?.message}</span>

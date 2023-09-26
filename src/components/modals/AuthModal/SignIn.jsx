@@ -39,7 +39,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
 
   const dispatch = useDispatch();
 
-  const [login, { isError, error }] = useLoginUserMutation();
+  const [login, { isError, error, data }] = useLoginUserMutation();
 
   const onSubmit = async (formData) => {
     const result = await login({
@@ -71,6 +71,9 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
       {errors.email && (
         <span className="text_light form__error">{errors.email?.message}</span>
       )}
+      {error?.data.errors.email && (
+        <span className="text_light form__error">{error.data.errors.email}</span>
+      )}
       <input
         className="text_light form__input"
         name="password"
@@ -82,6 +85,9 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
         <span className="text_light form__error">
           {errors.password?.message}
         </span>
+      )}
+      {error?.data.errors.password && (
+        <span className="text_light form__error">{error.data.errors.password}</span>
       )}
       <div className="container-horisontal form__middle__container">
         <label className="container-horisontal checkbox" name="remember">
@@ -105,9 +111,6 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
           I forgot password
         </button>
       </div>
-      {isError && (
-        <span className="text_light form__error">{error?.data.message}</span>
-      )}
       <Button type="submit" value="Sign in" />
       <Button
         type="submit"
