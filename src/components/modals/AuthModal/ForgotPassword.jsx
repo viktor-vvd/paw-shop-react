@@ -41,7 +41,11 @@ const ForgotPassword = ({ setForgotPassword }) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
-          className="text_light form__input"
+        className={
+          errors.email || error?.data.errors.email
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
           name="email"
           type="text"
           placeholder="E-mail"

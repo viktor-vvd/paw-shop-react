@@ -62,7 +62,11 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
-        className="text_light form__input"
+        className={
+          errors.email || error?.data.errors.email
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="email"
         type="text"
         placeholder="E-mail"
@@ -75,7 +79,11 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
         <span className="text_light form__error">{error.data.errors.email}</span>
       )}
       <input
-        className="text_light form__input"
+        className={
+          errors.password || error?.data.errors.password
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="password"
         type="password"
         placeholder="Password"

@@ -22,9 +22,13 @@
 				border-radius: $border-radius;
 				border: 1px solid $input;
 
-				color &::placeholder {
+				&::placeholder {
 					color: #000;
 				}
+
+				&_error{
+					border: 1px solid red;
+				 }
 			}
 
 			// .form__middle

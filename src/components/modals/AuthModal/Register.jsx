@@ -51,7 +51,11 @@ const Register = ({ setisRegistered }) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
-        className="text_light form__input"
+        className={
+          errors.name || error?.data.errors.name
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="name"
         type="text"
         placeholder="Full name"
@@ -64,7 +68,11 @@ const Register = ({ setisRegistered }) => {
         <span className="text_light form__error">{error.data.errors.name}</span>
       )}
       <input
-        className="text_light form__input"
+        className={
+          errors.email || error?.data.errors.email
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="email"
         type="email"
         placeholder="E-mail"
@@ -74,10 +82,16 @@ const Register = ({ setisRegistered }) => {
         <span className="text_light form__error">{errors.email?.message}</span>
       )}
       {error?.data.errors.email && (
-        <span className="text_light form__error">{error.data.errors.email}</span>
+        <span className="text_light form__error">
+          {error.data.errors.email}
+        </span>
       )}
       <input
-        className="text_light form__input"
+        className={
+          errors.password || error?.data.errors.password
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="password"
         type="password"
         placeholder="Password"
@@ -89,10 +103,16 @@ const Register = ({ setisRegistered }) => {
         </span>
       )}
       {error?.data.errors.password && (
-        <span className="text_light form__error">{error.data.errors.password}</span>
+        <span className="text_light form__error">
+          {error.data.errors.password}
+        </span>
       )}
       <input
-        className="text_light form__input"
+        className={
+          errors.password_confirmation || error?.data.errors.password_confirmation
+            ? "text_light form__input form__input_error"
+            : "text_light form__input"
+        }
         name="password_confirmation"
         type="password"
         placeholder="Confirm password"
@@ -104,7 +124,9 @@ const Register = ({ setisRegistered }) => {
         </span>
       )}
       {error?.data.errors.password_confirmation && (
-        <span className="text_light form__error">{error.data.errors.password_confirmation}</span>
+        <span className="text_light form__error">
+          {error.data.errors.password_confirmation}
+        </span>
       )}
       <Button type="submit" value="Register" />
       <Button
