@@ -14,8 +14,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [offset, setOffset] = useState(0);
   const [access_token, setAccess_token] = useState(Cookies.get("access_token"));
-  const isAuth =
-    useSelector((state) => state.auth.isAuth) || access_token;
+  const isAuth = useSelector((state) => state.auth.isAuth) || access_token;
 
   const [logout, { isError, error }] = useLogoutUserMutation();
 
@@ -63,12 +62,12 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="container-horisontal nav__list">
             <li className="nav__list__item">
-              <Link to="/catalog/1">
+              <Link to="/catalog/cat">
                 For <b>CAT</b>
               </Link>
             </li>
             <li className="nav__list__item">
-              <Link to="/catalog/2">
+              <Link to="/catalog/dog">
                 For <b>DOG</b>
               </Link>
             </li>

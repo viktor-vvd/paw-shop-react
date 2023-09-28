@@ -5,6 +5,14 @@ import Image from "./Image";
 const ReviewCard = ({ item }) => {
   const [maxImages, setMaxImages] = useState(3);
 
+  const convertDate = (dateToConvert) => {
+    const temp = new Date(dateToConvert);
+    const day = temp.getDate() < 10 ? "0" + temp.getDate() : temp.getDate();
+    const month =
+      temp.getMonth() < 9 ? "0" + (temp.getMonth() + 1) : temp.getMonth() + 1;
+    return day + "." + month + "." + temp.getFullYear();
+  };
+
   useEffect(() => {
     const handleWindowResize = () => {
       window.innerWidth < 767 ? setMaxImages(2) : setMaxImages(3);
@@ -17,16 +25,17 @@ const ReviewCard = ({ item }) => {
 
   return (
     <div className="container-vertical review-card">
-      <span className="review-card__date">{item.date}</span>
+      <span className="review-card__date">{convertDate(item.created_at)}</span>
       <div className="container-horisontal review-card__header">
-        <span className="review-card__name">{item.name}</span>
+        {item.name && <span className="review-card__name">{item.name}</span>}
         <div className="container-horisontal review-card__stars">
-          {item.rate &&
-            [...Array(item.rate)].map((e, i) => (
+          {item.rating &&
+            [...Array(Math.round(item.rating))].map((e, i) => (
               <Image
                 className="review-card__stars__item"
                 src={images["star"]}
-                loading="lazy" alt="star"
+                loading="lazy"
+                alt="star"
                 key={"star" + i}
                 width="19"
                 height="19"
@@ -34,7 +43,7 @@ const ReviewCard = ({ item }) => {
             ))}
         </div>
       </div>
-      {item.content && <span className="text_light">{item.content}</span>}
+      {item.body && <span className="text_light">{item.body}</span>}
       {item.images && (
         <div className="container-horisontal review-card__photos">
           {item.images.map(
@@ -42,8 +51,9 @@ const ReviewCard = ({ item }) => {
               index < maxImages && (
                 <Image
                   className="review-card__photos__item"
-                  src={imageItem}
-                  loading="lazy" alt="review Image"
+                  src={imageItem.conversions.thumb.url}
+                  loading="lazy"
+                  alt="review Image"
                   key={"picture" + index}
                   width="64"
                   height="66"
@@ -67,7 +77,8 @@ const ReviewCard = ({ item }) => {
         <Image
           className="review-card__link__icon"
           src={images["topRightPurpleArrow"]}
-          loading="lazy" alt="arrow"
+          loading="lazy"
+          alt="arrow"
           width="10"
           height="10"
         />

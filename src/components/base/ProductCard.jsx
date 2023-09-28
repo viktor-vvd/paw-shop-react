@@ -8,8 +8,10 @@ const ProductCard = ({ item }) => {
   return (
     <div className="container-vertical product-card">
       <div className="container-horisontal image__container">
-        {item.discount > 0 && (
-          <span className="tag tag_discount">-{item.discount}%</span>
+        {item.prices.discount_percent > 0 && (
+          <span className="tag tag_discount">
+            -{item.prices.discount_percent}%
+          </span>
         )}
         {item.new && <span className="tag tag_new">New</span>}
         <Link to={"/catalog/2/product/" + item.id}>
@@ -17,17 +19,22 @@ const ProductCard = ({ item }) => {
             className="image"
             width="230"
             height="194"
-            src={item.image}
+            src={item.images[0].conversions.preview.url}
             loading="lazy"
             alt="product Image"
           />
         </Link>
       </div>
-      <Link to={"/catalog/2/product/" + item.id} className="text product-card__title">{item.name}</Link>
+      <Link
+        to={"/catalog/2/product/" + item.id}
+        className="text product-card__title"
+      >
+        {item.product.name}
+      </Link>
       <div className="container-horisontal rate">
         <div className="container-horisontal rate__stars">
-          {item.rate &&
-            [...Array(item.rate)].map((e, i) => (
+          {item.product.rating &&
+            [...Array(Math.round(item.product.rating))].map((e, i) => (
               <Image
                 className="stars__item"
                 src={images["star"]}
@@ -39,21 +46,31 @@ const ProductCard = ({ item }) => {
               />
             ))}
         </div>
-        <span className="rate__text">{item.reviews}</span>
+        <span className="rate__text">{item.product.comments_count}</span>
       </div>
       <div className="container-horisontal product-card__bottom">
         <div className="container-horisontal price__container">
-          {item.discount > 0 && (
-            <span className="price price_new">
-              $
-              {Math.round(item.price * (1 - item.discount / 100))
-                .toString()
-                .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")}{" "}
+          {item.discount > 0 ? (
+            <>
+              <span className="price price_new">
+                {item.prices.currency.symbol}
+                {item.prices.now}
+              </span>
+              <span
+                className="price price_old"
+              >
+                {item.prices.currency.symbol}
+                {item.prices.old}
+              </span>
+            </>
+          ) : (
+            <span
+              className="price"
+            >
+              {item.prices.currency.symbol}
+              {item.price}
             </span>
           )}
-          <span className={"price" + (item.discount > 0 ? " price_old" : "")}>
-            ${item.price}
-          </span>
         </div>
         <Button value="+" title="Add to cart" icon={images["basket"]} />
       </div>

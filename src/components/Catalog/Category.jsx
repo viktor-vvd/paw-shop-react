@@ -3,11 +3,12 @@ import images from "imports/ImagesImport";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Category = ({ item }) => {
+const Category = ({ item, setCurrentPage }) => {
   const navigate = useNavigate();
 
   const handleOptionChange = (changeEvent) => {
     navigate("/catalog/" + changeEvent.target.value);
+    setCurrentPage(1);
   };
 
   return (
@@ -17,8 +18,8 @@ const Category = ({ item }) => {
           <input
             type="radio"
             name="category"
-            value="1"
-            checked={item.id === "1"}
+            value="cat"
+            checked={item.slug === "cat"}
             className="category__input"
             onChange={handleOptionChange}
           />
@@ -40,8 +41,8 @@ const Category = ({ item }) => {
           <input
             type="radio"
             name="category"
-            value="2"
-            checked={item.id === "2"}
+            value="dog"
+            checked={item.slug === "dog"}
             className="category__input"
             onChange={handleOptionChange}
           />
