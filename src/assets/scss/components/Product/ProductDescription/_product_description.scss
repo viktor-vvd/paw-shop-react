@@ -1,0 +1,41 @@
+.product__description {
+    align-items: flex-start;
+    gap: 30rem;
+
+    h1,
+    h2,
+    h4 {
+        @include subtitle;
+    }
+
+    p {
+        @include text_light;
+    }
+
+    img{
+        max-width: 672rem !important;
+        height: auto !important;
+        border-radius: $border-radius;
+    }
+
+    ul {
+        @include container-vertical;
+        align-items: flex-start;
+        gap: 10rem;
+
+        li {
+            @include text_light;
+            @include container-horisontal;
+            justify-content: flex-start;
+            gap: 8rem;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 5rem;
+                height: 5rem;
+                background: $accent;
+            }
+        }
+    }
+}

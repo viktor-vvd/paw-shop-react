@@ -24,7 +24,7 @@ const router = createBrowserRouter(
     >
       <Route index element={<HomePage />} errorElement={<ErrorPage />} />
       <Route
-        path="catalog/:id"
+        path="catalog/:slug"
         element={<Outlet />}
         handle={{
           crumb: (data) => ({
@@ -36,7 +36,7 @@ const router = createBrowserRouter(
       >
         <Route index element={<CatalogPage />} errorElement={<ErrorPage />} />
         <Route
-          path="product/:id"
+          path="product/:slug"
           element={<ProductPage />}
           handle={{
             crumb: (data) => ({

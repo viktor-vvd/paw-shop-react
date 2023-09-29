@@ -3,7 +3,6 @@ import React from "react";
 const Sort = ({sortValue = { sort: "default" }, setSortValue}) => {
   const handleOptionChange = (event) => {
     setSortValue(JSON.parse(event.target.value));
-    console.log(JSON.parse(event.target.value));
   };
   return (
     <div className="container-horisontal sort__container">

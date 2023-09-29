@@ -1,10 +1,19 @@
 import React from "react";
 
-const ProductDescription = () => {
+const ProductDescription = ({ item }) => {
   return (
-    <div>
-      <span className="text">Press <b>F</b> to pay respect</span>
-    </div>
+    <>
+      {item?.data && item?.data.product.body ? (
+        <div
+          className="container-vertical container product__description"
+          dangerouslySetInnerHTML={{ __html: item?.data.product.body }}
+        />
+      ) : (
+        <span className="text">
+          Press <b>F</b> to pay respect
+        </span>
+      )}
+    </>
   );
 };
 

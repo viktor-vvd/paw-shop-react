@@ -17,7 +17,7 @@ const ProductPhotos = ({ items }) => {
           items.map((item, index) => (
             <swiper-slide key={index}>
               <div className="container-horisontal slider__photo">
-                <Image src={item} key={index} alt={"Image" + index} />
+                <Image src={item.conversions.preview.url} key={index} alt={"Image" + index} />
               </div>
             </swiper-slide>
           ))}
@@ -33,7 +33,7 @@ const ProductPhotos = ({ items }) => {
           items.map((item, index) => (
             <swiper-slide key={index}>
               <div className="container-horisontal list__photo">
-                <Image src={item} key={index} alt={"Image" + index} />
+                <Image src={item.conversions.thumb.url} key={index} alt={"Image" + index} />
               </div>
             </swiper-slide>
           ))}

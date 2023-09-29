@@ -17,16 +17,11 @@ html {
 }
 
 .container-vertical {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-between;
+   @include container-vertical;
 }
 
 .container-horisontal {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+   @include container-horisontal;
 }
 
 .overlay {
@@ -53,66 +48,39 @@ html {
 }
 
 .logo__text {
-   font-family: Amatic SC;
-   font-size: 28rem;
-   font-weight: 700;
+   @include logo__text;
 }
 
 .text__button {
-   font-family: Montserrat Alternates;
-   font-size: 15rem;
-   font-style: normal;
-   font-weight: 400;
-   line-height: normal;
-   white-space: nowrap;
-   text-align: center;
-   transition: all 0.2s ease-in-out;
-   -webkit-transition: all 0.2s ease-in-out;
-   -moz-transition: all 0.2s ease-in-out;
-   -o-transition: all 0.2s ease-in-out;
-   -ms-transition: all 0.2s ease-in-out;
+   @include text__button;
 }
 
 .headline {
-   font-family: Montserrat Alternates;
-   font-size: 90rem;
-   font-weight: 900;
-   line-height: 110%;
+   @include headline;
 }
 
 .title {
-   font-family: Montserrat Alternates;
-   font-size: 36rem;
-   font-weight: 700;
-   line-height: 44rem;
+   @include title;
 }
 
 .subtitle {
-   font-family: Montserrat Alternates;
-   font-size: 20rem;
-   font-weight: 500;
+   @include subtitle;
 }
 
 .text {
-   font-family: Montserrat;
-   font-size: 15rem;
-   font-weight: 400;
-   line-height: 18rem;
+   @include text;
 }
 
 .text_light {
-   font-family: Montserrat;
-   font-size: 15rem;
-   font-weight: 300;
-   line-height: 18rem;
+   @include text_light;
 }
 
 .text_accent {
-   color: $accent;
+   @include text_accent;
 }
 
 .text_alternates {
-   font-family: Montserrat Alternates;
+   @include text_alternates;
 }
 
 .cat {
@@ -213,6 +181,7 @@ html {
 @import 'components/Product/ProductNavigation/product_navigation';
 @import 'components/Product/ProductReviews/product_reviews';
 @import 'components/Product/AddReview/add_review';
+@import 'components/Product/ProductDescription/_product_description';
 
 /* media */
 

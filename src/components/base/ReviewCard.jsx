@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import images from "@imports/ImagesImport";
 import Image from "./Image";
 
-const ReviewCard = ({ item }) => {
+const ReviewCard = ({ item, link = true }) => {
   const [maxImages, setMaxImages] = useState(3);
 
   const convertDate = (dateToConvert) => {
@@ -27,7 +27,7 @@ const ReviewCard = ({ item }) => {
     <div className="container-vertical review-card">
       <span className="review-card__date">{convertDate(item.created_at)}</span>
       <div className="container-horisontal review-card__header">
-        {item.name && <span className="review-card__name">{item.name}</span>}
+        <span className="review-card__name">{item.name?(item.name):("User")}</span>
         <div className="container-horisontal review-card__stars">
           {item.rating &&
             [...Array(Math.round(item.rating))].map((e, i) => (
@@ -69,20 +69,22 @@ const ReviewCard = ({ item }) => {
           )}
         </div>
       )}
-      <a
-        className="container-horisontal text__button review-card__link"
-        href="/"
-      >
-        See the product{" "}
-        <Image
-          className="review-card__link__icon"
-          src={images["topRightPurpleArrow"]}
-          loading="lazy"
-          alt="arrow"
-          width="10"
-          height="10"
-        />
-      </a>
+      {link && (
+        <a
+          className="container-horisontal text__button review-card__link"
+          href="/"
+        >
+          See the product{" "}
+          <Image
+            className="review-card__link__icon"
+            src={images["topRightPurpleArrow"]}
+            loading="lazy"
+            alt="arrow"
+            width="10"
+            height="10"
+          />
+        </a>
+      )}
     </div>
   );
 };

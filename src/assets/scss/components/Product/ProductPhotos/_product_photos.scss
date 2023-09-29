@@ -28,6 +28,8 @@
         gap:10rem;
         align-self: stretch;
         justify-content: flex-start;
+        max-height: 510rem;
+        overflow-y: auto; 
 
         .swiper-slide-thumb-active{
             .list__photo {

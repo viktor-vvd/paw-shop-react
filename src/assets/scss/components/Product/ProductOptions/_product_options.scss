@@ -1,8 +1,10 @@
 .product-options {
-    display: grid;
     gap: 30rem;
-    grid-template-columns: auto auto;
-    align-items: center;
+
+    &__wrapper{
+        width:100%;
+        gap: 30rem;
+    }
 
     // .product-options__list
 
@@ -68,7 +70,7 @@
 
         // .product-options__item_color
 
-        &_color {
+        &_image {
             padding: 0;
             width: 60rem;
             height: 60rem;
@@ -94,6 +96,7 @@
         }
 
         &_buy {
+            width: 100%;
             .button {
                 flex: 1;
                 padding: 20rem;

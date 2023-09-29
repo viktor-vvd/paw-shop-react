@@ -16,6 +16,16 @@ export const commentsApi = createApi({
       },
       providesTags: ["Catalog"],
     }),
+    commentsProductListGET: builder.query({
+      query: ({data, id}) => {
+        return {
+          url: `comments/products/${id}`,
+          method: `GET`,
+          params:data,
+        };
+      },
+      providesTags: ["Catalog"],
+    }),
     /* pageHomeGET: builder.query({
       query: () => {
         return {
@@ -51,4 +61,6 @@ export const commentsApi = createApi({
 export const {
   useCommentsRandomListGETQuery,
   useLazyCommentsRandomListGETQuery,
+  useCommentsProductListGETQuery,
+  useLazyCommentsProductListGETQuery,
 } = commentsApi;

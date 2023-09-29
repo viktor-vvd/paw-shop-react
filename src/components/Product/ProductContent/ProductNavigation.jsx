@@ -1,36 +1,38 @@
 import React from "react";
 
-const ProductNavigation = ({tab, setTab}) => {
+const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
   const handleOptionChange = (changeEvent) => {
     setTab(changeEvent.target.value);
   };
   return (
     <>
       <div className="container-horisontal outer-container product__navigation">
-        <label className="container-horisontal" name="tab">
-          <input
-            type="radio"
-            name="tab"
-            value={1}
-            checked={tab==1}
-            onChange={handleOptionChange}
-            className="navigation__input"
-          />
-          <span className="container-horisontal subtitle navigation__item">
-            Description
-          </span>
-        </label>
+        {isDescrtiption && (
+          <label className="container-horisontal" name="tab">
+            <input
+              type="radio"
+              name="tab"
+              value={1}
+              checked={tab == 1}
+              onChange={handleOptionChange}
+              className="navigation__input"
+            />
+            <span className="container-horisontal subtitle navigation__item">
+              Description
+            </span>
+          </label>
+        )}
         <label className="container-horisontal" name="tab">
           <input
             type="radio"
             name="tab"
             value={2}
-            checked={tab==2}
+            checked={tab == 2}
             onChange={handleOptionChange}
             className="navigation__input"
           />
           <span className="container-horisontal subtitle navigation__item">
-            Reviews (3)
+            Reviews ({reviews})
           </span>
         </label>
         <label className="container-horisontal" name="tab">
@@ -38,7 +40,7 @@ const ProductNavigation = ({tab, setTab}) => {
             type="radio"
             name="tab"
             value={3}
-            checked={tab==3}
+            checked={tab == 3}
             onChange={handleOptionChange}
             className="navigation__input"
           />

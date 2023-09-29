@@ -16,6 +16,16 @@ export const catalogApi = createApi({
       },
       providesTags: ["Catalog"],
     }),
+    catalogItemGET: builder.query({
+      query: (data) => {
+        return {
+          url: `variation/${data}`,
+          method: `GET`,
+          /* params: data, */
+        };
+      },
+      providesTags: ["Catalog"],
+    }),
     /* pageHomeGET: builder.query({
       query: () => {
         return {
@@ -51,4 +61,6 @@ export const catalogApi = createApi({
 export const {
   useCatalogListGETQuery,
   useLazyCatalogListGETQuery,
+  useCatalogItemGETQuery,
+  useLazyCatalogItemGETQuery,
 } = catalogApi;
