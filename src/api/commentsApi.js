@@ -26,6 +26,17 @@ export const commentsApi = createApi({
       },
       providesTags: ["Catalog"],
     }),
+    commentsAddPOST: builder.mutation({
+      query: ({data, id}) => {
+        return {
+          contentType: "multipart/form-data",
+          url: `comments/products/${id}`,
+          method: `POST`,
+          body: data,
+        };
+      },
+      invalidatesTags:["Projects"],
+    }),
     /* pageHomeGET: builder.query({
       query: () => {
         return {
@@ -63,4 +74,5 @@ export const {
   useLazyCommentsRandomListGETQuery,
   useCommentsProductListGETQuery,
   useLazyCommentsProductListGETQuery,
+  useCommentsAddPOSTMutation,
 } = commentsApi;

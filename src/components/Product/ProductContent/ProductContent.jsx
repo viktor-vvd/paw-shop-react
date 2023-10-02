@@ -27,7 +27,7 @@ const ProductContent = ({ item }) => {
         <div className="container-vertical container product__content">
           {isDescrtiption&&tab == 1 && <ProductDescription item={item} />}
           {tab == 2 && <ProductReviews item={item} />}
-          {tab == 3 && <AddReview />}
+          {tab == 3 && <AddReview item={item} />}
         </div>
       </div>
     </>

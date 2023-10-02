@@ -11,24 +11,6 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
-  const item = {
-    id: 3,
-    image: images["product4"],
-    images: [
-      images["product4"],
-      images["product1"],
-      images["product2"],
-      images["product3"],
-    ],
-    sku: 1541428774,
-    name: "Frisco Bird Teaser with Feathers Cat Toy",
-    rate: 5,
-    reviews: 10,
-    discount: 50,
-    price: 3.42,
-    new: false,
-  };
-
   const { slug } = useParams();
 
   const [catalogItemGET, { data }] = useLazyCatalogItemGETQuery();
@@ -43,7 +25,7 @@ const ProductPage = () => {
   return (
     data && (
       <div className="container-vertical page-container product">
-        <section className="container-vertical outer-container">
+        <section className="container-vertical outer-container product__wrapper">
           <div className="container-vertical container product__breadcrumbs">
             <Breadcrumbs item={{ name: data?.data.name }} />
           </div>
