@@ -3,8 +3,27 @@ import images from "@imports/ImagesImport";
 import Button from "./Button";
 import Image from "./Image";
 import { Link } from "react-router-dom";
+import { useAddToCartPOSTMutation } from "api/cartApi";
+import { useDispatch } from "react-redux";
+import { setCart_id } from "redux/reducers/cartSlice";
+import Cookies from "js-cookie";
 
 const ProductCard = ({ item }) => {
+  const dispatch = useDispatch();
+
+  const [addToCart, { data }] = useAddToCartPOSTMutation();
+
+  const handleAddToCart = async () => {
+    const result = await addToCart({
+      id: item.id,
+      data: { quantity: 1 },
+    });
+    if(result.data){
+      dispatch(setCart_id(result.data.cart_id));
+      Cookies.set("cart_id", result.data.cart_id);
+    }
+  };
+
   return (
     <div className="container-vertical product-card">
       <div className="container-horisontal image__container">
@@ -72,7 +91,7 @@ const ProductCard = ({ item }) => {
             </span>
           )}
         </div>
-        <Button value="+" title="Add to cart" icon={images["basket"]} />
+        <Button value="+" title="Add to cart" icon={images["basket"]} onClick={handleAddToCart} />
       </div>
     </div>
   );

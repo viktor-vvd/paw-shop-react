@@ -2,13 +2,21 @@ import React, { useEffect, useState } from "react";
 import images from "imports/ImagesImport";
 import Image from "components/base/Image";
 import Button from "../base/Button";
+import { useAddToCartPOSTMutation } from "api/cartApi";
+import { useDispatch } from "react-redux";
+import { setCart_id } from "redux/reducers/cartSlice";
+import Cookies from "js-cookie";
 
 const ProductOptions = ({ item }) => {
-  const [data, setData] = useState(item);
+  const dispatch = useDispatch();
+
+  const [dataItem, setDataItem] = useState(item);
   const [quantity, setQuantity] = useState(1);
 
+  const [addToCart, { data }] = useAddToCartPOSTMutation();
+
   const minusQuantity = () => {
-    if (quantity > data.data.min_qty) setQuantity(quantity - 1);
+    if (quantity > dataItem.data.min_qty) setQuantity(quantity - 1);
   };
 
   const plusQuantity = () => {
@@ -45,16 +53,27 @@ const ProductOptions = ({ item }) => {
     });
   }; */
 
+  const handleAddToCart = async () => {
+    const result = await addToCart({
+      id: item.variations.filter((element) => element.is_current)[0].id,
+      data: { quantity: quantity },
+    });
+    if(result.data){
+      dispatch(setCart_id(result.data.cart_id));
+      Cookies.set("cart_id", result.data.cart_id);
+    }
+  };
+
   useEffect(() => {
-    setData(item);
-    setQuantity(item.data.min_qty)
-    console.log(data);
-  }, [data, item]);
+    setDataItem(item);
+    setQuantity(item.data.min_qty);
+    console.log(dataItem);
+  }, [dataItem, item]);
 
   return (
     <div className="container-vertical product-options">
-      {data?.switching &&
-        data?.switching.map((option, index) => (
+      {dataItem?.switching &&
+        dataItem?.switching.map((option, index) => (
           <div
             className="container-horisontal product-options__wrapper"
             key={index}
@@ -81,12 +100,16 @@ const ProductOptions = ({ item }) => {
                           property.property.image
                             ? "container-horisontal text product-options__item product-options__item_image"
                             : "container-horisontal text product-options__item"
-                        } title={property.property.value}
+                        }
+                        title={property.property.value}
                       >
                         {option.attribute.format === "text" &&
                           property.property.value}
                         {property.property.image && (
-                          <Image src={property.property.image} alt={property.property.value} />
+                          <Image
+                            src={property.property.image}
+                            alt={property.property.value}
+                          />
                         )}
                       </span>
                     </label>
@@ -136,7 +159,7 @@ const ProductOptions = ({ item }) => {
           )}
         </div>
         <div className="container-horisontal product-options__buttons product-options__buttons_buy">
-          <Button type="button" value="Add to cart" />
+          <Button type="button" value="Add to cart" onClick={handleAddToCart} />
           <Button type="button" className="button_white" value="Buy 1 click" />
         </div>
       </div>

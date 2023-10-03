@@ -15,6 +15,7 @@ const Header = () => {
   const [offset, setOffset] = useState(0);
   const [access_token, setAccess_token] = useState(Cookies.get("access_token"));
   const isAuth = useSelector((state) => state.auth.isAuth) || access_token;
+  const cartCount = useSelector((state) => state.cart.cartCount);
 
   const [logout, { isError, error }] = useLogoutUserMutation();
 
@@ -25,8 +26,13 @@ const Header = () => {
         path: "/",
         secure: true,
       });
+      Cookies.remove("cart_id", {
+        path: "/",
+        secure: true,
+      });
       dispatch(removeTokens());
       setAccess_token(Cookies.get("access_token"));
+      dispatch(removeTokens());
       console.log(result.data);
     }
   };
@@ -120,7 +126,7 @@ const Header = () => {
                 width="26"
                 height="26"
               />
-              <span className="header__cart__number">2</span>
+              <span className="header__cart__number">{cartCount}</span>
             </div>
             <span className="header__cart__sum">$8</span>
           </div>

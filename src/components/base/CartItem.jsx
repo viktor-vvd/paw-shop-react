@@ -1,23 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import images from "imports/ImagesImport";
 import Image from "./Image";
+import { useAddToCartPOSTMutation, useRemoveFromCartPOSTMutation } from "api/cartApi";
+import { useDispatch } from "react-redux";
+import { setCart_id } from "redux/reducers/cartSlice";
+import Cookies from "js-cookie";
 
 const CartItem = ({ item }) => {
-  const [quantity, setQuantity] = useState(item.quantity);
+  const dispatch = useDispatch();
 
-  const minusQuantity = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+  const [addToCart, { }] = useAddToCartPOSTMutation();
+  const [removeFromCart, { }] = useRemoveFromCartPOSTMutation();
+
+  const minusQuantity = async () => {
+    const result = await removeFromCart({
+      id: item.id,
+      data: { quantity: 1 },
+    });
+    if(result.data){
+      dispatch(setCart_id(result.data.cart_id));
+      Cookies.set("cart_id", result.data.cart_id);
+    }
   };
 
-  const plusQuantity = () => {
-    setQuantity(quantity + 1);
+  const deleteItem = async () => {
+    const result = await removeFromCart({
+      id: item.id,
+      data: { quantity: item?.quantity },
+    });
+    if(result.data){
+      dispatch(setCart_id(result.data.cart_id));
+      Cookies.set("cart_id", result.data.cart_id);
+    }
+};
+
+  const plusQuantity = async () => {
+    const result = await addToCart({
+      id: item.variation.id,
+      data: { quantity: 1 },
+    });
+    if(result.data){
+      dispatch(setCart_id(result.data.cart_id));
+      Cookies.set("cart_id", result.data.cart_id);
+    }
   };
   return (
     <div className="container-horisontal cart__item">
       <div className="container-horisontal item__image">
         <Image
-          src={item.image}
+          src={item.variation.images[0].conversions.preview.url}
           loading="lazy"
           alt="close"
           width="81"
@@ -25,27 +57,27 @@ const CartItem = ({ item }) => {
         />
       </div>
       <div className="container-vertical item__controls">
-        <span className="text item__name">{item.name}</span>
+        <span className="text item__name">{item.variation.name}</span>
         <div className="container-horisontal item__buttons">
           <Button
             type="button"
             className="button_white"
             value="-"
             title="Remove 1"
-            onClick={() => minusQuantity()}
+            onClick={minusQuantity}
           />
-          <span className="text item__quantity">{quantity}</span>
+          <span className="text item__quantity">{item?.quantity}</span>
           <Button
             type="button"
             className="button_white"
             value="+"
             title="Add 1"
-            onClick={() => plusQuantity()}
+            onClick={plusQuantity}
           />
-          <span className="text item__total">${quantity*item.price}</span>
+          <span className="text item__total">{item.variation.prices.currency.symbol}{item.total}</span>
         </div>
       </div>
-      <button type="button">
+      <button type="button" onClick={deleteItem}>
         <Image
           className="item__delete"
           src={images["deleteIcon"]}

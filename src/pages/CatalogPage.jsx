@@ -17,7 +17,7 @@ const CatalogPage = () => {
 
   const [catalogListGET, { data }] = useLazyCatalogListGETQuery();
 
-  const [itemsPerPage, setitemsPerPage] = useState(16);
+  const [itemsPerPage, setitemsPerPage] = useState(1);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -44,7 +44,7 @@ const CatalogPage = () => {
         <div className="container-vertical outer__container catalog__bottom">
           <div className="container-horisontal container filter-sort">
             <Filter />
-            <Sort sortValue={sortValue} setSortValue={setSortValue} />
+            <Sort sortValue={sortValue} setSortValue={setSortValue} setCurrentPage={setCurrentPage} />
           </div>
           <div className="container-horisontal container catalog__products">
             {data?.data &&

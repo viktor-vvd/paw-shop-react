@@ -10,6 +10,8 @@ import catalogSlice from "./reducers/catalogSlice";
 import { catalogApi } from "api/catalogApi";
 import commentsSlice from "./reducers/commentsSlice";
 import { commentsApi } from "api/commentsApi";
+import cartSlice from "./reducers/cartSlice";
+import { cartApi } from "api/cartApi";
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +21,7 @@ export const store = configureStore({
     promo: promoSlice,
     catalog: catalogSlice,
     comments: commentsSlice,
+    cart: cartSlice,
     //api reducers
     
     [pageApi.reducerPath]: pageApi.reducer,
@@ -26,6 +29,7 @@ export const store = configureStore({
     [promoApi.reducerPath]: promoApi.reducer,
     [catalogApi.reducerPath]: catalogApi.reducer,
     [commentsApi.reducerPath]: commentsApi.reducer,
+    [cartApi.reducerPath]: cartApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }).concat([
@@ -34,5 +38,6 @@ export const store = configureStore({
       promoApi.middleware,
       catalogApi.middleware,
       commentsApi.middleware,
+      cartApi.middleware,
     ]),
 });

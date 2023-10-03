@@ -20,10 +20,7 @@ const initialState = {
         state.access_token = action.payload.access_token;
       },
       removeTokens(state, action) {
-        state.access_token = null;
-        state.token_type = null;
-        state.user = null;
-        state.isAuth = false;
+        state = initialState;
       },
       setIsAuth(state, action) {
         state.isAuth = action.payload;

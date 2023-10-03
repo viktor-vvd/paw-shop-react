@@ -1,7 +1,8 @@
 import React from "react";
 
-const Sort = ({sortValue = { sort: "default" }, setSortValue}) => {
+const Sort = ({sortValue = { sort: "default" }, setSortValue, setCurrentPage}) => {
   const handleOptionChange = (event) => {
+    setCurrentPage(1);
     setSortValue(JSON.parse(event.target.value));
   };
   return (

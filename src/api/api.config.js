@@ -16,6 +16,13 @@ export const baseQuery = fetchBaseQuery({
     } else if (token) {
       headers.set("Authorization", `Bearer ${token}`);
     }
+    const cart_id = getState().cart.cart_id;
+    const cart = Cookies.get("cart_id");
+    if (cart_id) {
+      headers.set("sCart", cart_id);
+    } else if (cart) {
+      headers.set("sCart", cart);
+    }
     return headers;
   },
 });
