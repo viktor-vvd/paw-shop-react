@@ -73,7 +73,7 @@ const ProductOptions = ({ item }) => {
   return (
     <div className="container-vertical product-options">
       {dataItem?.switching &&
-        dataItem?.switching.map((option, index) => (
+        dataItem.switching.map((option, index) => (
           <div
             className="container-horisontal product-options__wrapper"
             key={index}
@@ -81,7 +81,7 @@ const ProductOptions = ({ item }) => {
             <span className="text">{option.attribute.name}:</span>
             <ul className="container-horisontal product-options__list">
               {option?.properties &&
-                option?.properties.map((property, i) => (
+                option.properties.map((property, i) => (
                   <li className="container-horisontal" key={i}>
                     <label
                       className="container-horisontal text"

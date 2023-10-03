@@ -59,6 +59,7 @@ import facebookColorMini from "@public/images/facebookColorMini.svg";
 import twitterColor from "@public/images/twitterColor.svg";
 import gallery from "@public/images/gallery.svg";
 import closeMini from "@public/images/closeMini.svg";
+import loadingGif from "@public/images/loadingGif.gif";
 
 const images = {
   logo: logo,
@@ -122,6 +123,7 @@ const images = {
   twitterColor: twitterColor,
   gallery: gallery,
   closeMini: closeMini,
+  loadingGif: loadingGif,
 };
 
 /* function importAll(r) {

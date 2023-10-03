@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useForgotPasswordMutation } from "api/authApi";
 import { useState } from "react";
+import Preloader from "components/base/Preloader";
 
 const ForgotPassword = ({ setForgotPassword }) => {
   const schema = yup.object({
@@ -25,7 +26,7 @@ const ForgotPassword = ({ setForgotPassword }) => {
     resolver: yupResolver(schema),
   });
 
-  const [forgotPassword, { isError, error, isSuccess, data }] = useForgotPasswordMutation();
+  const [forgotPassword, { isLoading , error, isSuccess, data }] = useForgotPasswordMutation();
 
   const onSubmit = async (formData) => {
     const result = await forgotPassword(formData);
@@ -36,6 +37,7 @@ const ForgotPassword = ({ setForgotPassword }) => {
 
   return (
     <>
+    {isLoading  && <Preloader />}
       <form
         className="container-vertical modal__form"
         onSubmit={handleSubmit(onSubmit)}

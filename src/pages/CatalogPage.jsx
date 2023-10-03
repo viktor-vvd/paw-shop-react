@@ -7,6 +7,7 @@ import Filter from "components/Catalog/Filter";
 import Pagination from "components/Catalog/Pagination";
 import Sort from "components/Catalog/Sort";
 import Breadcrumbs from "components/base/Breadcrumbs";
+import Preloader from "components/base/Preloader";
 import ProductCard from "components/base/ProductCard";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -15,7 +16,7 @@ import { useParams } from "react-router-dom";
 const CatalogPage = () => {
   const { slug } = useParams();
 
-  const [catalogListGET, { data }] = useLazyCatalogListGETQuery();
+  const [catalogListGET, { data, isFetching }] = useLazyCatalogListGETQuery();
 
   const [itemsPerPage, setitemsPerPage] = useState(1);
 
@@ -34,7 +35,9 @@ const CatalogPage = () => {
   }, [slug, currentPage, sortValue]);
 
   return (
-    data && (
+    <>
+    {isFetching && <Preloader />}
+    {data && (
       <div className="container-vertical page-container catalog">
         <div className="container-vertical catalog__top">
           <Breadcrumbs item={{ slug: slug }} />
@@ -62,7 +65,8 @@ const CatalogPage = () => {
           )}
         </div>
       </div>
-    )
+    )}
+    </>
   );
 };
 

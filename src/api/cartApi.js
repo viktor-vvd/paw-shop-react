@@ -20,7 +20,7 @@ export const cartApi = createApi({
         return {
           url: `carts/${id}/add/`,
           method: `POST`,
-          params: data,
+          body: data,
         };
       },
       invalidatesTags: ["Cart"],
@@ -30,7 +30,7 @@ export const cartApi = createApi({
         return {
           url: `carts/${id}/remove/`,
           method: `POST`,
-          params: data,
+          body: data,
         };
       },
       invalidatesTags: ["Cart"],

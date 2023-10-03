@@ -9,15 +9,20 @@ import Cookies from "js-cookie";
 import { useLogoutUserMutation } from "api/authApi";
 import { removeTokens } from "redux/reducers/authSlice";
 import { IoLogOutOutline } from "react-icons/io5";
+import { removeCart } from "redux/reducers/cartSlice";
+import { catalogApi } from "api/catalogApi";
+import { cartApi } from "api/cartApi";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [offset, setOffset] = useState(0);
   const [access_token, setAccess_token] = useState(Cookies.get("access_token"));
-  const isAuth = useSelector((state) => state.auth.isAuth) || access_token;
+  const isAuth=useSelector((state) => state.auth.isAuth);
+  const [auth, setAuth] = useState(access_token|| isAuth);
   const cartCount = useSelector((state) => state.cart.cartCount);
+  const cartTotal = useSelector((state) => state.cart.cartTotal);
 
-  const [logout, { isError, error }] = useLogoutUserMutation();
+  const [logout, { isFetching }] = useLogoutUserMutation();
 
   const onLogout = async () => {
     const result = await logout();
@@ -31,8 +36,9 @@ const Header = () => {
         secure: true,
       });
       dispatch(removeTokens());
-      setAccess_token(Cookies.get("access_token"));
-      dispatch(removeTokens());
+      setAccess_token(null);
+      dispatch(removeCart());
+      dispatch(cartApi.util.invalidateTags(['Cart']));
       console.log(result.data);
     }
   };
@@ -41,8 +47,9 @@ const Header = () => {
     const onScroll = () => setOffset(window.scrollY);
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
+    setAuth(access_token|| isAuth);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isAuth, access_token ]);
 
   return (
     <header
@@ -90,7 +97,7 @@ const Header = () => {
         </a>
         <div className="container-horisontal header__buttons">
           <div>
-            {isAuth ? (
+            {auth ? (
               <IoLogOutOutline
                 className="profile"
                 loading="lazy"
@@ -128,7 +135,7 @@ const Header = () => {
               />
               <span className="header__cart__number">{cartCount}</span>
             </div>
-            <span className="header__cart__sum">$8</span>
+            <span className="header__cart__sum">${cartTotal}</span>
           </div>
           <Menu />
         </div>

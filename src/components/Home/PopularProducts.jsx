@@ -4,13 +4,17 @@ import ProductCard from "@components/base/ProductCard";
 import Image from "components/base/Image";
 import { useCatalogListGETQuery } from "api/catalogApi";
 import { Link } from "react-router-dom";
+import Preloader from "components/base/Preloader";
 
 const PopularProducts = ({
   title = "Popular products",
   buttons = true,
   className = null,
 }) => {
-  const { data } = useCatalogListGETQuery({ per_page: 4, sort: "random" });
+  const { data, isFetching } = useCatalogListGETQuery({
+    per_page: 4,
+    sort: "random",
+  });
 
   return (
     <section
@@ -23,6 +27,7 @@ const PopularProducts = ({
       <div className="container-vertical container section-popular__container">
         <h2 className="title">{title}</h2>
         <div className="container-horisontal populars">
+          {isFetching && <Preloader className="preloader_absolute" />}
           {data?.data &&
             data.data.map((item, index) => (
               <ProductCard item={item} key={index} />

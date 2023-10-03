@@ -3,6 +3,8 @@
     &__content {
 
         &__container {
+            position: relative;
+            overflow: hidden;
             width: 100%;
             gap:40rem;
             justify-content: center;

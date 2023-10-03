@@ -7,9 +7,10 @@ import {
   useCommentsRandomListGETQuery,
   useLazyCommentsRandomListGETQuery,
 } from "api/commentsApi";
+import Preloader from "components/base/Preloader";
 
 const Reviews = () => {
-  const { data, isSuccess } =
+  const { data, isFetching } =
   useCommentsRandomListGETQuery({ limit: 9 });
 /*   const [commentsGet, { data, isSuccess }] =
     useLazyCommentsRandomListGETQuery();
@@ -63,6 +64,7 @@ const Reviews = () => {
 
   return (
     <section className="container-vertical outer__container reviews">
+      {isFetching && <Preloader className="preloader_absolute" />}
       <div className="container-vertical reviews__container">
         <div className="reviews__title__container">
           <span className="title reviews__title_dark">Reviews</span>

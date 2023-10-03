@@ -10,9 +10,7 @@ const ProductContent = ({ item }) => {
   );
   const [tab, setTab] = useState(isDescrtiption ? 1 : 2);
   useEffect(() => {
-    setIsDescrtiption(
-      item?.data.product.body ? true : false
-    );
+    setIsDescrtiption(item?.data.product.body ? true : false);
     setTab(isDescrtiption ? 1 : 2);
   }, [item, isDescrtiption]);
   return (
@@ -25,7 +23,7 @@ const ProductContent = ({ item }) => {
       />
       <div className="container-horisontal outer-container product__content__container">
         <div className="container-vertical container product__content">
-          {isDescrtiption&&tab == 1 && <ProductDescription item={item} />}
+          {isDescrtiption && tab == 1 && <ProductDescription item={item} />}
           {tab == 2 && <ProductReviews item={item} />}
           {tab == 3 && <AddReview item={item} />}
         </div>

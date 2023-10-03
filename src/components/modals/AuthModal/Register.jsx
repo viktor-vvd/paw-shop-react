@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRegisterUserMutation } from "api/authApi";
+import Preloader from "components/base/Preloader";
 
 const Register = ({ setisRegistered }) => {
   const schema = yup.object({
@@ -35,7 +36,7 @@ const Register = ({ setisRegistered }) => {
     resolver: yupResolver(schema),
   });
 
-  const [registerUser, { isError, error }] = useRegisterUserMutation();
+  const [registerUser, { isLoading , error }] = useRegisterUserMutation();
 
   const onSubmit = async (formData) => {
     const result = await registerUser(formData);
@@ -46,98 +47,107 @@ const Register = ({ setisRegistered }) => {
   };
 
   return (
-    <form
-      className="container-vertical modal__form"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <input
-        className={
-          errors.name || error?.data.errors.name
-            ? "text_light form__input form__input_error"
-            : "text_light form__input"
-        }
-        name="name"
-        type="text"
-        placeholder="Full name"
-        {...register("name")}
-      />
-      {errors.name && (
-        <span className="text_light form__error">{errors.name?.message}</span>
-      )}
-      {error?.data.errors.name && (
-        <span className="text_light form__error">{error.data.errors.name}</span>
-      )}
-      <input
-        className={
-          errors.email || error?.data.errors.email
-            ? "text_light form__input form__input_error"
-            : "text_light form__input"
-        }
-        name="email"
-        type="email"
-        placeholder="E-mail"
-        {...register("email")}
-      />
-      {errors.email && (
-        <span className="text_light form__error">{errors.email?.message}</span>
-      )}
-      {error?.data.errors.email && (
-        <span className="text_light form__error">
-          {error.data.errors.email}
-        </span>
-      )}
-      <input
-        className={
-          errors.password || error?.data.errors.password
-            ? "text_light form__input form__input_error"
-            : "text_light form__input"
-        }
-        name="password"
-        type="password"
-        placeholder="Password"
-        {...register("password")}
-      />
-      {errors.password && (
-        <span className="text_light form__error">
-          {errors.password?.message}
-        </span>
-      )}
-      {error?.data.errors.password && (
-        <span className="text_light form__error">
-          {error.data.errors.password}
-        </span>
-      )}
-      <input
-        className={
-          errors.password_confirmation || error?.data.errors.password_confirmation
-            ? "text_light form__input form__input_error"
-            : "text_light form__input"
-        }
-        name="password_confirmation"
-        type="password"
-        placeholder="Confirm password"
-        {...register("password_confirmation")}
-      />
-      {errors.password_confirmation && (
-        <span className="text_light form__error">
-          {errors.password_confirmation?.message}
-        </span>
-      )}
-      {error?.data.errors.password_confirmation && (
-        <span className="text_light form__error">
-          {error.data.errors.password_confirmation}
-        </span>
-      )}
-      <Button type="submit" value="Register" />
-      <Button
-        type="submit"
-        className="button_white"
-        iconClassName="button__icon_arrow_right"
-        value="I have account"
-        icon={images["topRightPurpleArrow"]}
-        onClick={() => setisRegistered(true)}
-      />
-    </form>
+    <>
+
+      {isLoading  && <Preloader />}
+      <form
+        className="container-vertical modal__form"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <input
+          className={
+            errors.name || error?.data.errors.name
+              ? "text_light form__input form__input_error"
+              : "text_light form__input"
+          }
+          name="name"
+          type="text"
+          placeholder="Full name"
+          {...register("name")}
+        />
+        {errors.name && (
+          <span className="text_light form__error">{errors.name?.message}</span>
+        )}
+        {error?.data.errors.name && (
+          <span className="text_light form__error">
+            {error.data.errors.name}
+          </span>
+        )}
+        <input
+          className={
+            errors.email || error?.data.errors.email
+              ? "text_light form__input form__input_error"
+              : "text_light form__input"
+          }
+          name="email"
+          type="email"
+          placeholder="E-mail"
+          {...register("email")}
+        />
+        {errors.email && (
+          <span className="text_light form__error">
+            {errors.email?.message}
+          </span>
+        )}
+        {error?.data.errors.email && (
+          <span className="text_light form__error">
+            {error.data.errors.email}
+          </span>
+        )}
+        <input
+          className={
+            errors.password || error?.data.errors.password
+              ? "text_light form__input form__input_error"
+              : "text_light form__input"
+          }
+          name="password"
+          type="password"
+          placeholder="Password"
+          {...register("password")}
+        />
+        {errors.password && (
+          <span className="text_light form__error">
+            {errors.password?.message}
+          </span>
+        )}
+        {error?.data.errors.password && (
+          <span className="text_light form__error">
+            {error.data.errors.password}
+          </span>
+        )}
+        <input
+          className={
+            errors.password_confirmation ||
+            error?.data.errors.password_confirmation
+              ? "text_light form__input form__input_error"
+              : "text_light form__input"
+          }
+          name="password_confirmation"
+          type="password"
+          placeholder="Confirm password"
+          {...register("password_confirmation")}
+        />
+        {errors.password_confirmation && (
+          <span className="text_light form__error">
+            {errors.password_confirmation?.message}
+          </span>
+        )}
+        {error?.data.errors.password_confirmation && (
+          <span className="text_light form__error">
+            {error.data.errors.password_confirmation}
+          </span>
+        )}
+        <Button type="submit" value="Register" />
+        <Button
+          type="submit"
+          className="button_white"
+          iconClassName="button__icon_arrow_right"
+          value="I have account"
+          icon={images["topRightPurpleArrow"]}
+          onClick={() => setisRegistered(true)}
+        />
+      </form>
+    </>
   );
 };
 

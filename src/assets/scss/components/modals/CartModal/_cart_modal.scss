@@ -6,6 +6,7 @@
     width: 744rem;
     height: 100vh;
     border-radius: $border-radius 0 0 $border-radius;
+    overflow: hidden;
     background: #FFF;
     box-shadow: 0rem 4rem 30rem 0rem rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease-in-out;
@@ -56,6 +57,7 @@
     // .cart__container
 
     &__list {
+        position: relative;
         overflow-x: auto;
         height: 100%;
         width: 100%;

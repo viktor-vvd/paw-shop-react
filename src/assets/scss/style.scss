@@ -24,6 +24,27 @@ html {
    @include container-horisontal;
 }
 
+.preloader {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: #ffffff7f;
+   z-index: 10;
+   transition: all 0.2s ease-in-out;
+   justify-content: center;
+
+   &__gif {
+      width: 100rem;
+   }
+
+   &_absolute{
+   position: absolute;      
+   }
+}
+
+
 .overlay {
    position: fixed;
    top: 0;

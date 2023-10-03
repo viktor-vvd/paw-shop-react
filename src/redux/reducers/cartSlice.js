@@ -3,6 +3,7 @@ import { cartApi } from "../../api/cartApi";
 
 const initialState = {
   cartCount:0,
+  cartTotal:0,
   cart_id:null,
 };
 export const cartSlice = createSlice({
@@ -12,11 +13,16 @@ export const cartSlice = createSlice({
     setCartCount(state, action) {
       state.cartCount = action.payload;
     },
+    setCartTotal(state, action) {
+      state.cartTotal = action.payload;
+    },
     setCart_id(state, action) {
       state.cart_id = action.payload;
     },
     removeCart(state, action) {
-      state=initialState;
+      state.cartCount = 0;
+      state.cartTotal = 0;
+      state.cart_id=null;
     }
   },
 /*   extraReducers: (builder) => {
@@ -29,5 +35,5 @@ export const cartSlice = createSlice({
   },
  */});
 
-export const {setCartCount, setCart_id, removeCart } = cartSlice.actions;
+export const {setCartCount, setCart_id, removeCart, setCartTotal } = cartSlice.actions;
 export default cartSlice.reducer;

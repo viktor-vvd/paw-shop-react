@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "api/authApi";
 import { setAuthModal } from "redux/reducers/modalsSlice";
 import { useState } from "react";
+import { cartApi } from "api/cartApi";
+import Preloader from "components/base/Preloader";
 
 const SignIn = ({ setisRegistered, setForgotPassword }) => {
   const schema = yup.object({
@@ -39,7 +41,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
 
   const dispatch = useDispatch();
 
-  const [login, { isError, error, data }] = useLoginUserMutation();
+  const [login, { isLoading , error, data }] = useLoginUserMutation();
 
   const onSubmit = async (formData) => {
     const result = await login({
@@ -50,6 +52,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
       dispatch(setTokens(result.data.data));
       Cookies.set("access_token", result.data.data.access_token);
       dispatch(setIsAuth(true));
+      dispatch(cartApi.util.invalidateTags(['Cart']));
       dispatch(setAuthModal(false));
       reset();
       console.log(result.data);
@@ -57,6 +60,8 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
   };
 
   return (
+    <>
+    {isLoading  && <Preloader zIndex={14} />}
     <form
       className="container-vertical modal__form"
       onSubmit={handleSubmit(onSubmit)}
@@ -128,7 +133,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
         icon={images["topRightPurpleArrow"]}
         onClick={() => setisRegistered(false)}
       />
-    </form>
+    </form></>
   );
 };
 
