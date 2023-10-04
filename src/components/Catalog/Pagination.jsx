@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactPaginate from "react-paginate";
 
 const Pagination = ({
   setCurrentPage = () => {},
-  itemsPerPage,
   pageCount,
   forcePage = 1,
 }) => {
-  useEffect(() => {
-    /* setCurrentItems(items.slice(itemOffset, endOffset)); */
-  }, [itemsPerPage, forcePage]);
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected + 1);

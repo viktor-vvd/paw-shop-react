@@ -62,7 +62,6 @@ const CatalogPage = () => {
             {data && data.meta.last_page > 1 && (
               <Pagination
                 setCurrentPage={setCurrentPage}
-                itemsPerPage={itemsPerPage}
                 pageCount={data.meta.last_page}
                 forcePage={data.meta.current_page}
               />
