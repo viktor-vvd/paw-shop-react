@@ -11,18 +11,34 @@ import Preloader from "components/base/Preloader";
 import ProductCard from "components/base/ProductCard";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const CatalogPage = () => {
+  const navigate = useNavigate();
+    const params = new URLSearchParams(window.location.search);
   const { slug } = useParams();
 
   const [catalogListGET, { data, isFetching }] = useLazyCatalogListGETQuery();
 
   const [itemsPerPage, setitemsPerPage] = useState(1);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(Number(params.get("page")) || 1);
 
-  const [sortValue, setSortValue] = useState({ sort: "default" });
+  const [sortValue, setSortValue] = useState({
+    sort: params.get("sort") || "default",
+    order: params.get("order") || "desc",
+  });
+
+  const handlePagination = (selectedPage) => {
+    navigate(`/catalog/${slug}?sort=${sortValue.sort}&order=${sortValue.order}&page=${selectedPage}`);
+    setCurrentPage(selectedPage);
+  };
+
+  const handleSortChange = (event) => {
+    navigate(`/catalog/${slug}?sort=${JSON.parse(event.target.value)?.sort}&order=${JSON.parse(event.target.value)?.order?(JSON.parse(event.target.value)?.order):(`desc`)}&page=1`);
+    setSortValue(JSON.parse(event.target.value));
+    setCurrentPage(1);
+  };
 
   useEffect(() => {
     catalogListGET({
@@ -32,7 +48,7 @@ const CatalogPage = () => {
       order: sortValue.order,
       category: slug,
     });
-  }, [slug, currentPage, sortValue]);
+  }, [slug, currentPage, sortValue, navigate]);
 
   return (
     <>
@@ -49,8 +65,7 @@ const CatalogPage = () => {
               <Filter />
               <Sort
                 sortValue={sortValue}
-                setSortValue={setSortValue}
-                setCurrentPage={setCurrentPage}
+                handleSortChange={handleSortChange}
               />
             </div>
             <div className="container-horisontal container catalog__products">
@@ -64,6 +79,7 @@ const CatalogPage = () => {
                 setCurrentPage={setCurrentPage}
                 pageCount={data.meta.last_page}
                 forcePage={data.meta.current_page}
+                onPageChange={handlePagination}
               />
             )}
           </div>

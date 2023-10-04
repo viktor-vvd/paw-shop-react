@@ -75,12 +75,12 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="container-horisontal nav__list">
             <li className="nav__list__item">
-              <Link to="/catalog/cat">
+              <Link to="/catalog/cat?sort=default&order=desc&page=1">
                 For <b>CAT</b>
               </Link>
             </li>
             <li className="nav__list__item">
-              <Link to="/catalog/dog">
+              <Link to="/catalog/dog?sort=default&order=desc&page=1">
                 For <b>DOG</b>
               </Link>
             </li>

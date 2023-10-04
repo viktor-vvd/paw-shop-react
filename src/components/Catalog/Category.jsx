@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const Category = ({ item, setCurrentPage }) => {
   const navigate = useNavigate();
+  const params = new URLSearchParams(window.location.search);
 
   const handleOptionChange = (changeEvent) => {
-    navigate("/catalog/" + changeEvent.target.value);
+    navigate(`/catalog/${changeEvent.target.value}?sort=${params.get("sort") || "default"}&order=${params.get("order") || "desc"}&page=1`);
     setCurrentPage(1);
   };
 

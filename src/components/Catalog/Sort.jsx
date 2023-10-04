@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Sort = ({sortValue = { sort: "default" }, setSortValue, setCurrentPage}) => {
+const Sort = ({sortValue = { sort: "default", order: "desc" }, handleSortChange}) => {
+  const navigate = useNavigate();
+  const { slug } = useParams();
+
   const handleOptionChange = (event) => {
-    setCurrentPage(1);
-    setSortValue(JSON.parse(event.target.value));
+    const url = `/catalog/${slug}?sort=${JSON.parse(event.target.value)?.sort}&order=${JSON.parse(event.target.value)?.order?(JSON.parse(event.target.value)?.order):(`desc`)}&page=1`;
+    navigate(url);
+    /* setSortValue(JSON.parse(event.target.value)); */
   };
   return (
     <div className="container-horisontal sort__container">
@@ -13,9 +18,9 @@ const Sort = ({sortValue = { sort: "default" }, setSortValue, setCurrentPage}) =
           className="text sort"
           name="sortValue"
           defaultValue={JSON.stringify(sortValue)}
-          onChange={handleOptionChange}
+          onChange={(event) => handleSortChange(event)}
         >
-          <option className="text sort__item" value={JSON.stringify({ sort: "default" })}>
+          <option className="text sort__item" value={JSON.stringify({ sort: "default", order: "desc" })}>
             Relevance
           </option>
           <option
