@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ setCurrentPage=()=>{}, itemsPerPage, pageCount, initialPage=1 }) => {
-
+const Pagination = ({
+  setCurrentPage = () => {},
+  itemsPerPage,
+  pageCount,
+  forcePage = 1,
+}) => {
   useEffect(() => {
     /* setCurrentItems(items.slice(itemOffset, endOffset)); */
-  }, [itemsPerPage]);
+  }, [itemsPerPage, forcePage]);
 
   const handlePageClick = (event) => {
-    setCurrentPage(event.selected+1);
+    setCurrentPage(event.selected + 1);
   };
 
   return (
     <>
       <ReactPaginate
         nextLabel=""
-        initialPage={initialPage-1}
+        forcePage={forcePage - 1}
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         marginPagesDisplayed={2}

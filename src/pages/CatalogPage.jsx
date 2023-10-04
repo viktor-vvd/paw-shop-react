@@ -36,36 +36,40 @@ const CatalogPage = () => {
 
   return (
     <>
-    {isFetching && <Preloader />}
-    {data && (
-      <div className="container-vertical page-container catalog">
-        <div className="container-vertical catalog__top">
-          <Breadcrumbs item={{ slug: slug }} />
-          <h2 className="title">Catalog</h2>
-          <Category item={{ slug: slug }} setCurrentPage={setCurrentPage} />
-        </div>
-        <div className="container-vertical outer__container catalog__bottom">
-          <div className="container-horisontal container filter-sort">
-            <Filter />
-            <Sort sortValue={sortValue} setSortValue={setSortValue} setCurrentPage={setCurrentPage} />
+      {isFetching && <Preloader />}
+      {data && (
+        <div className="container-vertical page-container catalog">
+          <div className="container-vertical catalog__top">
+            <Breadcrumbs item={{ slug: slug }} />
+            <h2 className="title">Catalog</h2>
+            <Category item={{ slug: slug }} setCurrentPage={setCurrentPage} />
           </div>
-          <div className="container-horisontal container catalog__products">
-            {data?.data &&
-              data.data.map((item, index) => (
-                <ProductCard item={item} key={index} />
-              ))}
+          <div className="container-vertical outer__container catalog__bottom">
+            <div className="container-horisontal container filter-sort">
+              <Filter />
+              <Sort
+                sortValue={sortValue}
+                setSortValue={setSortValue}
+                setCurrentPage={setCurrentPage}
+              />
+            </div>
+            <div className="container-horisontal container catalog__products">
+              {data?.data &&
+                data.data.map((item, index) => (
+                  <ProductCard item={item} key={index} />
+                ))}
+            </div>
+            {data && data.meta.last_page > 1 && (
+              <Pagination
+                setCurrentPage={setCurrentPage}
+                itemsPerPage={itemsPerPage}
+                pageCount={data.meta.last_page}
+                forcePage={data.meta.current_page}
+              />
+            )}
           </div>
-          {data && data.meta.last_page > 1 && (
-            <Pagination
-              setCurrentPage={setCurrentPage}
-              itemsPerPage={itemsPerPage}
-              pageCount={data.meta.last_page}
-              initialPage={data.meta.current_page}
-            />
-          )}
         </div>
-      </div>
-    )}
+      )}
     </>
   );
 };

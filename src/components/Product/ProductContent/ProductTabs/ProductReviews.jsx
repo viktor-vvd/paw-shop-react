@@ -29,7 +29,7 @@ const ProductReviews = ({ item }) => {
         <div className="container-vertical product__reviews">
           <div className="container-horisontal product__reviews__rate">
             <div className="container-horisontal rate__stars">
-            <RatingStars value={parseFloat(data.total.avg)} size="40" />
+              <RatingStars value={parseFloat(data.total.avg)} size="40" />
             </div>
             <span className="text rate__text">{item.data.product.rating}</span>
           </div>
@@ -43,7 +43,7 @@ const ProductReviews = ({ item }) => {
               setCurrentPage={setCurrentPage}
               itemsPerPage={itemsPerPage}
               pageCount={data.meta.last_page}
-              initialPage={data.meta.current_page}
+              forcePage={data.meta.current_page}
             />
           )}
         </div>
