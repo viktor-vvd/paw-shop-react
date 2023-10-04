@@ -10,11 +10,7 @@ import {
 import Preloader from "components/base/Preloader";
 
 const Reviews = () => {
-  const { data, isFetching } =
-  useCommentsRandomListGETQuery({ limit: 9 });
-/*   const [commentsGet, { data, isSuccess }] =
-    useLazyCommentsRandomListGETQuery();
- */  console.log(data);
+  const { data, isFetching } = useCommentsRandomListGETQuery({ limit: 9 });
 
   const swiperElRef = useRef(null);
   const prevRef = useRef(null);

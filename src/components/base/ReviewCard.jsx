@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import images from "@imports/ImagesImport";
 import Image from "./Image";
+import RatingStars from "./RatingStars";
 
 const ReviewCard = ({ item, link = true }) => {
   const [maxImages, setMaxImages] = useState(3);
@@ -27,20 +28,11 @@ const ReviewCard = ({ item, link = true }) => {
     <div className="container-vertical review-card">
       <span className="review-card__date">{convertDate(item.created_at)}</span>
       <div className="container-horisontal review-card__header">
-        <span className="review-card__name">{item.name?(item.name):("User")}</span>
+        <span className="review-card__name">
+          {item.name ? item.name : "User"}
+        </span>
         <div className="container-horisontal review-card__stars">
-          {item.rating &&
-            [...Array(Math.round(item.rating))].map((e, i) => (
-              <Image
-                className="review-card__stars__item"
-                src={images["star"]}
-                loading="lazy"
-                alt="star"
-                key={"star" + i}
-                width="19"
-                height="19"
-              />
-            ))}
+          <RatingStars value={parseFloat(item.rating)} />
         </div>
       </div>
       {item.body && <span className="text_light">{item.body}</span>}

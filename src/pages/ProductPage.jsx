@@ -6,6 +6,7 @@ import ProductPhotos from "components/Product/ProductPhotos";
 import Breadcrumbs from "components/base/Breadcrumbs";
 import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
+import RatingStars from "components/base/RatingStars";
 import images from "imports/ImagesImport";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -40,20 +41,7 @@ const ProductPage = () => {
                 </span>
                 <div className="container-horisontal rate">
                   <div className="container-horisontal rate__stars">
-                    {data.data.product.rating &&
-                      [...Array(Math.round(data.data.product.rating))].map(
-                        (e, i) => (
-                          <Image
-                            className="stars__item"
-                            src={images["star"]}
-                            loading="lazy"
-                            alt="star"
-                            key={"star" + i}
-                            width="13"
-                            height="13"
-                          />
-                        )
-                      )}
+                    <RatingStars value={parseFloat(data.data.product.rating)} />
                   </div>
                   <span className="text rate__text">
                     {data.data.product.rating}

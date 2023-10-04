@@ -6,7 +6,22 @@ import Preloader from "components/base/Preloader";
 import images from "imports/ImagesImport";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Rating } from "react-simple-star-rating";
 import * as yup from "yup";
+
+const fillColorArray = [
+  "#f17a45",
+  "#f17a45",
+  "#f19745",
+  "#f19745",
+  "#f1a545",
+  "#f1a545",
+  "#f1b345",
+  "#f1b345",
+  "#f1d045",
+  "#f1d045",
+];
+
 
 const AddReview = ({ item }) => {
   const schema = yup.object({
@@ -22,8 +37,9 @@ const AddReview = ({ item }) => {
     resolver: yupResolver(schema),
   });
 
-  const [addComment, { isLoading, error, data }] =
-    useCommentsAddPOSTMutation();
+  const [rating, setRating] = useState(1);
+
+  const [addComment, { isLoading, error, data }] = useCommentsAddPOSTMutation();
 
   const [imgs, setImgs] = useState([]);
 
@@ -39,23 +55,21 @@ const AddReview = ({ item }) => {
   };
 
   const onSubmit = async (formData) => {
-    /* e.target.files ? [...e.target.files] : [] 
-    setImgs(imgs ? [...imgs] : []);*/
     const formImgs = new FormData();
     imgs.forEach((file, i) => {
-      console.log(file);
       formImgs.append("file", file);
     });
-    /* console.log(imgs); */
     const result = await addComment({
       data: {
-        rating: parseFloat(formData.rating),
+        rating: parseFloat(rating),
         body: formData.body,
         images: formImgs,
       },
       id: item?.data.product.id,
     });
     if (result.data) {
+      setRating(1);
+      setImgs([]);
       reset();
     }
   };
@@ -69,73 +83,23 @@ const AddReview = ({ item }) => {
           className="container-vertical add-review__form"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="container-horisontal form__rating">
-            <input
-              type="radio"
-              id="star5"
-              name="rating"
-              value="5"
-              {...register("rating")}
+          <div className="container-horisontal form__rating__wrapper">
+            <Rating
+              className="container-horisontal form__rating"
+              initialValue={rating}
+              ratingValue={rating}
+              size={50}
+              label
+              transition
+              fillColorArray={fillColorArray}
+              emptyColor="gray"
+              onClick={(rate) => {
+                setRating(rate);
+              }}
+              onMouseLeave={() => {
+                setRating((currentRating) => currentRating);
+              }}
             />
-            <label
-              className="star"
-              htmlFor="star5"
-              title="Awesome"
-              aria-hidden="true"
-            ></label>
-            <input
-              type="radio"
-              id="star4"
-              name="rating"
-              value="4"
-              {...register("rating")}
-            />
-            <label
-              className="star"
-              htmlFor="star4"
-              title="Great"
-              aria-hidden="true"
-            ></label>
-            <input
-              type="radio"
-              id="star3"
-              name="rating"
-              value="3"
-              {...register("rating")}
-            />
-            <label
-              className="star"
-              htmlFor="star3"
-              title="Very good"
-              aria-hidden="true"
-            ></label>
-            <input
-              type="radio"
-              id="star2"
-              name="rating"
-              value="2"
-              {...register("rating")}
-            />
-            <label
-              className="star"
-              htmlFor="star2"
-              title="Good"
-              aria-hidden="true"
-            ></label>
-            <input
-              type="radio"
-              id="star1"
-              name="rating"
-              value="1"
-              defaultChecked
-              {...register("rating")}
-            />
-            <label
-              className="star"
-              htmlFor="star1"
-              title="Bad"
-              aria-hidden="true"
-            ></label>
           </div>
           <div className="container-vertical form__wrapper">
             <textarea

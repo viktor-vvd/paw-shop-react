@@ -6,8 +6,10 @@ import { useAddToCartPOSTMutation } from "api/cartApi";
 import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const ProductOptions = ({ item }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [dataItem, setDataItem] = useState(item);
@@ -23,42 +25,12 @@ const ProductOptions = ({ item }) => {
     setQuantity(quantity + 1);
   };
 
-  /* const handleOptionChange = (event) => {
-    const newState = {
-      ...data,
-      switching: {
-          ...data.switching,
-          [key]: value,
-      },
-  };
-    setData((prevState) => {
-      switching: prevState.switching.map((el) =>
-        el.attribute.slug === event.target.name
-          ? el.properties.map((propert) =>
-              propert.property.slug === event.target.value
-                ? { ...propert, is_current: true }
-                : { ...propert, is_current: false }
-            )
-          : el
-      );
-      /* return {
-        ...current,
-        event.target.name: {
-          ...current.address,
-
-          // 👇️ override value for nested country property
-          country: 'Germany',
-        },
-      }; 
-    });
-  }; */
-
   const handleAddToCart = async () => {
     const result = await addToCart({
       id: item.variations.filter((element) => element.is_current)[0].id,
       data: { quantity: quantity },
     });
-    if(result.data){
+    if (result.data) {
       dispatch(setCart_id(result.data.cart_id));
       Cookies.set("cart_id", result.data.cart_id);
     }
@@ -91,8 +63,15 @@ const ProductOptions = ({ item }) => {
                         type="radio"
                         name={option.attribute.slug}
                         value={property.slug}
-                        /* onChange={handleOptionChange} */
-                        defaultChecked={property.is_current}
+                        onChange={() =>
+                          navigate(
+                            "/catalog/" +
+                              item.data.product.category.slug +
+                              "/product/" +
+                              property.variation.slug
+                          )
+                        }
+                        checked={property.is_current}
                         className="product-options__input"
                       />
                       <span

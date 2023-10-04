@@ -2,6 +2,7 @@ import { useLazyCommentsProductListGETQuery } from "api/commentsApi";
 import Pagination from "components/Catalog/Pagination";
 import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
+import RatingStars from "components/base/RatingStars";
 import ReviewCard from "components/base/ReviewCard";
 import images from "imports/ImagesImport";
 import React, { useEffect, useState } from "react";
@@ -19,9 +20,6 @@ const ProductReviews = ({ item }) => {
       id: item?.data.product.id,
       data: { page: currentPage, per_page: itemsPerPage },
     });
-    /* data && setCurrentPage(data.meta.current_page); */
-    console.log(data);
-    console.log({ currentPage: currentPage });
   }, [currentPage, item]);
 
   return (
@@ -31,18 +29,7 @@ const ProductReviews = ({ item }) => {
         <div className="container-vertical product__reviews">
           <div className="container-horisontal product__reviews__rate">
             <div className="container-horisontal rate__stars">
-              {item.data.product.rating &&
-                [...Array(Math.round(item.data.product.rating))].map((e, i) => (
-                  <Image
-                    className="stars__item"
-                    src={images["star"]}
-                    loading="lazy"
-                    alt="star"
-                    key={"star" + i}
-                    width="47"
-                    height="47"
-                  />
-                ))}
+            <RatingStars value={parseFloat(data.total.avg)} size="40" />
             </div>
             <span className="text rate__text">{item.data.product.rating}</span>
           </div>

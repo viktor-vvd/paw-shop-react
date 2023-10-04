@@ -22,7 +22,7 @@ const CartModal = () => {
   const { data, isFetching } = useCartGETQuery();
 
   useEffect(() => {
-    if (data?.data) {
+    if (data?.data  && data.data.purchases) {
       dispatch(setCartCount(data.data.purchases.length));
       dispatch(setCartTotal(data.total.total));
       dispatch(setCart_id(data.data.id));
@@ -30,7 +30,7 @@ const CartModal = () => {
     } else {
       dispatch(setCartCount(0));
     }
-  }, [data, isFetching]);
+  }, [data, isFetching, dispatch]);
 
   return (
     <>

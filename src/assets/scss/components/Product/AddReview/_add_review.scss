@@ -10,54 +10,16 @@
         .form {
 
             &__rating {
-                background: #fff;
-                padding: 33rem 19rem;
-                border-radius: $border-radius;
-                box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
-                border: none;
-                justify-content: center;
-                flex-direction: row-reverse;
-                gap: 20rem;
-                width: fit-content;
-            }
+                    gap: 20rem;
 
-            &__rating>label {
-                color: #90A0A3;
-            }
-
-            &__rating>label:before {
-                content: "";
-                width: 46rem;
-                height: 46rem;
-                background: url("../../../../../public/images/starDisabled.svg");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: block;
-                transition: all 0.2s ease-in-out;
-            }
-
-            &__rating>input {
-                display: none;
-            }
-
-            &__rating>input:checked~label:before,
-            &__rating:not(:checked)>label:hover:before,
-            &__rating:not(:checked)>label:hover~label:before {
-                background: url("../../../../../public/images/star.svg");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            &__rating>input:checked+label:hover,
-            &__rating>input:checked~label:hover,
-            &__rating>label:hover~input:checked~label:before,
-            &__rating>input:checked~label:hover~label:before {
-                background: url("../../../../../public/images/star.svg");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
+                &__wrapper{
+                    background: #fff;
+                    padding: 33rem 19rem;
+                    border-radius: $border-radius;
+                    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+                    border: none;
+                    width: fit-content;
+                }
             }
 
             &__wrapper {

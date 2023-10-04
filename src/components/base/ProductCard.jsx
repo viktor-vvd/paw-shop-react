@@ -7,6 +7,7 @@ import { useAddToCartPOSTMutation } from "api/cartApi";
 import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
+import RatingStars from "./RatingStars";
 
 const ProductCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const ProductCard = ({ item }) => {
       id: item.id,
       data: { quantity: 1 },
     });
-    if(result.data){
+    if (result.data) {
       dispatch(setCart_id(result.data.cart_id));
       Cookies.set("cart_id", result.data.cart_id);
     }
@@ -33,7 +34,11 @@ const ProductCard = ({ item }) => {
           </span>
         )}
         {item.new && <span className="tag tag_new">New</span>}
-        <Link to={"/catalog/"+item.product.category.slug+"/product/" + item.slug}>
+        <Link
+          to={
+            "/catalog/" + item.product.category.slug + "/product/" + item.slug
+          }
+        >
           <Image
             className="image"
             width="230"
@@ -45,25 +50,14 @@ const ProductCard = ({ item }) => {
         </Link>
       </div>
       <Link
-        to={"/catalog/"+item.product.category.slug+"/product/" + item.slug}
+        to={"/catalog/" + item.product.category.slug + "/product/" + item.slug}
         className="text product-card__title"
       >
         {item.name}
       </Link>
       <div className="container-horisontal rate">
         <div className="container-horisontal rate__stars">
-          {item.product.rating &&
-            [...Array(Math.round(item.product.rating))].map((e, i) => (
-              <Image
-                className="stars__item"
-                src={images["star"]}
-                loading="lazy"
-                alt="star"
-                key={"star" + i}
-                width="13"
-                height="13"
-              />
-            ))}
+          <RatingStars value={parseFloat(item.product.rating)} />
         </div>
         <span className="rate__text">{item.product.comments_count}</span>
       </div>
@@ -75,23 +69,24 @@ const ProductCard = ({ item }) => {
                 {item.prices.currency.symbol}
                 {item.prices.now}
               </span>
-              <span
-                className="price price_old"
-              >
+              <span className="price price_old">
                 {item.prices.currency.symbol}
                 {item.prices.old}
               </span>
             </>
           ) : (
-            <span
-              className="price"
-            >
+            <span className="price">
               {item.prices.currency.symbol}
               {item.price}
             </span>
           )}
         </div>
-        <Button value="+" title="Add to cart" icon={images["basket"]} onClick={handleAddToCart} />
+        <Button
+          value="+"
+          title="Add to cart"
+          icon={images["basket"]}
+          onClick={handleAddToCart}
+        />
       </div>
     </div>
   );
