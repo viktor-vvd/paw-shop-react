@@ -108,6 +108,12 @@
                 border-radius: $border-radius;
                 border: 1px solid $input;
 
+                &_wrapper {
+                    width: 100%;
+                    position: relative;
+                    align-items: flex-start;
+                }
+
                 &_error {
                     border: 1px solid red;
                 }

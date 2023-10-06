@@ -35,6 +35,26 @@ export const cartApi = createApi({
       },
       invalidatesTags: ["Cart"],
     }),
+    addPromocodePOST: builder.mutation({
+      query: (data) => {
+        return {
+          url: `carts/promocode/add`,
+          method: `POST`,
+          body: data,
+        };
+      },
+      invalidatesTags: ["Cart"],
+    }),
+    removePromocodePOST: builder.mutation({
+      query: (data) => {
+        return {
+          url: `carts/promocode/remove`,
+          method: `POST`,
+          body: data,
+        };
+      },
+      invalidatesTags: ["Cart"],
+    }),
     /* pageHomeGET: builder.query({
       query: () => {
         return {
@@ -71,5 +91,7 @@ export const {
     useCartGETQuery,
   useLazyCartGETQuery,
   useAddToCartPOSTMutation,
-  useRemoveFromCartPOSTMutation
+  useRemoveFromCartPOSTMutation,
+  useAddPromocodePOSTMutation,
+  useRemovePromocodePOSTMutation
 } = cartApi;
