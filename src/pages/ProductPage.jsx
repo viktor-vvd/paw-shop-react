@@ -4,23 +4,18 @@ import ProductContent from "components/Product/ProductContent/ProductContent";
 import ProductOptions from "components/Product/ProductOptions";
 import ProductPhotos from "components/Product/ProductPhotos";
 import Breadcrumbs from "components/base/Breadcrumbs";
-import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
 import RatingStars from "components/base/RatingStars";
-import images from "imports/ImagesImport";
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
   const { slug } = useParams();
 
   const [catalogItemGET, { data, isFetching }] = useLazyCatalogItemGETQuery();
-  /* const [switchingData, setSwitchingData] = useState(data); */
 
   useEffect(() => {
     catalogItemGET(slug);
-    /* data && setSwitchingData(data); */
   }, [slug]);
 
   return (

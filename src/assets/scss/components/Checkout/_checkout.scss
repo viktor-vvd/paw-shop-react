@@ -1,0 +1,293 @@
+.checkout {
+    width: 100%;
+    gap: 30rem;
+    align-items: flex-start;
+
+    &__container {
+        width: 100%;
+        align-items: flex-start;
+        gap: 40rem;
+    }
+
+    &__steps {
+        gap: 10rem;
+        gap: 50rem;
+
+        &>*:not(:last-child)::after {
+            position: absolute;
+            bottom: 15rem;
+            left: 30rem;
+            padding: 0 20rem;
+            content: '';
+            margin: 0 5rem;
+            border-bottom: 1rem solid $grey;
+        }
+
+        &>.checkout__step_done:not(:last-child)::after {
+            border-bottom: 1rem solid $accent;
+        }
+    }
+
+    &__step {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        border: 1rem solid $grey;
+        background-color: #fff;
+
+        &_active {
+            background-color: $accent;
+            border-color: $accent;
+            color: #fff;
+        }
+
+        &_done {
+            color: $accent;
+            border-color: $accent;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        align-items: flex-start;
+        gap: 40rem;
+
+        .form {
+            &__section {
+                width: 100%;
+                align-items: flex-start;
+                gap: 20rem;
+
+                &_horisontal {
+                    gap: 16rem;
+                    width: 100%;
+                }
+            }
+
+            &__account {
+                gap: 10rem;
+            }
+
+            &__label {
+                &_wrapper {
+                    position: relative;
+                    width: 100%;
+                    align-items: flex-start;
+                    gap: 10rem;
+                }
+            }
+
+            &__input {
+                width: 100%;
+                padding: 16rem 20rem;
+                border-radius: $border-radius;
+                border: 1px solid $input;
+
+                &_error {
+                    border: 1px solid red;
+                }
+
+                &_country {
+                    width: 100%;
+
+                    .css-t3ipsp-control {
+                        padding: 5rem;
+                        border: 1rem solid $input;
+                        border-radius: $border-radius;
+                        box-shadow: none;
+                    }
+
+                    .css-t3ipsp-control:hover {
+                        border: 1rem solid $input;
+                    }
+
+                    .css-13cymwt-control {
+                        padding: 5rem;
+                        border: 1rem solid $input;
+                        border-radius: $border-radius;
+                    }
+                }
+            }
+
+            &__radio {
+                gap: 12rem;
+                width: 100%;
+                justify-content: flex-start;
+                padding: 26rem 20rem;
+                border-radius: $border-radius;
+                border: 1px solid $input;
+                transition: all 0.2s ease-in-out;
+
+                img {
+                    height: 24rem;
+                    width: auto;
+                }
+
+                &:hover {
+                    border: 1px solid $accent;
+                }
+
+                .radio {
+                    &__input {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+
+                    &__label {
+                        width: 100%;
+                        gap: 10rem;
+                        align-items: center;
+                        user-select: none;
+                    }
+
+                    &__mark {
+                        position: relative;
+                        display: inline-block;
+                        width: 24rem;
+                        height: 24rem;
+                        border-radius: 50%;
+                        border: 1px solid $input;
+                        padding: 5rem;
+                    }
+                }
+
+                .radio__input:checked+.radio__mark::after {
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 14rem;
+                    height: 14rem;
+                    border-radius: 50%;
+                    background: $accent;
+                }
+            }
+
+            &__promocode {
+                padding-right: 100rem;
+
+                &_button {
+                    position: absolute;
+                    bottom: 6rem;
+                    right: 7rem;
+                    border-radius: 15rem;
+                }
+            }
+        }
+    }
+
+    &__order {
+        max-width: 370rem;
+        width: 100%;
+        align-items: flex-start;
+        gap: 20rem;
+        flex-shrink: 0;
+
+        .order {
+            &__header {
+                width: 100%;
+
+                .subtitle {
+                    white-space: nowrap;
+                }
+            }
+
+            &__list {
+                width: 100%;
+                gap: 20rem;
+            }
+
+            &__item {
+                width: 100%;
+                gap: 20rem;
+                align-items: center;
+
+                &__name {
+                    width: 100%;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    text-align: left;
+                }
+
+                .image {
+                    border-radius: $border-radius;
+                    height: 70rem;
+                    width: 100%;
+                    object-fit: cover;
+                    vertical-align: bottom;
+
+                    &__container {
+                        width: 70rem;
+                        height: 70rem;
+                        flex-shrink: 0;
+                        position: relative;
+
+                        .quantity-tag {
+                            font-size: 13rem;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            padding: 1.92rem 7.04rem 2.08rem;
+                            border-radius: 50%;
+                            background: linear-gradient(92deg, #F28C05 0%, #FFBC05 100%), #FFEAEA;
+                            color: #FFF;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            &__details {
+                padding: 29rem 30rem;
+                width: 100%;
+                gap: 20rem;
+                border-radius: $border-radius;
+                background: #FFF;
+                box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+
+                &__item {
+                    width: 100%;
+
+                    .subtitle {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        padding: 16rem;
+        height: fit-content;
+
+        .text__button {
+            font-size: 14rem;
+        }
+    }
+
+    &__text-button {
+        gap: 10rem;
+        justify-content: center;
+        color: $accent;
+
+        &__wrapper {
+            width: 100%;
+            justify-content: center;
+        }
+
+        img {
+            height: 16rem;
+            width: auto;
+        }
+    }
+}

@@ -7,6 +7,12 @@ html {
    font-size: calc(1vw / 19.2);
 }
 
+.App {
+   min-height: 100vh;
+   position: relative;
+   @include container-vertical;
+}
+
 .outer__container {
    padding: 0 16rem;
 }
@@ -39,8 +45,8 @@ html {
       width: 100rem;
    }
 
-   &_absolute{
-   position: absolute;      
+   &_absolute {
+      position: absolute;
    }
 }
 
@@ -164,7 +170,8 @@ html {
 
 .main {
    width: 100%;
-   min-height: 100vh;
+   flex: 1 0 auto;
+   /* min-height: 100vh; */
 }
 
 .page-container {
@@ -202,7 +209,8 @@ html {
 @import 'components/Product/ProductNavigation/product_navigation';
 @import 'components/Product/ProductReviews/product_reviews';
 @import 'components/Product/AddReview/add_review';
-@import 'components/Product/ProductDescription/_product_description';
+@import 'components/Product/ProductDescription/product_description';
+@import 'components/Checkout/checkout';
 
 /* media */
 

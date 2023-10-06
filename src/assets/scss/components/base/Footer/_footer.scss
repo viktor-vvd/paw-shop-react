@@ -1,6 +1,8 @@
 .footer {
     width: 100%;
     justify-content: center;
+    position: relative;
+    flex-shrink: 0;
     bottom:0;
 
     // .footer__promo

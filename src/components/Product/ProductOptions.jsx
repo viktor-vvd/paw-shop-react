@@ -31,8 +31,9 @@ const ProductOptions = ({ item }) => {
       data: { quantity: quantity },
     });
     if (result.data) {
-      dispatch(setCart_id(result.data.cart_id));
+      console.log(result.data.cart_id);
       Cookies.set("cart_id", result.data.cart_id);
+      dispatch(setCart_id(result.data.cart_id));
     }
   };
 

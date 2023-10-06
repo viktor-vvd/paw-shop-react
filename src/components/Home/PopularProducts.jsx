@@ -36,7 +36,7 @@ const PopularProducts = ({
       </div>
       {buttons && (
         <div className="container-horisontal for-cat-dog__container">
-          <Link to="/catalog/cat">
+          <Link to="/catalog/cat?sort=default&order=desc&page=1">
             <div className="container-horisontal for-cat-dog__button for-cat-dog__button_cat">
               <span className="text__button">
                 Products for <span className="text__button cat">CAT</span>
@@ -59,7 +59,7 @@ const PopularProducts = ({
               />
             </div>
           </Link>
-          <Link to="/catalog/dog">
+          <Link to="/catalog/dog?sort=default&order=desc&page=1">
             <div className="container-horisontal for-cat-dog__button for-cat-dog__button_dog">
               <span className="text__button">
                 Products for <span className="text__button dog">DOG</span>

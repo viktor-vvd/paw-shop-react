@@ -11,6 +11,7 @@ export const baseQuery = fetchBaseQuery({
     headers.set("Cache-Control", `no-cache`);
     const access_token = getState().auth.access_token;
     const token = Cookies.get("access_token");
+      console.log({access_token:access_token,token:token});
     if (access_token) {
       headers.set("Authorization", `Bearer ${access_token}`);
     } else if (token) {
@@ -18,6 +19,7 @@ export const baseQuery = fetchBaseQuery({
     }
     const cart_id = getState().cart.cart_id;
     const cart = Cookies.get("cart_id");
+      console.log({cart:cart});
     if (cart_id) {
       headers.set("sCart", cart_id);
     } else if (cart) {

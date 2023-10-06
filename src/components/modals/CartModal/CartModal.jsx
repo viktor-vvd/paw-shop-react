@@ -9,26 +9,34 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  removeCart,
   setCartCount,
   setCartTotal,
   setCart_id,
 } from "redux/reducers/cartSlice";
 import { setCartModal } from "redux/reducers/modalsSlice";
 
-const CartModal = () => {
+const CartModal = ({ buttons = true }) => {
   const dispatch = useDispatch();
   const isVisible = useSelector((state) => state.modals.cartModal);
   const total = useSelector((state) => state.cart.cartTotal);
+  /* const { data, isFetching } = useCartGETQuery(); */
   const { data, isFetching } = useCartGETQuery();
 
   useEffect(() => {
-    if (data?.data  && data.data.purchases) {
+    if (data?.data && data.data.purchases) {
       dispatch(setCartCount(data.data.purchases.length));
-      dispatch(setCartTotal(data.total.total));
+      dispatch(setCartTotal(data.total.purchases_all));
       dispatch(setCart_id(data.data.id));
       Cookies.set("cart_id", data.data.id);
     } else {
+      Cookies.remove("cart_id", {
+        path: "/",
+        secure: true,
+      });
+      dispatch(removeCart());
       dispatch(setCartCount(0));
+      dispatch(setCartTotal(0));
     }
   }, [data, isFetching, dispatch]);
 
@@ -83,17 +91,20 @@ const CartModal = () => {
         <hr />
         <div className="container-vertical cart__bottom">
           <span className="text">
-            Cart Subtotal: <b>${data?.data ? data.total.total : total}</b>
+            Cart Subtotal:{" "}
+            <b>${data?.data ? data.total.purchases_all : total}</b>
           </span>
-          <div className="container-horisontal buttons__container">
-            <Button
-              type="button"
-              className="button_white"
-              value="Keep shopping"
-              onClick={() => dispatch(setCartModal(false))}
-            />
-            <Button type="submit" value="Buy" />
-          </div>
+          {buttons && (
+            <div className="container-horisontal buttons__container">
+              <Button
+                type="button"
+                className="button_white"
+                value="Keep shopping"
+                onClick={() => dispatch(setCartModal(false))}
+              />
+              {data && data.data && <Button type="submit" value="Buy" />}
+            </div>
+          )}
         </div>
       </div>
     </>

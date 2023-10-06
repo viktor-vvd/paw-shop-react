@@ -59,7 +59,11 @@ import facebookColorMini from "@public/images/facebookColorMini.svg";
 import twitterColor from "@public/images/twitterColor.svg";
 import gallery from "@public/images/gallery.svg";
 import closeMini from "@public/images/closeMini.svg";
+import leftPurpleArrow from "@public/images/leftPurpleArrow.svg";
 import loadingGif from "@public/images/loadingGif.gif";
+import mastercard2 from "@public/images/mastercard2.svg";
+import visa2 from "@public/images/visa2.svg";
+import paypal from "@public/images/paypal.svg";
 
 const images = {
   logo: logo,
@@ -124,6 +128,10 @@ const images = {
   gallery: gallery,
   closeMini: closeMini,
   loadingGif: loadingGif,
+  leftPurpleArrow: leftPurpleArrow,
+  mastercard2: mastercard2,
+  visa2: visa2,
+  paypal: paypal,
 };
 
 /* function importAll(r) {
