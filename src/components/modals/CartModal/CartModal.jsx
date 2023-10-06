@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   removeCart,
   setCartCount,
@@ -18,9 +19,9 @@ import { setCartModal } from "redux/reducers/modalsSlice";
 
 const CartModal = ({ buttons = true }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isVisible = useSelector((state) => state.modals.cartModal);
   const total = useSelector((state) => state.cart.cartTotal);
-  /* const { data, isFetching } = useCartGETQuery(); */
   const { data, isFetching } = useCartGETQuery();
 
   useEffect(() => {
@@ -102,7 +103,16 @@ const CartModal = ({ buttons = true }) => {
                 value="Keep shopping"
                 onClick={() => dispatch(setCartModal(false))}
               />
-              {data && data.data && <Button type="submit" value="Buy" />}
+              {data && data.data && (
+                <Button
+                  type="button"
+                  value="Buy"
+                  onClick={() => {
+                    navigate("/checkout/");
+                    dispatch(setCartModal(false));
+                  }}
+                />
+              )}
             </div>
           )}
         </div>

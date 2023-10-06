@@ -2,10 +2,43 @@ import Button from "components/base/Button";
 import Image from "components/base/Image";
 import images from "imports/ImagesImport";
 import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-const CheckoutShipping = ({setTab}) => {
+const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
+  const schema = yup.object({
+    method: yup.string().required("Please select a shipping method"),
+  });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (formData) => {
+    const updatedCheckoutData = {
+      ...checkoutData,
+      shipping: {
+        ...checkoutData.shipping,
+        method: formData.method,
+      },
+    };
+
+    console.log({shipping:updatedCheckoutData});
+    setCheckoutData(updatedCheckoutData);
+    setTab(3);
+  };
+
   return (
-    <form className="container-vertical checkout__form">
+    <form
+      className="container-vertical checkout__form"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <section className="container-vertical form__section">
         <h3 className="subtitle">Shipping</h3>
 
@@ -16,6 +49,7 @@ const CheckoutShipping = ({setTab}) => {
             value="free"
             name="method"
             defaultChecked={true}
+            {...register("method")}
           />
           <span className="radio__mark"></span>
           <span className="container-horisontal text radio__label">
@@ -26,9 +60,10 @@ const CheckoutShipping = ({setTab}) => {
           <input
             className="radio__input"
             type="radio"
-            value="postal"
+            value="fast"
             name="method"
             defaultChecked={false}
+            {...register("method")}
           />
           <span className="radio__mark"></span>
           <span className="container-horisontal text radio__label">
@@ -46,7 +81,7 @@ const CheckoutShipping = ({setTab}) => {
       <div className="container-horisontal checkout__text-button__wrapper">
         <button
           type="button"
-          onClick={setTab}
+          onClick={() => setTab(1)}
           className="container-horisontal text__button checkout__text-button"
         >
           <Image

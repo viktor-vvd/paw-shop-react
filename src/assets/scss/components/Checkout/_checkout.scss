@@ -71,6 +71,26 @@
 
             &__account {
                 gap: 10rem;
+
+                .account{
+                    &__item {
+                        padding: 16rem 30rem;
+                        border-radius: $border-radius;
+                        background: #fff;
+                        border: 1px solid $light-grey;
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &__input:checked+.account__item{
+                        background: $light-purple;
+                        border: 1px solid $accent;
+                    }
+                                
+                    &__input {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+                }
             }
 
             &__label {

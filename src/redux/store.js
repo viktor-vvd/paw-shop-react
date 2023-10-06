@@ -12,6 +12,8 @@ import commentsSlice from "./reducers/commentsSlice";
 import { commentsApi } from "api/commentsApi";
 import cartSlice from "./reducers/cartSlice";
 import { cartApi } from "api/cartApi";
+import checkoutSlice from "./reducers/checkoutSlice";
+import { checkoutApi } from "api/checkoutApi";
 
 export const store = configureStore({
   reducer: {
@@ -22,6 +24,7 @@ export const store = configureStore({
     catalog: catalogSlice,
     comments: commentsSlice,
     cart: cartSlice,
+    checkout: checkoutSlice,
     //api reducers
     
     [pageApi.reducerPath]: pageApi.reducer,
@@ -30,6 +33,7 @@ export const store = configureStore({
     [catalogApi.reducerPath]: catalogApi.reducer,
     [commentsApi.reducerPath]: commentsApi.reducer,
     [cartApi.reducerPath]: cartApi.reducer,
+    [checkoutApi.reducerPath]: checkoutApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }).concat([
@@ -39,5 +43,6 @@ export const store = configureStore({
       catalogApi.middleware,
       commentsApi.middleware,
       cartApi.middleware,
+      checkoutApi.middleware,
     ]),
 });

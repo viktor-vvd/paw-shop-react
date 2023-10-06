@@ -2,10 +2,66 @@ import Button from "components/base/Button";
 import Image from "components/base/Image";
 import images from "imports/ImagesImport";
 import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useCheckoutPOSTMutation } from "api/checkoutApi";
+import Preloader from "components/base/Preloader";
+import { useDispatch } from "react-redux";
+import { cartApi } from "api/cartApi";
+import { useNavigate } from "react-router-dom";
 
-const CheckoutPayment = ({setTab}) => {
+const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
+  const [sendCheckout, { isLoading, isError, error, isSuccess }] =
+    useCheckoutPOSTMutation();
+  const schema = yup.object({
+    gateway: yup.string().required("Please select a payment"),
+  });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(schema),
+  });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = async (formData) => {
+    const updatedCheckoutData = {
+      ...checkoutData,
+      shipping: {
+        ...checkoutData.shipping,
+      },
+      payment: {
+        gateway: formData.gateway,
+      },
+    };
+    console.log({ payment: updatedCheckoutData });
+
+    setCheckoutData(updatedCheckoutData);
+      const result = await sendCheckout(updatedCheckoutData);
+      if(result?.data){
+        dispatch(cartApi.util.invalidateTags(["Cart"]));
+        navigate("/");
+      }
+    try {
+      const result = await sendCheckout(updatedCheckoutData);
+      console.log(result);
+    } catch (error) {
+      console.error("API error", error);
+    }
+  };
+
   return (
-    <form className="container-vertical checkout__form">
+    <form
+      className="container-vertical checkout__form"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      {isLoading && <Preloader />}
       <section className="container-vertical form__section">
         <h3 className="subtitle">Payment</h3>
 
@@ -13,9 +69,10 @@ const CheckoutPayment = ({setTab}) => {
           <input
             className="radio__input"
             type="radio"
-            value="card"
+            value="fondy"
             name="gateway"
             defaultChecked={true}
+            {...register("gateway")}
           />
           <span className="radio__mark"></span>
           <span className="container-horisontal text radio__label">
@@ -42,9 +99,10 @@ const CheckoutPayment = ({setTab}) => {
           <input
             className="radio__input"
             type="radio"
-            value="pay_pal"
+            value="fondy"
             name="gateway"
             defaultChecked={false}
+            {...register("gateway")}
           />
           <span className="radio__mark"></span>
           <div className="container-horisontal text radio__label">
@@ -59,7 +117,7 @@ const CheckoutPayment = ({setTab}) => {
         </label>
       </section>
       <Button
-        value="Continue to payment"
+        value="Pay now"
         className="checkout__submit"
         type="submit"
         /* onClick={() => handleTabClick('shipping')} */
@@ -67,7 +125,7 @@ const CheckoutPayment = ({setTab}) => {
       <div className="container-horisontal checkout__text-button__wrapper">
         <button
           type="button"
-          onClick={setTab}
+          onClick={() => setTab(2)}
           className="container-horisontal text__button checkout__text-button"
         >
           <Image

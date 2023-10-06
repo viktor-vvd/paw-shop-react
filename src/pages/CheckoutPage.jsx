@@ -3,33 +3,25 @@ import CheckoutContact from "components/Checkout/CheckoutContact";
 import CheckoutPayment from "components/Checkout/CheckoutPayment";
 import CheckoutShipping from "components/Checkout/CheckoutShipping";
 import Order from "components/Checkout/Order/Order";
+import Preloader from "components/base/Preloader";
 import React, { useEffect, useState } from "react";
 import { MdDone } from "react-icons/md";
 
 const CheckoutPage = () => {
   const [tab, setTab] = useState(1);
+  const [checkoutData, setCheckoutData] = useState({});
   const { data: cartData, isFetching: cartisFetching } = useCartGETQuery();
   useEffect(() => {
     if (cartData?.data && cartData.data.purchases) {
       console.log(cartData);
-      /* dispatch(setCartCount(data.data.purchases.length));
-      dispatch(setCartTotal(data.total.purchases_all));
-      dispatch(setCart_id(data.data.id));
-      Cookies.set("cart_id", data.data.id); */
     } else {
       console.log("Cart is Empty");
-      /* Cookies.remove("cart_id", {
-        path: "/",
-        secure: true,
-      });
-      dispatch(removeCart());
-      dispatch(setCartCount(0));
-      dispatch(setCartTotal(0)); */
     }
   }, [cartData, cartisFetching]);
 
   return (
     <div className="container-horisontal checkout">
+      {cartisFetching && <Preloader />}
       <div className="container-vertical checkout__container">
         <div className="container-horisontal checkout__steps">
           <span
@@ -67,9 +59,9 @@ const CheckoutPage = () => {
             3
           </span>
         </div>
-        {tab==1&&<CheckoutContact/>}
-        {tab==2&&<CheckoutShipping setTab={()=>setTab(1)}/>}
-        {tab==3&&<CheckoutPayment setTab={()=>setTab(2)}/>}
+        {tab==1&&<CheckoutContact setTab={setTab} setCheckoutData={setCheckoutData}/>}
+        {tab==2&&<CheckoutShipping setTab={setTab} checkoutData={checkoutData} setCheckoutData={setCheckoutData}/>}
+        {tab==3&&<CheckoutPayment setTab={setTab} checkoutData={checkoutData} setCheckoutData={setCheckoutData}/>}
       </div>
       <Order data={cartData}/>
     </div>
