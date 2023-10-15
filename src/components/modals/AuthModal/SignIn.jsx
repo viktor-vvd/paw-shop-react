@@ -51,6 +51,10 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
     if (result.data) {
       dispatch(setTokens(result.data.data));
       Cookies.set("access_token", result.data.data.access_token);
+      Cookies.remove("cart_id", {
+        path: "/",
+        secure: true,
+      });
       dispatch(setIsAuth(true));
       dispatch(cartApi.util.invalidateTags(['Cart']));
       dispatch(setAuthModal(false));

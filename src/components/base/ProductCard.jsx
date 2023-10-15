@@ -3,7 +3,7 @@ import images from "@imports/ImagesImport";
 import Button from "./Button";
 import Image from "./Image";
 import { Link } from "react-router-dom";
-import { useAddToCartPOSTMutation } from "api/cartApi";
+import { cartApi, useAddToCartPOSTMutation } from "api/cartApi";
 import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
@@ -22,6 +22,8 @@ const ProductCard = ({ item }) => {
     if (result.data) {
       dispatch(setCart_id(result.data.cart_id));
       Cookies.set("cart_id", result.data.cart_id);
+      console.log({onadd: Cookies.get("cart_id")});
+      dispatch(cartApi.util.invalidateTags(['Cart']));
     }
   };
 

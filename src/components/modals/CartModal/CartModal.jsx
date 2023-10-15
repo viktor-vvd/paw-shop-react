@@ -22,7 +22,7 @@ const CartModal = ({ buttons = true }) => {
   const navigate = useNavigate();
   const isVisible = useSelector((state) => state.modals.cartModal);
   const total = useSelector((state) => state.cart.cartTotal);
-  const { data, isFetching } = useCartGETQuery();
+  const { data, isFetching, isSuccess } = useCartGETQuery();
 
   useEffect(() => {
     if (data?.data && data.data.purchases) {
@@ -31,15 +31,23 @@ const CartModal = ({ buttons = true }) => {
       dispatch(setCart_id(data.data.id));
       Cookies.set("cart_id", data.data.id);
     } else {
-      Cookies.remove("cart_id", {
+      /* Cookies.remove("cart_id", {
         path: "/",
         secure: true,
-      });
+      }); */
       dispatch(removeCart());
       dispatch(setCartCount(0));
       dispatch(setCartTotal(0));
     }
-  }, [data, isFetching, dispatch]);
+/*     if(isSuccess && !data?.data)
+    {
+      console.log("S")
+      Cookies.remove("cart_id", {
+        path: "/",
+        secure: true,
+      });
+    } */
+  }, [data, isFetching, isSuccess, dispatch]);
 
   return (
     <>
