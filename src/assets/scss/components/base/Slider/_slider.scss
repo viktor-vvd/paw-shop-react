@@ -21,10 +21,7 @@
     }
 
     swiper-container::part(pagination) {
-        display: flex;
-        justify-content: center;
         bottom: 40rem;
-        gap: 14rem;
     }
 
     swiper-container::part(bullet){

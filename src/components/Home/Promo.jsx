@@ -14,7 +14,9 @@ const Promo = () => {
 
     const params = {
       slidesPerView: 1,
-      pagination: true,
+      pagination:{
+        dynamicBullets: true,
+      },
       loop: true,
     };
 

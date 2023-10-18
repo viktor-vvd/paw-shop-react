@@ -22,7 +22,9 @@ const Reviews = () => {
     const swiperContainer = swiperElRef.current;
 
     const params = {
-      pagination: true,
+      pagination:{
+        dynamicBullets: true,
+      },
       loop: true,
       observer: true,
       observeSlideChildren: true,
