@@ -1,10 +1,8 @@
 import { useLazyCommentsProductListGETQuery } from "api/commentsApi";
 import Pagination from "components/Catalog/Pagination";
-import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
 import RatingStars from "components/base/RatingStars";
 import ReviewCard from "components/base/ReviewCard";
-import images from "imports/ImagesImport";
 import React, { useEffect, useState } from "react";
 
 const ProductReviews = ({ item }) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import images from "@imports/ImagesImport";
 import Image from "components/base/Image";
+import Svg from "components/base/Svg";
 
 const ModalLayout = ({
   name = "Modal",
@@ -34,9 +35,9 @@ const ModalLayout = ({
             )}
             <h2 className="title">{name}</h2>
           </div>
-          <Image
+          <Svg
             className="modal__icon close__icon"
-            src={images["closePurple"]}
+            name="closePurple"
             loading="lazy"
             alt="close"
             width="32"

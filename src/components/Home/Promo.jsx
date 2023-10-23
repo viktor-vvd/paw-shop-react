@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
 import Image from "components/base/Image";
+import Svg from "components/base/Svg";
 
 const Promo = () => {
   const swiperElRef = useRef(null);
@@ -33,8 +34,8 @@ const Promo = () => {
   return (
     <section className="container-horisontal section-promo">
       <div className="slider__button" ref={prevRef}>
-        <Image
-          src={images["leftButtonArrow"]}
+        <Svg
+          name="leftButtonArrow"
           loading="lazy"
           alt="left"
           width="59"
@@ -98,8 +99,8 @@ const Promo = () => {
           /> */}
       </swiper-container>
       <div className="slider__button" ref={nextRef}>
-        <Image
-          src={images["rightButtonArrow"]}
+        <Svg
+          name="rightButtonArrow"
           loading="lazy"
           alt="right"
           width="59"
@@ -107,40 +108,6 @@ const Promo = () => {
         />
       </div>
     </section>
-    /* <section className="container-horisontal section-promo">
-          <Image
-            className="slider__button"
-            src={images["leftbuttonarrow"]}
-            loading="lazy" alt="left"
-          />
-          <div className="container promo__slider">
-            <Image
-              className="promo__slider__item PC"
-              src={images["promoImagePC"]}
-              loading="lazy" alt="promo Image"
-            />
-            <Image
-              className="promo__slider__item MD"
-              src={images["promoImageMD"]}
-              loading="lazy" alt="promo Image"
-            />
-            <Image
-              className="promo__slider__item SM"
-              src={images["promoImageSM"]}
-              loading="lazy" alt="promo Image"
-            />
-          </div>
-          <ul className="slider__dots">
-            <li className="slider__dots__item slider__dots__item_active"></li>
-            <li className="slider__dots__item"></li>
-            <li className="slider__dots__item"></li>
-          </ul>
-          <Image
-            className="slider__button"
-            src={images["rightbuttonarrow"]}
-            loading="lazy" alt="right"
-          />
-        </section> */
   );
 };
 

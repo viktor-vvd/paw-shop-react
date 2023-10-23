@@ -98,15 +98,7 @@
                 text-align: center;
                 width: 100%;
                 z-index: 4;
-
-                &_dark {
-                    color: $dark;
-                    text-align: center;
-                    width: 100%;
-                    position: absolute;
-                    top: 4.96rem;
-                    z-index: 3;
-                }
+                text-shadow: 0 5px 0 $dark;
             }
         }
     }

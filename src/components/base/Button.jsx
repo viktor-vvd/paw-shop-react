@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./Image";
+import Svg from "./Svg";
 
 const Button = ({
   icon = null,
@@ -19,11 +19,11 @@ const Button = ({
     >
       {value && <span className="text__button">{value}</span>}
       {icon && (
-        <Image
+        <Svg
           className={
             iconClassName ? "button__icon " + iconClassName : "button__icon"
           }
-          src={icon}
+          name={icon}
           alt="icon"
           width="20"
           height="20"

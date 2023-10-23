@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "./Button";
-import images from "imports/ImagesImport";
 import Image from "./Image";
 import {
   useAddToCartPOSTMutation,
@@ -10,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
 import Preloader from "./Preloader";
+import Svg from "./Svg";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -89,9 +89,9 @@ const CartItem = ({ item }) => {
           </div>
         </div>
         <button type="button" onClick={deleteItem}>
-          <Image
+          <Svg
             className="item__delete"
-            src={images["deleteIcon"]}
+            name="deleteIcon"
             loading="lazy"
             alt="close"
             width="17"

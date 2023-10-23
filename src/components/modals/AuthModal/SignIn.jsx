@@ -1,16 +1,13 @@
 import React from "react";
 import Button from "components/base/Button";
-import images from "imports/ImagesImport";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Cookies from "js-cookie";
 import { setIsAuth, setTokens } from "redux/reducers/authSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "api/authApi";
 import { setAuthModal } from "redux/reducers/modalsSlice";
-import { useState } from "react";
 import { cartApi } from "api/cartApi";
 import Preloader from "components/base/Preloader";
 
@@ -134,7 +131,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
         className="button_white"
         iconClassName="button__icon_arrow_right"
         value="I’m a new customer"
-        icon={images["topRightPurpleArrow"]}
+        icon="topRightPurpleArrow"
         onClick={() => setisRegistered(false)}
       />
     </form></>

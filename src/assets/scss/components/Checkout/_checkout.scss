@@ -149,7 +149,7 @@
                 border: 1px solid $input;
                 transition: all 0.2s ease-in-out;
 
-                img {
+                img, svg {
                     height: 24rem;
                     width: auto;
                 }
@@ -311,7 +311,7 @@
             justify-content: center;
         }
 
-        img {
+        img, svg {
             height: 16rem;
             width: auto;
         }

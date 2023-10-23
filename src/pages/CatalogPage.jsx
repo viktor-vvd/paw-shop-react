@@ -1,5 +1,4 @@
 import {
-  useCatalogListGETQuery,
   useLazyCatalogListGETQuery,
 } from "api/catalogApi";
 import Category from "components/Catalog/Category";

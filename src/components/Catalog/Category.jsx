@@ -1,5 +1,4 @@
-import Image from "components/base/Image";
-import images from "imports/ImagesImport";
+import Svg from "components/base/Svg";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,9 +27,9 @@ const Category = ({ item, setCurrentPage }) => {
             <span className="text__button">
               For <span className="cat">CAT</span>
             </span>
-            <Image
+            <Svg
               className="button__icon"
-              src={images["catIcon"]}
+              name="catIcon"
               loading="lazy"
               alt="arrow"
               width="30"
@@ -51,9 +50,9 @@ const Category = ({ item, setCurrentPage }) => {
             <span className="text__button">
               For <span className="dog">DOG</span>
             </span>
-            <Image
+            <Svg
               className="button__icon"
-              src={images["dogIcon"]}
+              name="dogIcon"
               loading="lazy"
               alt="arrow"
               width="30"

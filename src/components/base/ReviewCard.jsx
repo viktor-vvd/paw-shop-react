@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import images from "@imports/ImagesImport";
 import Image from "./Image";
 import RatingStars from "./RatingStars";
+import Svg from "./Svg";
 
 const ReviewCard = ({ item, link = true }) => {
   const [maxImages, setMaxImages] = useState(3);
@@ -67,9 +67,9 @@ const ReviewCard = ({ item, link = true }) => {
           href="/"
         >
           See the product{" "}
-          <Image
+          <Svg
             className="review-card__link__icon"
-            src={images["topRightPurpleArrow"]}
+            name="topRightPurpleArrow"
             loading="lazy"
             alt="arrow"
             width="10"

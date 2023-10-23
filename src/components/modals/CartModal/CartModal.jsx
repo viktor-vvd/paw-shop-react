@@ -1,9 +1,8 @@
-import { useCartGETQuery, useLazyCartGETQuery } from "api/cartApi";
+import { useCartGETQuery } from "api/cartApi";
 import Button from "components/base/Button";
 import CartItem from "components/base/CartItem";
-import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
-import images from "imports/ImagesImport";
+import Svg from "components/base/Svg";
 import Cookies from "js-cookie";
 import React from "react";
 import { useEffect } from "react";
@@ -65,9 +64,9 @@ const CartModal = ({ buttons = true }) => {
       >
         <div className="container-horisontal cart__top">
           <div className="container-horisontal cart__header">
-            <Image
+            <Svg
               className="cart__icon"
-              src={images["cartPurple"]}
+              name="cartPurple"
               loading="lazy"
               alt="icon"
               width="40"
@@ -75,9 +74,9 @@ const CartModal = ({ buttons = true }) => {
             />
             <h2 className="title">Cart</h2>
           </div>
-          <Image
+          <Svg
             className="cart__icon close__icon"
-            src={images["closePurple"]}
+            name="closePurple"
             loading="lazy"
             alt="close"
             width="47"

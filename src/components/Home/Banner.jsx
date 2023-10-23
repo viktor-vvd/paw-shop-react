@@ -1,6 +1,7 @@
 import React from "react";
 import images from "@imports/ImagesImport";
 import Image from "components/base/Image";
+import Svg from "components/base/Svg";
 
 const Banner = () => {
   return (
@@ -36,30 +37,30 @@ const Banner = () => {
           <Image
             className="headline__image headline__image_ball"
             src={images["ball"]}
-            loading="lazy" alt="ball"
+            loading="lazy"
+            alt="ball"
             width="188"
             height="188"
           />
           <Image
             className="headline__image headline__image_bone"
             src={images["bone"]}
-            loading="lazy" alt="bone"
+            loading="lazy"
+            alt="bone"
             width="360"
             height="329"
           />
-          <span className="headline headline__text headline__text_dark">
-            Make your pet’s life better
-          </span>
           <h2 className="headline headline__text">
             Make your pet’s life better
           </h2>
         </div>
         <div className="container-horisontal banner__buttons">
           <button className="container-horisontal banner__button banner__button_cat">
-            <Image
+            <Svg
               className="button__icon_arrow"
-              src={images["topLeftArrow"]}
-              loading="lazy" alt="arrow"
+              name="topLeftArrow"
+              loading="lazy"
+              alt="arrow"
               width="10"
               height="10"
             />
@@ -74,10 +75,11 @@ const Banner = () => {
             <span className="text__button">
               For <span className="text__button dog">DOG</span>
             </span>
-            <Image
+            <Svg
               className="button__icon_arrow button__icon_arrow_right"
-              src={images["topRightArrow"]}
-              loading="lazy" alt="arrow"
+              name="topRightArrow"
+              loading="lazy"
+              alt="arrow"
               width="10"
               height="10"
             />
@@ -86,10 +88,11 @@ const Banner = () => {
       </div>
       <ul className="container-horisontal benefits">
         <li className="container-horisontal benefits__item">
-          <Image
+          <Svg
             className="benefits__item__icon"
-            src={images["star"]}
-            loading="lazy" alt="star"
+            name="star"
+            loading="lazy"
+            alt="star"
             width="30"
             height="30"
           />
@@ -98,10 +101,11 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Image
+          <Svg
             className="benefits__item__icon"
-            src={images["support"]}
-            loading="lazy" alt="support"
+            name="support"
+            loading="lazy"
+            alt="support"
             width="30"
             height="30"
           />
@@ -110,10 +114,11 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Image
+          <Svg
             className="benefits__item__icon"
-            src={images["returnIcon"]}
-            loading="lazy" alt="return"
+            name="returnIcon"
+            loading="lazy"
+            alt="return"
             width="30"
             height="30"
           />
@@ -122,10 +127,11 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Image
+          <Svg
             className="benefits__item__icon"
-            src={images["checkmark"]}
-            loading="lazy" alt="checkmark"
+            name="checkmark"
+            loading="lazy"
+            alt="checkmark"
             width="30"
             height="30"
           />

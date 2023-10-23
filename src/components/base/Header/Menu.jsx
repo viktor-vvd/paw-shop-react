@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import images from "@imports/ImagesImport";
-import Image from "../Image";
+import Svg from "../Svg";
 
 const Menu = () => {
   const [showMenu, setshowMenu] = useState(false);
   return (
     <div className="menu__container">
       <div className="menu__button" onClick={() => setshowMenu(true)}>
-        <Image src={images["menu"]} alt="cart" width="37" height="21" />
+        <Svg name="menu" alt="cart" width="37" height="21" />
       </div>
       <div className={showMenu?"overlay show":"overlay hide"} ></div>
 
@@ -20,9 +19,9 @@ const Menu = () => {
       >
         <div className="container-horisontal menu__header">
           <h2 className="title">Menu</h2>
-          <Image
+          <Svg
             className="close__icon"
-            src={images["closePurple"]}
+            name="closePurple"
             loading="lazy" alt="close"
             width="32" height="32"
             onClick={() => setshowMenu(false)}

@@ -1,9 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useCommentsAddPOSTMutation } from "api/commentsApi";
 import Button from "components/base/Button";
-import Image from "components/base/Image";
 import Preloader from "components/base/Preloader";
-import images from "imports/ImagesImport";
+import Svg from "components/base/Svg";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Rating } from "react-simple-star-rating";
@@ -126,9 +125,9 @@ const AddReview = ({ item }) => {
                 /* {...register("pics")} */
               />
               <div className="button button_white form__add-file__button">
-                <Image
+                <Svg
                   className="button__icon"
-                  src={images["gallery"]}
+                  name="gallery"
                   alt="icon"
                   width="20"
                   height="20"
@@ -144,9 +143,9 @@ const AddReview = ({ item }) => {
                     key={index}
                   >
                     <span className="text">{image.name}</span>
-                    <Image
+                    <Svg
                       className="images__item__icon"
-                      src={images["closeMini"]}
+                      name="closeMini"
                       alt="close"
                       width="12"
                       height="12"

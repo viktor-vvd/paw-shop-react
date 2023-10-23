@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import images from "@imports/ImagesImport";
 import Menu from "@components/base/Header/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthModal, setCartModal } from "redux/reducers/modalsSlice";
-import Image from "../Image";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useLogoutUserMutation } from "api/authApi";
 import { removeTokens } from "redux/reducers/authSlice";
 import { IoLogOutOutline } from "react-icons/io5";
 import { removeCart } from "redux/reducers/cartSlice";
-import { catalogApi } from "api/catalogApi";
 import { cartApi } from "api/cartApi";
 import Svg from "../Svg";
 
@@ -63,9 +60,9 @@ const Header = ({ isCheckout = false }) => {
       <div className="container-horisontal container header__container">
         <Link to="/">
           <div className="container-horisontal header__logo">
-            <Image
+            <Svg
               className="logo__icon"
-              src={images["logo"]}
+              name="logo"
               alt="logo"
               width="37"
               height="43"
@@ -128,9 +125,9 @@ const Header = ({ isCheckout = false }) => {
                   className="container-horisontal header__cart__button"
                   onClick={() => dispatch(setCartModal(true))}
                 >
-                  <Image
+                  <Svg
                     className="header__cart__icon"
-                    src={images["basket"]}
+                    name="basket"
                     loading="lazy"
                     alt="cart"
                     width="26"

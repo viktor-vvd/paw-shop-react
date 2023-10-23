@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import images from "@imports/ImagesImport";
 import ReviewCard from "@components/base/ReviewCard";
 import { register } from "swiper/element/bundle";
-import Image from "components/base/Image";
 import {
   useCommentsRandomListGETQuery,
-  useLazyCommentsRandomListGETQuery,
 } from "api/commentsApi";
 import Preloader from "components/base/Preloader";
+import Svg from "components/base/Svg";
 
 const Reviews = () => {
   const { data, isFetching } = useCommentsRandomListGETQuery({ limit: 9 });
@@ -70,8 +68,8 @@ const Reviews = () => {
         </div>
         <div className="container-horisontal reviews__slider__container">
           <div className="slider__button" ref={prevRef}>
-            <Image
-              src={images["leftButtonArrow"]}
+            <Svg
+              name="leftButtonArrow"
               loading="lazy"
               alt="left"
               width="59"
@@ -91,8 +89,8 @@ const Reviews = () => {
               ))}
           </swiper-container>
           <div className="slider__button" ref={nextRef}>
-            <Image
-              src={images["rightButtonArrow"]}
+            <Svg
+              name="rightButtonArrow"
               loading="lazy"
               alt="right"
               width="59"

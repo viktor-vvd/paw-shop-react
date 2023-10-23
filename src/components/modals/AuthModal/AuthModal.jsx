@@ -3,7 +3,6 @@ import ModalLayout from "../ModalLayout/ModalLayout";
 import Register from "./Register";
 import SignIn from "./SignIn";
 import Button from "components/base/Button";
-import images from "imports/ImagesImport";
 import ForgotPassword from "./ForgotPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthModal } from "redux/reducers/modalsSlice";
@@ -45,14 +44,14 @@ const AuthModal = () => {
             className="button_oauth"
             iconClassName="button__icon_oauth"
             value="Google"
-            icon={images["google"]}
+            icon="google"
           />
           <Button
             type="button"
             className="button_oauth"
             iconClassName="button__icon_oauth"
             value="Facebook"
-            icon={images["facebookColor"]}
+            icon="facebookColor"
           />
         </div>
       </ModalLayout>

@@ -22,21 +22,21 @@
             .telegram {
                 border: 1px solid #0094FF;
 
-                img {
+                img, svg {
                     height: 15rem;
                 }
             }
             .facebook {
                 border: 1px solid #3656FF;
 
-                img {
+                img, svg {
                     height: 20rem;
                 }
             }
             .twitter {
                 border: 1px solid #36CFFF;
 
-                img {
+                img, svg {
                     width: 20rem;
                 }
             }
@@ -75,7 +75,7 @@
             width: 60rem;
             height: 60rem;
 
-            img {
+            img, svg {
                 object-fit: cover;
                 width: 100%;
             }
@@ -143,7 +143,7 @@
         justify-content: flex-start;
         gap: 20rem;
 
-        img {
+        img, svg {
             width: 30rem;
             height: 30rem;
         }

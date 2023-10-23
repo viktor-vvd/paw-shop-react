@@ -1,11 +1,9 @@
 import React from "react";
 import Button from "components/base/Button";
-import images from "imports/ImagesImport";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useForgotPasswordMutation } from "api/authApi";
-import { useState } from "react";
 import Preloader from "components/base/Preloader";
 
 const ForgotPassword = ({ setForgotPassword }) => {
@@ -72,7 +70,7 @@ const ForgotPassword = ({ setForgotPassword }) => {
           className="button_white"
           iconClassName="button__icon_arrow_right"
           value="I remember password"
-          icon={images["topRightPurpleArrow"]}
+          icon="topRightPurpleArrow"
           onClick={() => setForgotPassword(false)}
         />
       </form>

@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useIncomingsSaveMutation } from "api/promoApi";
+import Svg from "./Svg";
 
 const Footer = () => {
   const schema = yup.object({
@@ -25,7 +26,7 @@ const Footer = () => {
     resolver: yupResolver(schema),
   });
 
-  const [incomingsSave, { isError, error, isSuccess, data }] =
+  const [incomingsSave, { error, isSuccess, data }] =
     useIncomingsSaveMutation();
 
   const onSubmit = async (formData) => {
@@ -94,9 +95,9 @@ const Footer = () => {
         <div className="container-horisontal container footer__info__container">
           <div className="container-vertical footer__contacts__wrapper">
             <div className="container-horisontal footer__logo__container">
-              <Image
+              <Svg
                 className="footer__logo"
-                src={images["logoWhite"]}
+                name="logoWhite"
                 loading="lazy"
                 alt="logo"
                 width="54"
@@ -105,9 +106,9 @@ const Footer = () => {
               <h2 className="logo__text footer__logo__text">PawShop</h2>
             </div>
             <div className="container-horisontal footer__phone__wrapper">
-              <Image
+              <Svg
                 className="footer__phone__logo"
-                src={images["phone"]}
+                name="phone"
                 loading="lazy"
                 alt="logo"
                 width="25"
@@ -119,9 +120,9 @@ const Footer = () => {
             </div>
             <div className="container-horisontal footer__socials">
               <div className="container-horisontal social">
-                <Image
+                <Svg
                   className="social__icon"
-                  src={images["insta"]}
+                  name="insta"
                   loading="lazy"
                   alt="logo"
                   width="20"
@@ -129,9 +130,9 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <Image
+                <Svg
                   className="social__icon"
-                  src={images["facebook"]}
+                  name="facebook"
                   loading="lazy"
                   alt="logo"
                   width="10"
@@ -139,9 +140,9 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <Image
+                <Svg
                   className="social__icon social__icon_twitter"
-                  src={images["twitter"]}
+                  name="twitter"
                   loading="lazy"
                   alt="logo"
                   width="20"

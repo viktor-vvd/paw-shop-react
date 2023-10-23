@@ -1,5 +1,4 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 import Button from "./Button";
 import Image from "./Image";
 import { Link } from "react-router-dom";
@@ -86,7 +85,7 @@ const ProductCard = ({ item }) => {
         <Button
           value="+"
           title="Add to cart"
-          icon={images["basket"]}
+          icon="basket"
           onClick={handleAddToCart}
         />
       </div>

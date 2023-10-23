@@ -1,10 +1,9 @@
 import Button from "components/base/Button";
-import Image from "components/base/Image";
-import images from "imports/ImagesImport";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Svg from "components/base/Svg";
 
 const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
   const schema = yup.object({
@@ -84,9 +83,9 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
           onClick={() => setTab(1)}
           className="container-horisontal text__button checkout__text-button"
         >
-          <Image
+          <Svg
             className="button__icon_arrow button__icon_arrow_right"
-            src={images["leftPurpleArrow"]}
+            name="leftPurpleArrow"
             loading="lazy"
             alt="arrow"
             width="10"
