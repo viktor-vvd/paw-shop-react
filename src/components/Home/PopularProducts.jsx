@@ -3,7 +3,7 @@ import ProductCard from "@components/base/ProductCard";
 import { useCatalogListGETQuery } from "api/catalogApi";
 import { Link } from "react-router-dom";
 import Preloader from "components/base/Preloader";
-import Svg from "components/base/Svg";
+import { CatIcon, DogIcon, TopRightArrow } from "public/svgComponents";
 
 const PopularProducts = ({
   title = "Popular products",
@@ -40,17 +40,15 @@ const PopularProducts = ({
               <span className="text__button">
                 Products for <span className="text__button cat">CAT</span>
               </span>
-              <Svg
+              <CatIcon
                 className="for-cat-dog__button__icon"
-                name="catIcon"
                 loading="lazy"
                 alt="cat"
                 width="30"
                 height="30"
               />
-              <Svg
+              <TopRightArrow
                 className="button__icon_arrow button__icon_arrow_right"
-                name="topRightArrow"
                 loading="lazy"
                 alt="arrow"
                 width="10"
@@ -63,7 +61,7 @@ const PopularProducts = ({
               <span className="text__button">
                 Products for <span className="text__button dog">DOG</span>
               </span>
-              <Svg
+              <DogIcon
                 className="for-cat-dog__button__icon"
                 name="dogIcon"
                 loading="lazy"
@@ -71,7 +69,7 @@ const PopularProducts = ({
                 width="30"
                 height="30"
               />
-              <Svg
+              <TopRightArrow
                 className="button__icon_arrow button__icon_arrow_right"
                 name="topRightArrow"
                 loading="lazy"

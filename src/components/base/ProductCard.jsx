@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
 import RatingStars from "./RatingStars";
+import { Basket } from "public/svgComponents";
 
 const ProductCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const ProductCard = ({ item }) => {
         <Button
           value="+"
           title="Add to cart"
-          icon="basket"
+          Icon={Basket}
           onClick={handleAddToCart}
         />
       </div>

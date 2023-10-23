@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import Svg from "components/base/Svg";
+import { FacebookColorMini, Return, TelegramColor, TwitterColor } from "public/svgComponents";
 
 const ProductOptions = ({ item }) => {
   const navigate = useNavigate();
@@ -144,7 +144,7 @@ const ProductOptions = ({ item }) => {
         </div>
       </div>
       <div className="container-horisontal product-options__return">
-        <Svg name="returnIcon" alt={"return"} />
+        <Return alt={"return"} />
         <span className="text">Free return within 15 days</span>
       </div>
       <div className="container-horisontal product-options__wrapper">
@@ -154,21 +154,21 @@ const ProductOptions = ({ item }) => {
             <Button
               type="button"
               className="button_white telegram"
-              icon="telegramColor"
+              Icon={TelegramColor}
             />
           </li>
           <li className="container-horisontal">
             <Button
               type="button"
               className="button_white facebook"
-              icon="facebookColorMini"
+              Icon={FacebookColorMini}
             />
           </li>
           <li className="container-horisontal">
             <Button
               type="button"
               className="button_white twitter"
-              icon="twitterColor"
+              Icon={TwitterColor}
             />
           </li>
         </ul>

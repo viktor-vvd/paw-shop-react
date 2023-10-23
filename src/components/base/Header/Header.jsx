@@ -9,7 +9,7 @@ import { removeTokens } from "redux/reducers/authSlice";
 import { IoLogOutOutline } from "react-icons/io5";
 import { removeCart } from "redux/reducers/cartSlice";
 import { cartApi } from "api/cartApi";
-import Svg from "../Svg";
+import { User, Basket, Logo } from "public/svgComponents";
 
 const Header = ({ isCheckout = false }) => {
   const dispatch = useDispatch();
@@ -60,9 +60,8 @@ const Header = ({ isCheckout = false }) => {
       <div className="container-horisontal container header__container">
         <Link to="/">
           <div className="container-horisontal header__logo">
-            <Svg
+            <Logo
               className="logo__icon"
-              name="logo"
               alt="logo"
               width="37"
               height="43"
@@ -108,9 +107,8 @@ const Header = ({ isCheckout = false }) => {
                     onClick={onLogout}
                   />
                 ) : (
-                  <Svg
+                  <User
                     className="profile"
-                    name="user"
                     loading="lazy"
                     alt="user"
                     width="26"
@@ -125,7 +123,7 @@ const Header = ({ isCheckout = false }) => {
                   className="container-horisontal header__cart__button"
                   onClick={() => dispatch(setCartModal(true))}
                 >
-                  <Svg
+                  <Basket
                     className="header__cart__icon"
                     name="basket"
                     loading="lazy"

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import images from "@imports/ImagesImport";
 import { register } from "swiper/element/bundle";
 import Image from "components/base/Image";
-import Svg from "components/base/Svg";
+import { LeftButtonArrow, RightButtonArrow } from "public/svgComponents";
 
 const Promo = () => {
   const swiperElRef = useRef(null);
@@ -34,7 +34,7 @@ const Promo = () => {
   return (
     <section className="container-horisontal section-promo">
       <div className="slider__button" ref={prevRef}>
-        <Svg
+        <LeftButtonArrow
           name="leftButtonArrow"
           loading="lazy"
           alt="left"
@@ -99,8 +99,7 @@ const Promo = () => {
           /> */}
       </swiper-container>
       <div className="slider__button" ref={nextRef}>
-        <Svg
-          name="rightButtonArrow"
+        <RightButtonArrow
           loading="lazy"
           alt="right"
           width="59"

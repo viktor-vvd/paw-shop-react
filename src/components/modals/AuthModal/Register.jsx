@@ -142,7 +142,7 @@ const Register = ({ setisRegistered }) => {
           className="button_white"
           iconClassName="button__icon_arrow_right"
           value="I have account"
-          icon="topRightPurpleArrow"
+          Icon="topRightPurpleArrow"
           onClick={() => setisRegistered(true)}
         />
       </form>

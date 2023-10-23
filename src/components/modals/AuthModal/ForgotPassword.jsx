@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useForgotPasswordMutation } from "api/authApi";
 import Preloader from "components/base/Preloader";
+import { TopRightPurpleArrow } from "public/svgComponents";
 
 const ForgotPassword = ({ setForgotPassword }) => {
   const schema = yup.object({
@@ -70,7 +71,7 @@ const ForgotPassword = ({ setForgotPassword }) => {
           className="button_white"
           iconClassName="button__icon_arrow_right"
           value="I remember password"
-          icon="topRightPurpleArrow"
+          Icon={TopRightPurpleArrow}
           onClick={() => setForgotPassword(false)}
         />
       </form>

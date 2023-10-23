@@ -10,6 +10,7 @@ import { useLoginUserMutation } from "api/authApi";
 import { setAuthModal } from "redux/reducers/modalsSlice";
 import { cartApi } from "api/cartApi";
 import Preloader from "components/base/Preloader";
+import { TopRightPurpleArrow } from "public/svgComponents";
 
 const SignIn = ({ setisRegistered, setForgotPassword }) => {
   const schema = yup.object({
@@ -131,7 +132,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
         className="button_white"
         iconClassName="button__icon_arrow_right"
         value="I’m a new customer"
-        icon="topRightPurpleArrow"
+        Icon={TopRightPurpleArrow}
         onClick={() => setisRegistered(false)}
       />
     </form></>

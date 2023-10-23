@@ -10,7 +10,7 @@ import Preloader from "components/base/Preloader";
 import { useDispatch } from "react-redux";
 import { cartApi } from "api/cartApi";
 import { useNavigate } from "react-router-dom";
-import Svg from "components/base/Svg";
+import { LeftPurpleArrow } from "public/svgComponents";
 
 const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
   const [sendCheckout, { isLoading }] =
@@ -128,9 +128,8 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
           onClick={() => setTab(2)}
           className="container-horisontal text__button checkout__text-button"
         >
-          <Svg
+          <LeftPurpleArrow
             className="button__icon_arrow button__icon_arrow_right"
-            name="leftPurpleArrow"
             loading="lazy"
             alt="arrow"
             width="10"

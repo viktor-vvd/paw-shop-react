@@ -2,8 +2,8 @@ import { useCartGETQuery } from "api/cartApi";
 import Button from "components/base/Button";
 import CartItem from "components/base/CartItem";
 import Preloader from "components/base/Preloader";
-import Svg from "components/base/Svg";
 import Cookies from "js-cookie";
+import { CartPurple, ClosePurple } from "public/svgComponents";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,9 +64,8 @@ const CartModal = ({ buttons = true }) => {
       >
         <div className="container-horisontal cart__top">
           <div className="container-horisontal cart__header">
-            <Svg
+            <CartPurple
               className="cart__icon"
-              name="cartPurple"
               loading="lazy"
               alt="icon"
               width="40"
@@ -74,9 +73,8 @@ const CartModal = ({ buttons = true }) => {
             />
             <h2 className="title">Cart</h2>
           </div>
-          <Svg
+          <ClosePurple
             className="cart__icon close__icon"
-            name="closePurple"
             loading="lazy"
             alt="close"
             width="47"

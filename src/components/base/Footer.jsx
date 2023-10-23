@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useIncomingsSaveMutation } from "api/promoApi";
-import Svg from "./Svg";
+import { Facebook, Insta, LogoWhite, Phone, Twitter } from "public/svgComponents";
 
 const Footer = () => {
   const schema = yup.object({
@@ -95,9 +95,8 @@ const Footer = () => {
         <div className="container-horisontal container footer__info__container">
           <div className="container-vertical footer__contacts__wrapper">
             <div className="container-horisontal footer__logo__container">
-              <Svg
+              <LogoWhite
                 className="footer__logo"
-                name="logoWhite"
                 loading="lazy"
                 alt="logo"
                 width="54"
@@ -106,9 +105,8 @@ const Footer = () => {
               <h2 className="logo__text footer__logo__text">PawShop</h2>
             </div>
             <div className="container-horisontal footer__phone__wrapper">
-              <Svg
+              <Phone
                 className="footer__phone__logo"
-                name="phone"
                 loading="lazy"
                 alt="logo"
                 width="25"
@@ -120,9 +118,8 @@ const Footer = () => {
             </div>
             <div className="container-horisontal footer__socials">
               <div className="container-horisontal social">
-                <Svg
+                <Insta
                   className="social__icon"
-                  name="insta"
                   loading="lazy"
                   alt="logo"
                   width="20"
@@ -130,9 +127,8 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <Svg
+                <Facebook
                   className="social__icon"
-                  name="facebook"
                   loading="lazy"
                   alt="logo"
                   width="10"
@@ -140,9 +136,8 @@ const Footer = () => {
                 />
               </div>
               <div className="container-horisontal social">
-                <Svg
+                <Twitter
                   className="social__icon social__icon_twitter"
-                  name="twitter"
                   loading="lazy"
                   alt="logo"
                   width="20"

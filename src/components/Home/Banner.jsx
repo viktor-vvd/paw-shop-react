@@ -1,7 +1,7 @@
 import React from "react";
 import images from "@imports/ImagesImport";
 import Image from "components/base/Image";
-import Svg from "components/base/Svg";
+import { Checkmark, Return, Star, Support, TopLeftArrow, TopRightArrow } from "public/svgComponents";
 
 const Banner = () => {
   return (
@@ -56,9 +56,8 @@ const Banner = () => {
         </div>
         <div className="container-horisontal banner__buttons">
           <button className="container-horisontal banner__button banner__button_cat">
-            <Svg
+            <TopLeftArrow
               className="button__icon_arrow"
-              name="topLeftArrow"
               loading="lazy"
               alt="arrow"
               width="10"
@@ -75,9 +74,8 @@ const Banner = () => {
             <span className="text__button">
               For <span className="text__button dog">DOG</span>
             </span>
-            <Svg
+            <TopRightArrow
               className="button__icon_arrow button__icon_arrow_right"
-              name="topRightArrow"
               loading="lazy"
               alt="arrow"
               width="10"
@@ -88,9 +86,8 @@ const Banner = () => {
       </div>
       <ul className="container-horisontal benefits">
         <li className="container-horisontal benefits__item">
-          <Svg
+          <Star
             className="benefits__item__icon"
-            name="star"
             loading="lazy"
             alt="star"
             width="30"
@@ -101,9 +98,8 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Svg
+          <Support
             className="benefits__item__icon"
-            name="support"
             loading="lazy"
             alt="support"
             width="30"
@@ -114,9 +110,8 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Svg
+          <Return
             className="benefits__item__icon"
-            name="returnIcon"
             loading="lazy"
             alt="return"
             width="30"
@@ -127,9 +122,8 @@ const Banner = () => {
           </span>
         </li>
         <li className="container-horisontal benefits__item">
-          <Svg
+          <Checkmark
             className="benefits__item__icon"
-            name="checkmark"
             loading="lazy"
             alt="checkmark"
             width="30"

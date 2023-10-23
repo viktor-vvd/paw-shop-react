@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Svg from "components/base/Svg";
+import { LeftPurpleArrow } from "public/svgComponents";
 
 const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
   const schema = yup.object({
@@ -82,7 +82,7 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
           onClick={() => setTab(1)}
           className="container-horisontal text__button checkout__text-button"
         >
-          <Svg
+          <LeftPurpleArrow
             className="button__icon_arrow button__icon_arrow_right"
             name="leftPurpleArrow"
             loading="lazy"

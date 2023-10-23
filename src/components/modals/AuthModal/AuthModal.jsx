@@ -6,6 +6,7 @@ import Button from "components/base/Button";
 import ForgotPassword from "./ForgotPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthModal } from "redux/reducers/modalsSlice";
+import { FacebookColor, Google } from "public/svgComponents";
 
 const AuthModal = () => {
   const dispatch = useDispatch();
@@ -44,14 +45,14 @@ const AuthModal = () => {
             className="button_oauth"
             iconClassName="button__icon_oauth"
             value="Google"
-            icon="google"
+            Icon={Google}
           />
           <Button
             type="button"
             className="button_oauth"
             iconClassName="button__icon_oauth"
             value="Facebook"
-            icon="facebookColor"
+            Icon={FacebookColor}
           />
         </div>
       </ModalLayout>

@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
 import Preloader from "./Preloader";
-import Svg from "./Svg";
+import { Delete } from "public/svgComponents";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -89,9 +89,8 @@ const CartItem = ({ item }) => {
           </div>
         </div>
         <button type="button" onClick={deleteItem}>
-          <Svg
+          <Delete
             className="item__delete"
-            name="deleteIcon"
             loading="lazy"
             alt="close"
             width="17"
