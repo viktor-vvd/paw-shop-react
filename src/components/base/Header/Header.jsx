@@ -12,6 +12,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { removeCart } from "redux/reducers/cartSlice";
 import { catalogApi } from "api/catalogApi";
 import { cartApi } from "api/cartApi";
+import Svg from "../Svg";
 
 const Header = ({ isCheckout = false }) => {
   const dispatch = useDispatch();
@@ -110,9 +111,9 @@ const Header = ({ isCheckout = false }) => {
                     onClick={onLogout}
                   />
                 ) : (
-                  <Image
+                  <Svg
                     className="profile"
-                    src={images["user"]}
+                    name="user"
                     loading="lazy"
                     alt="user"
                     width="26"

@@ -8,7 +8,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "glob": "^10.3.10",
     "js-cookie": "^3.0.5",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^6.1.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1",
@@ -19,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.7",
     "react-simple-star-rating": "^5.1.7",
+    "sharp": "^0.32.6",
     "swiper": "^10.2.0",
     "web-vitals": "^2.1.4",
     "yup": "^1.2.0"
@@ -27,7 +31,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:icons": "node ./src/imports/SvgImport.mjs"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +58,6 @@
     "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-webp": "^8.0.0",
-    "sass": "^1.66.1"
+    "sass": "^1.69.4"
   }
 }

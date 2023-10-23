@@ -35,7 +35,7 @@
             display: block;
             width: 41rem;
             height: 41rem;
-            background: url("../../../../../public/images/arrowRight.svg");
+            background: url("../../../../../public/svg/arrowRight.svg");
             background-size: 100%;
             cursor: pointer;
 
@@ -47,7 +47,7 @@
 
         &_disabled {
             .pagination__button__link {
-                background: url("../../../../../public/images/arrowDisabled.svg");
+                background: url("../../../../../public/svg/arrowDisabled.svg");
                 background-size: 100%;
             }
         }
