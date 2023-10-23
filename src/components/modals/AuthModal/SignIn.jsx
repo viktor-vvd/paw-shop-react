@@ -38,7 +38,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
 
   const dispatch = useDispatch();
 
-  const [login, { isLoading , error, data }] = useLoginUserMutation();
+  const [login, { isLoading , error }] = useLoginUserMutation();
 
   const onSubmit = async (formData) => {
     const result = await login({

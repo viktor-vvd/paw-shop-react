@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "components/base/Button";
-import images from "imports/ImagesImport";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

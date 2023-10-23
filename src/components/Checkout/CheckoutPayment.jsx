@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import Svg from "components/base/Svg";
 
 const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
-  const [sendCheckout, { isLoading, isError, error, isSuccess }] =
+  const [sendCheckout, { isLoading }] =
     useCheckoutPOSTMutation();
   const schema = yup.object({
     gateway: yup.string().required("Please select a payment"),
@@ -21,7 +21,6 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     mode: "onChange",

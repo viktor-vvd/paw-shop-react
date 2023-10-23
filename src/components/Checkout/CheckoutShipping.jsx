@@ -12,7 +12,6 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     mode: "onChange",

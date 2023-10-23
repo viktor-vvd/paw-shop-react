@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import images from "imports/ImagesImport";
 import Image from "components/base/Image";
 import Button from "../base/Button";
 import { useAddToCartPOSTMutation } from "api/cartApi";

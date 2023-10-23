@@ -1,5 +1,4 @@
 import React from "react";
-import images from "@imports/ImagesImport";
 import Image from "components/base/Image";
 import Svg from "components/base/Svg";
 

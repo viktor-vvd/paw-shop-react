@@ -38,7 +38,7 @@ const AddReview = ({ item }) => {
 
   const [rating, setRating] = useState(1);
 
-  const [addComment, { isLoading, error, data }] = useCommentsAddPOSTMutation();
+  const [addComment, { isLoading }] = useCommentsAddPOSTMutation();
 
   const [imgs, setImgs] = useState([]);
 
