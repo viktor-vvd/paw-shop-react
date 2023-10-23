@@ -151,6 +151,7 @@ html {
 }
 
 .button__icon_arrow {
+   flex-shrink: 0;
    width: 9.5rem;
    height: 9.5rem;
    transition: all 0.2s ease-in-out;
