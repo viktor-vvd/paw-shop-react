@@ -32,7 +32,6 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "build:icons": "node ./build-icons.mjs",
     "icons": "npx @svgr/cli --out-dir src/public/svgComponents -- src/public/svg",
     "icons:watch": "npm-watch icons"
   },
