@@ -8,7 +8,7 @@ const SvgSupport = (props) => (
     viewBox="0 0 30 30"
     {...props}
   >
-    <g clipPath="url(#a)">
+    <g clipPath="url(#support_svg__a)">
       <path
         fill="#FFCC9D"
         d="M26.88 15.027c-1.02-.176-2.1 1.417-2.412 3.557-.312 2.14.262 4.018 1.281 4.194 1.02.176 2.1-1.416 2.411-3.556.312-2.14-.261-4.019-1.28-4.195Zm-21.802-.014c1.024-.176 2.107 1.422 2.42 3.57.314 2.15-.262 4.035-1.286 4.211-1.023.177-2.107-1.421-2.42-3.57-.313-2.149.263-4.034 1.286-4.21Z"
@@ -27,7 +27,7 @@ const SvgSupport = (props) => (
       />
     </g>
     <defs>
-      <clipPath id="a">
+      <clipPath id="support_svg__a">
         <path fill="#fff" d="M.705.5h29v29h-29z" />
       </clipPath>
     </defs>
