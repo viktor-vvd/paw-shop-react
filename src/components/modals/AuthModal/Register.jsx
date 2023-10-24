@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRegisterUserMutation } from "api/authApi";
 import Preloader from "components/base/Preloader";
+import { TopRightPurpleArrow } from "public/svgComponents";
 
 const Register = ({ setisRegistered }) => {
   const schema = yup.object({
@@ -142,7 +143,7 @@ const Register = ({ setisRegistered }) => {
           className="button_white"
           iconClassName="button__icon_arrow_right"
           value="I have account"
-          Icon="topRightPurpleArrow"
+          Icon={TopRightPurpleArrow}
           onClick={() => setisRegistered(true)}
         />
       </form>
