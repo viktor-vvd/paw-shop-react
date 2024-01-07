@@ -48,7 +48,6 @@ const Register = ({ setisRegistered }) => {
 
   return (
     <>
-
       {isLoading  && <Preloader />}
       <form
         className="container-vertical modal__form"
