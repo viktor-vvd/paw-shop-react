@@ -6,9 +6,9 @@ const ProductPhotos = ({ items }) => {
   register();
 
   return (
-    <div className="container-horisontal product-photos">
+    <div className="container-horizontal product-photos">
       <swiper-container
-        class="container-horisontal slider product-photos__slider"
+        class="container-horizontal slider product-photos__slider"
         loop="true"
         slides-per-view={1}
         thumbs-swiper=".product-photos__list"
@@ -16,7 +16,7 @@ const ProductPhotos = ({ items }) => {
         {items &&
           items.map((item, index) => (
             <swiper-slide key={index}>
-              <div className="container-horisontal slider__photo">
+              <div className="container-horizontal slider__photo">
                 <Image src={item.conversions.preview.url} key={index} alt={"Image" + index} />
               </div>
             </swiper-slide>
@@ -32,7 +32,7 @@ const ProductPhotos = ({ items }) => {
         {items &&
           items.map((item, index) => (
             <swiper-slide key={index}>
-              <div className="container-horisontal list__photo">
+              <div className="container-horizontal list__photo">
                 <Image src={item.conversions.thumb.url} key={index} alt={"Image" + index} />
               </div>
             </swiper-slide>

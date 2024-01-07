@@ -40,8 +40,8 @@ const Footer = () => {
   };
   return (
     <footer className="container-vertical footer">
-      <div className="container-horisontal outer__container footer_top">
-        <div className="container-horisontal container footer__promo">
+      <div className="container-horizontal outer__container footer_top">
+        <div className="container-horizontal container footer__promo">
           <Image
             className="footer__background_toy"
             src={images["footerbg1"]}
@@ -62,7 +62,7 @@ const Footer = () => {
             Get the latest news and promotions. No spam, just a few emails per
             year.
           </span>
-          <form className="container-horisontal footer__promo__form" onSubmit={handleSubmit(onSubmit)}>
+          <form className="container-horizontal footer__promo__form" onSubmit={handleSubmit(onSubmit)}>
             <input
               className="text_light footer__promo__input"
               name="email"
@@ -92,9 +92,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="container-vertical outer__container footer_bottom">
-        <div className="container-horisontal container footer__info__container">
+        <div className="container-horizontal container footer__info__container">
           <div className="container-vertical footer__contacts__wrapper">
-            <div className="container-horisontal footer__logo__container">
+            <div className="container-horizontal footer__logo__container">
               <LogoWhite
                 className="footer__logo"
                 loading="lazy"
@@ -104,7 +104,7 @@ const Footer = () => {
               />
               <h2 className="logo__text footer__logo__text">PawShop</h2>
             </div>
-            <div className="container-horisontal footer__phone__wrapper">
+            <div className="container-horizontal footer__phone__wrapper">
               <Phone
                 className="footer__phone__logo"
                 loading="lazy"
@@ -116,8 +116,8 @@ const Footer = () => {
                 1-800-055-5566
               </a>
             </div>
-            <div className="container-horisontal footer__socials">
-              <div className="container-horisontal social">
+            <div className="container-horizontal footer__socials">
+              <div className="container-horizontal social">
                 <Insta
                   className="social__icon"
                   loading="lazy"
@@ -126,7 +126,7 @@ const Footer = () => {
                   height="20"
                 />
               </div>
-              <div className="container-horisontal social">
+              <div className="container-horizontal social">
                 <Facebook
                   className="social__icon"
                   loading="lazy"
@@ -135,7 +135,7 @@ const Footer = () => {
                   height="20"
                 />
               </div>
-              <div className="container-horisontal social">
+              <div className="container-horizontal social">
                 <Twitter
                   className="social__icon social__icon_twitter"
                   loading="lazy"
@@ -146,7 +146,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="container-horisontal footer__nav__container">
+          <div className="container-horizontal footer__nav__container">
             <nav className="container-vertical footer__nav">
               <a className="text footer__nav__link" href="/">
                 Home
@@ -185,8 +185,8 @@ const Footer = () => {
         </div>
         <div className="container-vertical container footer__payment-copyright__container">
           <hr className="container footer__divider" />
-          <div className="container-horisontal container footer__payment-copyright__wrapper">
-            <div className="container-horisontal footer__payment">
+          <div className="container-horizontal container footer__payment-copyright__wrapper">
+            <div className="container-horizontal footer__payment">
               <Image
                 className="footer__payment__icon"
                 src={images["googlepay"]}

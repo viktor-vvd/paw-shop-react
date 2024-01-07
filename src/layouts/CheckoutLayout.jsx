@@ -14,7 +14,7 @@ const CheckoutLayout = () => {
         className="container-vertical footer footer_bottom"
         style={{ background: "#fff" }}
       >
-        <div className="container-horisontal footer__payment-copyright__wrapper">
+        <div className="container-horizontal footer__payment-copyright__wrapper">
           <span className="text">
             Copyright © 2022. All Rights Reserved by SleepGo
           </span>

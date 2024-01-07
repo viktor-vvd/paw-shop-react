@@ -32,7 +32,7 @@ const Promo = () => {
     });
   }, []);
   return (
-    <section className="container-horisontal section-promo">
+    <section className="container-horizontal section-promo">
       <div className="slider__button" ref={prevRef}>
         <LeftButtonArrow
           name="leftButtonArrow"

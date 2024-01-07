@@ -21,7 +21,7 @@ const ProductContent = ({ item }) => {
         tab={tab}
         setTab={setTab}
       />
-      <div className="container-horisontal outer-container product__content__container">
+      <div className="container-horizontal outer-container product__content__container">
         <div className="container-vertical container product__content">
           {isDescrtiption && tab == 1 && <ProductDescription item={item} />}
           {tab == 2 && <ProductReviews item={item} />}

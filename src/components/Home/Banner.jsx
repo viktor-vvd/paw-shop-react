@@ -6,7 +6,7 @@ import { Checkmark, Return, Star, Support, TopLeftArrow, TopRightArrow } from "p
 const Banner = () => {
   return (
     <section className="container-vertical banner ">
-      {/* <div className="container-horisontal background">
+      {/* <div className="container-horizontal background">
         <Image
           className="background__pattern"
           src={images["bg1"]}
@@ -54,8 +54,8 @@ const Banner = () => {
             Make your pet’s life better
           </h2>
         </div>
-        <div className="container-horisontal banner__buttons">
-          <button className="container-horisontal banner__button banner__button_cat">
+        <div className="container-horizontal banner__buttons">
+          <button className="container-horizontal banner__button banner__button_cat">
             <TopLeftArrow
               className="button__icon_arrow"
               loading="lazy"
@@ -70,7 +70,7 @@ const Banner = () => {
           <span className="banner__subtitle">
             Toys and accessories that your pet will like
           </span>
-          <button className="container-horisontal banner__button banner__button_dog">
+          <button className="container-horizontal banner__button banner__button_dog">
             <span className="text__button">
               For <span className="text__button dog">DOG</span>
             </span>
@@ -84,8 +84,8 @@ const Banner = () => {
           </button>
         </div>
       </div>
-      <ul className="container-horisontal benefits">
-        <li className="container-horisontal benefits__item">
+      <ul className="container-horizontal benefits">
+        <li className="container-horizontal benefits__item">
           <Star
             className="benefits__item__icon"
             loading="lazy"
@@ -97,7 +97,7 @@ const Banner = () => {
             <b>Unique</b> products
           </span>
         </li>
-        <li className="container-horisontal benefits__item">
+        <li className="container-horizontal benefits__item">
           <Support
             className="benefits__item__icon"
             loading="lazy"
@@ -109,7 +109,7 @@ const Banner = () => {
             <b>24/7</b> support
           </span>
         </li>
-        <li className="container-horisontal benefits__item">
+        <li className="container-horizontal benefits__item">
           <Return
             className="benefits__item__icon"
             loading="lazy"
@@ -121,7 +121,7 @@ const Banner = () => {
             <b>Free return</b> within 15 days
           </span>
         </li>
-        <li className="container-horisontal benefits__item">
+        <li className="container-horizontal benefits__item">
           <Checkmark
             className="benefits__item__icon"
             loading="lazy"

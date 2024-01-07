@@ -54,8 +54,8 @@ const CartItem = ({ item }) => {
     <>
       {isFetching && <Preloader />}
       {isFetching2 && <Preloader />}
-      <div className="container-horisontal cart__item">
-        <div className="container-horisontal item__image">
+      <div className="container-horizontal cart__item">
+        <div className="container-horizontal item__image">
           <Image
             src={item.variation.images[0].conversions.preview.url}
             loading="lazy"
@@ -66,7 +66,7 @@ const CartItem = ({ item }) => {
         </div>
         <div className="container-vertical item__controls">
           <span className="text item__name">{item.variation.name}</span>
-          <div className="container-horisontal item__buttons">
+          <div className="container-horizontal item__buttons">
             <Button
               type="button"
               className="button_white"

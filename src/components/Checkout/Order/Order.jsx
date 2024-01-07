@@ -65,12 +65,12 @@ const Order = ({ data }) => {
   const dispatch = useDispatch();
   return (
     <aside className="container-vertical checkout__order">
-      <div className="container-horisontal order__header">
+      <div className="container-horizontal order__header">
         <h3 className="subtitle">My order</h3>
         <button
           type="button"
           onClick={() => dispatch(setCartModal(true))}
-          className="container-horisontal text__button checkout__text-button"
+          className="container-horizontal text__button checkout__text-button"
         >
           Edit cart
         </button>
@@ -79,7 +79,7 @@ const Order = ({ data }) => {
         {data && data.data ? (
           data.data.purchases &&
           data.data.purchases.map((item, index) => (
-            <div className="container-horisontal order__item" key={index}>
+            <div className="container-horizontal order__item" key={index}>
               <div className="image__container">
                 <Image
                   className="image"
@@ -154,19 +154,19 @@ const Order = ({ data }) => {
       </form>
       {data && data.data && (
         <div className="container-vertical order__details">
-          <div className="container-horisontal order__details__item">
+          <div className="container-horizontal order__details__item">
             <span className="text">Goods:</span>
             <span className="text">${data.total.purchases_all}</span>
           </div>
-          <div className="container-horisontal order__details__item">
+          <div className="container-horizontal order__details__item">
             <span className="text">Delivery:</span>
             <span className="text">${data.total.delivery_all}</span>
           </div>
-          <div className="container-horisontal order__details__item">
+          <div className="container-horizontal order__details__item">
             <span className="text">Discount:</span>
             <span className="text">${data.total.total_discount}</span>
           </div>
-          <div className="container-horisontal order__details__item">
+          <div className="container-horizontal order__details__item">
             <span className="subtitle">Order total</span>
             <span className="subtitle text_accent">${data.total.total}</span>
           </div>

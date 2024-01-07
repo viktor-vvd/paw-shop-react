@@ -29,7 +29,7 @@ const ProductCard = ({ item }) => {
 
   return (
     <div className="container-vertical product-card">
-      <div className="container-horisontal image__container">
+      <div className="container-horizontal image__container">
         {item.prices.discount_percent > 0 && (
           <span className="tag tag_discount">
             -{item.prices.discount_percent}%
@@ -57,14 +57,14 @@ const ProductCard = ({ item }) => {
       >
         {item.name}
       </Link>
-      <div className="container-horisontal rate">
-        <div className="container-horisontal rate__stars">
+      <div className="container-horizontal rate">
+        <div className="container-horizontal rate__stars">
           <RatingStars value={parseFloat(item.product.rating)} />
         </div>
         <span className="rate__text">{item.product.comments_count}</span>
       </div>
-      <div className="container-horisontal product-card__bottom">
-        <div className="container-horisontal price__container">
+      <div className="container-horizontal product-card__bottom">
+        <div className="container-horizontal price__container">
           {item.discount > 0 ? (
             <>
               <span className="price price_new">

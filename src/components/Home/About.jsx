@@ -4,7 +4,7 @@ import Image from "components/base/Image";
 
 const About = () => {
   return (
-    <section className="container-horisontal outer__container section-about">
+    <section className="container-horizontal outer__container section-about">
       <Image
         className="section-about__background section-about__background_first"
         src={images["paws1"]}
@@ -22,8 +22,8 @@ const About = () => {
       <div className="container-vertical container section-about__container">
         <h2 className="title">About us</h2>
         <div className="container-vertical about__container">
-          <div className="container-horisontal about__content__container">
-            <div className="container-horisontal about__content about__content_left">
+          <div className="container-horizontal about__content__container">
+            <div className="container-horizontal about__content about__content_left">
               <Image
                 className="about__image"
                 src={images["aboutimage1"]}
@@ -61,7 +61,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="container-horisontal about__content__container about__content__container_bottom">
+          <div className="container-horizontal about__content__container about__content__container_bottom">
             <div className="container-vertical about__content">
               <h3 className="subtitle">
                 Cats <span className="text_accent">love to play</span>, but did
@@ -90,7 +90,7 @@ const About = () => {
                 bring something new to the table.
               </p>
             </div>
-            <div className="container-horisontal about__content">
+            <div className="container-horizontal about__content">
               <Image
                 className="about__image"
                 src={images["aboutimage2"]}

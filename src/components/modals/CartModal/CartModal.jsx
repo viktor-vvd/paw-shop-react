@@ -62,8 +62,8 @@ const CartModal = ({ buttons = true }) => {
         }
         style={{ zIndex: 13 }}
       >
-        <div className="container-horisontal cart__top">
-          <div className="container-horisontal cart__header">
+        <div className="container-horizontal cart__top">
+          <div className="container-horizontal cart__header">
             <CartPurple
               className="cart__icon"
               loading="lazy"
@@ -101,7 +101,7 @@ const CartModal = ({ buttons = true }) => {
             <b>${data?.data ? data.total.purchases_all : total}</b>
           </span>
           {buttons && (
-            <div className="container-horisontal buttons__container">
+            <div className="container-horizontal buttons__container">
               <Button
                 type="button"
                 className="button_white"

@@ -25,7 +25,7 @@
 
         li {
             @include text_light;
-            @include container-horisontal;
+            @include container-horizontal;
             justify-content: flex-start;
             gap: 8rem;
 

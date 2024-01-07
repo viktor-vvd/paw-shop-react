@@ -25,7 +25,7 @@ const PopularProducts = ({
     >
       <div className="container-vertical container section-popular__container">
         <h2 className="title">{title}</h2>
-        <div className="container-horisontal populars">
+        <div className="container-horizontal populars">
           {isFetching && <Preloader className="preloader_absolute" />}
           {data?.data &&
             data.data.map((item, index) => (
@@ -34,9 +34,9 @@ const PopularProducts = ({
         </div>
       </div>
       {buttons && (
-        <div className="container-horisontal for-cat-dog__container">
+        <div className="container-horizontal for-cat-dog__container">
           <Link to="/catalog/cat?sort=default&order=desc&page=1">
-            <div className="container-horisontal for-cat-dog__button for-cat-dog__button_cat">
+            <div className="container-horizontal for-cat-dog__button for-cat-dog__button_cat">
               <span className="text__button">
                 Products for <span className="text__button cat">CAT</span>
               </span>
@@ -57,7 +57,7 @@ const PopularProducts = ({
             </div>
           </Link>
           <Link to="/catalog/dog?sort=default&order=desc&page=1">
-            <div className="container-horisontal for-cat-dog__button for-cat-dog__button_dog">
+            <div className="container-horizontal for-cat-dog__button for-cat-dog__button_dog">
               <span className="text__button">
                 Products for <span className="text__button dog">DOG</span>
               </span>

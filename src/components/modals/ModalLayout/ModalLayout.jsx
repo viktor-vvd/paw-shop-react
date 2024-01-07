@@ -19,8 +19,8 @@ const ModalLayout = ({
         className={isVisible ? "modal show" : "modal hide"}
         style={{ zIndex: zIndex }}
       >
-        <div className="container-horisontal modal__top">
-          <div className="container-horisontal modal__header">
+        <div className="container-horizontal modal__top">
+          <div className="container-horizontal modal__header">
             {Icon && (
               <Icon
                 className="modal__icon"

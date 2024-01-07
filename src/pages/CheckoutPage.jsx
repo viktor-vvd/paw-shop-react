@@ -20,17 +20,17 @@ const CheckoutPage = () => {
   }, [cartData, cartisFetching]);
 
   return (
-    <div className="container-horisontal checkout">
+    <div className="container-horizontal checkout">
       {cartisFetching && <Preloader />}
       <div className="container-vertical checkout__container">
-        <div className="container-horisontal checkout__steps">
+        <div className="container-horizontal checkout__steps">
           <span
             className={
               tab == 1
-                ? "container-horisontal text checkout__step checkout__step_active"
+                ? "container-horizontal text checkout__step checkout__step_active"
                 : tab > 1
-                ? "container-horisontal text checkout__step checkout__step_done"
-                : "container-horisontal text checkout__step"
+                ? "container-horizontal text checkout__step checkout__step_done"
+                : "container-horizontal text checkout__step"
             }
             onClick={()=>setTab(1)}
           >
@@ -39,10 +39,10 @@ const CheckoutPage = () => {
           <span
             className={
               tab == 2
-                ? "container-horisontal text checkout__step checkout__step_active"
+                ? "container-horizontal text checkout__step checkout__step_active"
                 : tab > 2
-                ? "container-horisontal text checkout__step checkout__step_done"
-                : "container-horisontal text checkout__step"
+                ? "container-horizontal text checkout__step checkout__step_done"
+                : "container-horizontal text checkout__step"
             }
             onClick={()=>setTab(2)}
           >
@@ -51,8 +51,8 @@ const CheckoutPage = () => {
           <span
             className={
               tab == 3
-                ? "container-horisontal text checkout__step checkout__step_active"
-                : "container-horisontal text checkout__step"
+                ? "container-horizontal text checkout__step checkout__step_active"
+                : "container-horizontal text checkout__step"
             }
             onClick={()=>setTab(3)}
           >

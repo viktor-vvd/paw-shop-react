@@ -65,7 +65,7 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
       <section className="container-vertical form__section">
         <h3 className="subtitle">Payment</h3>
 
-        <label className="container-horisontal form__radio" name="gateway">
+        <label className="container-horizontal form__radio" name="gateway">
           <input
             className="radio__input"
             type="radio"
@@ -75,7 +75,7 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
             {...register("gateway")}
           />
           <span className="radio__mark"></span>
-          <span className="container-horisontal text radio__label">
+          <span className="container-horizontal text radio__label">
             Credit or debit card{" "}
             <div>
               <Image
@@ -95,7 +95,7 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
             </div>
           </span>
         </label>
-        <label className="container-horisontal form__radio" name="gateway">
+        <label className="container-horizontal form__radio" name="gateway">
           <input
             className="radio__input"
             type="radio"
@@ -105,7 +105,7 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
             {...register("gateway")}
           />
           <span className="radio__mark"></span>
-          <div className="container-horisontal text radio__label">
+          <div className="container-horizontal text radio__label">
             <Image
               src={images["paypal"]}
               loading="lazy"
@@ -122,11 +122,11 @@ const CheckoutPayment = ({ checkoutData, setCheckoutData, setTab }) => {
         type="submit"
         /* onClick={() => handleTabClick('shipping')} */
       />
-      <div className="container-horisontal checkout__text-button__wrapper">
+      <div className="container-horizontal checkout__text-button__wrapper">
         <button
           type="button"
           onClick={() => setTab(2)}
-          className="container-horisontal text__button checkout__text-button"
+          className="container-horizontal text__button checkout__text-button"
         >
           <LeftPurpleArrow
             className="button__icon_arrow button__icon_arrow_right"

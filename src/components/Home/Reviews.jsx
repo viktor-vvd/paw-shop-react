@@ -66,7 +66,7 @@ const Reviews = () => {
           <span className="title reviews__title_dark">Reviews</span>
           <h2 className="title reviews__title">Reviews</h2>
         </div>
-        <div className="container-horisontal reviews__slider__container">
+        <div className="container-horizontal reviews__slider__container">
           <div className="slider__button" ref={prevRef}>
             <LeftButtonArrow
               loading="lazy"
@@ -76,7 +76,7 @@ const Reviews = () => {
             />
           </div>
           <swiper-container
-            class="container-horisontal container slider reviews__slider"
+            class="container-horizontal container slider reviews__slider"
             init="false"
             ref={swiperElRef}
           >

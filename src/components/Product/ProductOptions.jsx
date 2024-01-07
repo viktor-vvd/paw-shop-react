@@ -48,16 +48,16 @@ const ProductOptions = ({ item }) => {
       {dataItem?.switching &&
         dataItem.switching.map((option, index) => (
           <div
-            className="container-horisontal product-options__wrapper"
+            className="container-horizontal product-options__wrapper"
             key={index}
           >
             <span className="text">{option.attribute.name}:</span>
-            <ul className="container-horisontal product-options__list">
+            <ul className="container-horizontal product-options__list">
               {option?.properties &&
                 option.properties.map((property, i) => (
-                  <li className="container-horisontal" key={i}>
+                  <li className="container-horizontal" key={i}>
                     <label
-                      className="container-horisontal text"
+                      className="container-horizontal text"
                       name={option.attribute.slug}
                     >
                       <input
@@ -78,8 +78,8 @@ const ProductOptions = ({ item }) => {
                       <span
                         className={
                           property.property.image
-                            ? "container-horisontal text product-options__item product-options__item_image"
-                            : "container-horisontal text product-options__item"
+                            ? "container-horizontal text product-options__item product-options__item_image"
+                            : "container-horizontal text product-options__item"
                         }
                         title={property.property.value}
                       >
@@ -98,9 +98,9 @@ const ProductOptions = ({ item }) => {
             </ul>
           </div>
         ))}
-      <div className="container-horisontal product-options__wrapper">
+      <div className="container-horizontal product-options__wrapper">
         <span className="text">Quantity:</span>
-        <div className="container-horisontal product-options__buttons">
+        <div className="container-horizontal product-options__buttons">
           <Button
             type="button"
             className="button_white quantity__button"
@@ -118,7 +118,7 @@ const ProductOptions = ({ item }) => {
           />
         </div>
       </div>
-      <div className="container-horisontal product-options__wrapper">
+      <div className="container-horizontal product-options__wrapper">
         <div className="container-vertical product-options__price">
           {item.data.discount_percent > 0 ? (
             <>
@@ -138,33 +138,33 @@ const ProductOptions = ({ item }) => {
             </span>
           )}
         </div>
-        <div className="container-horisontal product-options__buttons product-options__buttons_buy">
+        <div className="container-horizontal product-options__buttons product-options__buttons_buy">
           <Button type="button" value="Add to cart" onClick={handleAddToCart} />
           <Button type="button" className="button_white" value="Buy 1 click" />
         </div>
       </div>
-      <div className="container-horisontal product-options__return">
+      <div className="container-horizontal product-options__return">
         <Return alt={"return"} />
         <span className="text">Free return within 15 days</span>
       </div>
-      <div className="container-horisontal product-options__wrapper">
+      <div className="container-horizontal product-options__wrapper">
         <span className="text">Share:</span>
-        <ul className="container-horisontal product-options__list product-options__list_socials">
-          <li className="container-horisontal">
+        <ul className="container-horizontal product-options__list product-options__list_socials">
+          <li className="container-horizontal">
             <Button
               type="button"
               className="button_white telegram"
               Icon={TelegramColor}
             />
           </li>
-          <li className="container-horisontal">
+          <li className="container-horizontal">
             <Button
               type="button"
               className="button_white facebook"
               Icon={FacebookColorMini}
             />
           </li>
-          <li className="container-horisontal">
+          <li className="container-horizontal">
             <Button
               type="button"
               className="button_white twitter"

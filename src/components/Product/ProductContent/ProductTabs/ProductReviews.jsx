@@ -25,8 +25,8 @@ const ProductReviews = ({ item }) => {
       {isFetching && <Preloader className="preloader_absolute" />}
       {data?.data && (
         <div className="container-vertical product__reviews">
-          <div className="container-horisontal product__reviews__rate">
-            <div className="container-horisontal rate__stars">
+          <div className="container-horizontal product__reviews__rate">
+            <div className="container-horizontal rate__stars">
               <RatingStars value={parseFloat(data.total.avg)} size="40" />
             </div>
             <span className="text rate__text">{item.data.product.rating}</span>

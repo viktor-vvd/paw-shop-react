@@ -40,7 +40,7 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
       <section className="container-vertical form__section">
         <h3 className="subtitle">Shipping</h3>
 
-        <label className="container-horisontal form__radio" name="method">
+        <label className="container-horizontal form__radio" name="method">
           <input
             className="radio__input"
             type="radio"
@@ -50,11 +50,11 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
             {...register("method")}
           />
           <span className="radio__mark"></span>
-          <span className="container-horisontal text radio__label">
+          <span className="container-horizontal text radio__label">
             Free US Shipping <b>Free</b>
           </span>
         </label>
-        <label className="container-horisontal form__radio" name="method">
+        <label className="container-horizontal form__radio" name="method">
           <input
             className="radio__input"
             type="radio"
@@ -64,7 +64,7 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
             {...register("method")}
           />
           <span className="radio__mark"></span>
-          <span className="container-horisontal text radio__label">
+          <span className="container-horizontal text radio__label">
             US Shipping (Priority Processing - Skip The Queue & Save 24 Hours)
             <b>$1.99</b>
           </span>
@@ -76,11 +76,11 @@ const CheckoutShipping = ({ checkoutData, setCheckoutData, setTab }) => {
         type="submit"
         /* onClick={() => handleTabClick('shipping')} */
       />
-      <div className="container-horisontal checkout__text-button__wrapper">
+      <div className="container-horizontal checkout__text-button__wrapper">
         <button
           type="button"
           onClick={() => setTab(1)}
-          className="container-horisontal text__button checkout__text-button"
+          className="container-horizontal text__button checkout__text-button"
         >
           <LeftPurpleArrow
             className="button__icon_arrow button__icon_arrow_right"

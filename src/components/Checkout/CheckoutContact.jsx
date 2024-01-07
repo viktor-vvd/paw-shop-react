@@ -65,8 +65,8 @@ const CheckoutContact = ({ setCheckoutData, setTab }) => {
     >
       <section className="container-vertical form__section">
         <h3 className="subtitle">Your contact details</h3>
-        <div className="container-horisontal form__account">
-        <label className="container-horisontal text" name="account">
+        <div className="container-horizontal form__account">
+        <label className="container-horizontal text" name="account">
             <input
               type="radio"
               name="account"
@@ -74,17 +74,17 @@ const CheckoutContact = ({ setCheckoutData, setTab }) => {
               defaultChecked={true}
               className="account__input"
             />
-            <span className="container-horisontal text account__item">I’m a new customer</span>            
+            <span className="container-horizontal text account__item">I’m a new customer</span>            
           </label>
           <span className="text">or</span>
-          <label className="container-horisontal text" name="account">
+          <label className="container-horizontal text" name="account">
             <input
               type="radio"
               name="account"
               value="registered"
               className="account__input"
             />
-            <span className="container-horisontal text account__item">I have an account</span>            
+            <span className="container-horizontal text account__item">I have an account</span>            
           </label>
         </div>
         <label className="container-vertical form__label_wrapper" name="email">
@@ -123,7 +123,7 @@ const CheckoutContact = ({ setCheckoutData, setTab }) => {
             onChange={(e) => setSelectedCountry(e)}
           />
         </label>
-        <div className="container-horisontal form__section_horisontal">
+        <div className="container-horizontal form__section_horizontal">
           <label
             className="container-vertical form__label_wrapper"
             name="firstname"
@@ -188,7 +188,7 @@ const CheckoutContact = ({ setCheckoutData, setTab }) => {
             </span>
           )}
         </label>
-        <div className="container-horisontal form__section_horisontal">
+        <div className="container-horizontal form__section_horizontal">
           <label className="container-vertical form__label_wrapper" name="city">
             <span className="text">City</span>
             <input

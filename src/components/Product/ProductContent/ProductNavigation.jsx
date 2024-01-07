@@ -6,9 +6,9 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
   };
   return (
     <>
-      <div className="container-horisontal outer-container product__navigation">
+      <div className="container-horizontal outer-container product__navigation">
         {isDescrtiption && (
-          <label className="container-horisontal" name="tab">
+          <label className="container-horizontal" name="tab">
             <input
               type="radio"
               name="tab"
@@ -17,12 +17,12 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
               onChange={handleOptionChange}
               className="navigation__input"
             />
-            <span className="container-horisontal subtitle navigation__item">
+            <span className="container-horizontal subtitle navigation__item">
               Description
             </span>
           </label>
         )}
-        <label className="container-horisontal" name="tab">
+        <label className="container-horizontal" name="tab">
           <input
             type="radio"
             name="tab"
@@ -31,11 +31,11 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
             onChange={handleOptionChange}
             className="navigation__input"
           />
-          <span className="container-horisontal subtitle navigation__item">
+          <span className="container-horizontal subtitle navigation__item">
             Reviews ({reviews})
           </span>
         </label>
-        <label className="container-horisontal" name="tab">
+        <label className="container-horizontal" name="tab">
           <input
             type="radio"
             name="tab"
@@ -44,7 +44,7 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
             onChange={handleOptionChange}
             className="navigation__input"
           />
-          <span className="container-horisontal subtitle navigation__item accent">
+          <span className="container-horizontal subtitle navigation__item accent">
             Write a review
           </span>
         </label>

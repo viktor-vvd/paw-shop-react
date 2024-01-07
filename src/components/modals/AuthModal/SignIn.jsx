@@ -104,8 +104,8 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
       {error?.data.errors.password && (
         <span className="text_light form__error">{error.data.errors.password}</span>
       )}
-      <div className="container-horisontal form__middle__container">
-        <label className="container-horisontal checkbox" name="remember">
+      <div className="container-horizontal form__middle__container">
+        <label className="container-horizontal checkbox" name="remember">
           <input
             className="checkbox__input"
             type="checkbox"
@@ -113,7 +113,7 @@ const SignIn = ({ setisRegistered, setForgotPassword }) => {
             defaultChecked={false}
           />
           <span className="checkmark"></span>
-          <span className="container-horisontal text_light checkbox__label">
+          <span className="container-horizontal text_light checkbox__label">
             Remember me
           </span>
         </label>

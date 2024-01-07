@@ -82,9 +82,9 @@ const AddReview = ({ item }) => {
           className="container-vertical add-review__form"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="container-horisontal form__rating__wrapper">
+          <div className="container-horizontal form__rating__wrapper">
             <Rating
-              className="container-horisontal form__rating"
+              className="container-horizontal form__rating"
               initialValue={rating}
               ratingValue={rating}
               size={50}
@@ -114,7 +114,7 @@ const AddReview = ({ item }) => {
               </span>
             )}
 
-            <label className="container-horisontal form__add-file" name="pics">
+            <label className="container-horizontal form__add-file" name="pics">
               <input
                 type="file"
                 name="pics"
@@ -135,10 +135,10 @@ const AddReview = ({ item }) => {
               </div>
             </label>
             {imgs.length > 0 && (
-              <div className="container-horisontal images__list">
+              <div className="container-horizontal images__list">
                 {Array.from(imgs).map((image, index) => (
                   <div
-                    className="container-horisontal images__item"
+                    className="container-horizontal images__item"
                     key={index}
                   >
                     <span className="text">{image.name}</span>

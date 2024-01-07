@@ -18,7 +18,7 @@ const Menu = () => {
             : "container-vertical menu hide"
         }
       >
-        <div className="container-horisontal menu__header">
+        <div className="container-horizontal menu__header">
           <h2 className="title">Menu</h2>
           <ClosePurple
             className="close__icon"

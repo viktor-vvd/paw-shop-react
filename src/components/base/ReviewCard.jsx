@@ -27,17 +27,17 @@ const ReviewCard = ({ item, link = true }) => {
   return (
     <div className="container-vertical review-card">
       <span className="review-card__date">{convertDate(item.created_at)}</span>
-      <div className="container-horisontal review-card__header">
+      <div className="container-horizontal review-card__header">
         <span className="review-card__name">
           {item.name ? item.name : "User"}
         </span>
-        <div className="container-horisontal review-card__stars">
+        <div className="container-horizontal review-card__stars">
           <RatingStars value={parseFloat(item.rating)} />
         </div>
       </div>
       {item.body && <span className="text_light">{item.body}</span>}
       {item.images && (
-        <div className="container-horisontal review-card__photos">
+        <div className="container-horizontal review-card__photos">
           {item.images.map(
             (imageItem, index) =>
               index < maxImages && (
@@ -53,7 +53,7 @@ const ReviewCard = ({ item, link = true }) => {
               )
           )}
           {item.images.length > maxImages && (
-            <div className="container-horisontal review-card__photos__item review-card__photos__more">
+            <div className="container-horizontal review-card__photos__item review-card__photos__more">
               <span className="text review-card__photos__more__text">
                 +{item.images.length - maxImages}
               </span>
@@ -63,7 +63,7 @@ const ReviewCard = ({ item, link = true }) => {
       )}
       {link && (
         <a
-          className="container-horisontal text__button review-card__link"
+          className="container-horizontal text__button review-card__link"
           href="/"
         >
           See the product{" "}
