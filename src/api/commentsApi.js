@@ -9,25 +9,25 @@ export const commentsApi = createApi({
     commentsRandomListGET: builder.query({
       query: (data) => {
         return {
-          url: `comments/products/random`,
+          url: `comments/products/8301e8ca-58ab-4598-b7cc-4a2ddfab34f6`,
           method: `GET`,
-          params:data,
+          params: data,
         };
       },
       providesTags: ["Catalog"],
     }),
     commentsProductListGET: builder.query({
-      query: ({data, id}) => {
+      query: ({ data, id }) => {
         return {
           url: `comments/products/${id}`,
           method: `GET`,
-          params:data,
+          params: data,
         };
       },
       providesTags: ["Catalog"],
     }),
     commentsAddPOST: builder.mutation({
-      query: ({data, id}) => {
+      query: ({ data, id }) => {
         return {
           contentType: "multipart/form-data",
           url: `comments/products/${id}`,
@@ -35,7 +35,7 @@ export const commentsApi = createApi({
           body: data,
         };
       },
-      invalidatesTags:["Projects"],
+      invalidatesTags: ["Projects"],
     }),
     /* pageHomeGET: builder.query({
       query: () => {
@@ -46,7 +46,7 @@ export const commentsApi = createApi({
       },
       providesTags: ["page"],
     }), */
-/*     createProject: builder.mutation({
+    /*     createProject: builder.mutation({
       query: (data) => {
         return {
           url: `project/manage_project/`,
@@ -55,8 +55,8 @@ export const commentsApi = createApi({
         };
       },
       invalidatesTags:["Projects"],
-    }),
- *//*     delete: builder.mutation({
+    }), */
+    /*     delete: builder.mutation({
       query: (data) => {
         return {
           url: `notifications/`,
@@ -66,7 +66,6 @@ export const commentsApi = createApi({
       },
       invalidatesTags:["Notifications"],
     }), */
-
   }),
 });
 export const {

@@ -1,0 +1,18 @@
+@include sm {
+    .product-photos {
+        max-width: 100%;
+        overflow: hidden;
+        flex-direction: column;
+
+        // .product-photos__slider
+
+        &__slider {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        &__list {
+            flex-shrink: 0;
+        }
+    }
+}

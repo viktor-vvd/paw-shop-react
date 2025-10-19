@@ -23,7 +23,7 @@ const ProductPage = () => {
       {isFetching && <Preloader />}
       {data?.data && (
         <div className="container-vertical page-container product">
-          <section className="container-vertical outer-container product__wrapper">
+          <section className="container-vertical outer-container outer__container product__wrapper">
             <div className="container-vertical container product__breadcrumbs">
               <Breadcrumbs item={{ name: data.data.name }} />
             </div>

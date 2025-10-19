@@ -6,7 +6,12 @@ import { useDispatch } from "react-redux";
 import { setCart_id } from "redux/reducers/cartSlice";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import { FacebookColorMini, Return, TelegramColor, TwitterColor } from "public/svgComponents";
+import {
+  FacebookColorMini,
+  Return,
+  TelegramColor,
+  TwitterColor,
+} from "public/svgComponents";
 
 const ProductOptions = ({ item }) => {
   const navigate = useNavigate();
@@ -67,7 +72,7 @@ const ProductOptions = ({ item }) => {
                         onChange={() =>
                           navigate(
                             "/catalog/" +
-                              item.data.product.category.slug +
+                              item.data.product.category?.slug +
                               "/product/" +
                               property.variation.slug
                           )
@@ -77,20 +82,26 @@ const ProductOptions = ({ item }) => {
                       />
                       <span
                         className={
-                          property.property.image
+                          /* property.property.image */ option.attribute
+                            .format !== "text"
                             ? "container-horizontal text product-options__item product-options__item_image"
                             : "container-horizontal text product-options__item"
+                        }
+                        style={
+                          option.attribute.format !== "text"
+                            ? { backgroundColor: property.property.value }
+                            : {}
                         }
                         title={property.property.value}
                       >
                         {option.attribute.format === "text" &&
                           property.property.value}
-                        {property.property.image && (
+                        {/* {property.property.image && (
                           <Image
                             src={property.property.image}
                             alt={property.property.value}
                           />
-                        )}
+                        )} */}
                       </span>
                     </label>
                   </li>
@@ -120,7 +131,7 @@ const ProductOptions = ({ item }) => {
       </div>
       <div className="container-horizontal product-options__wrapper">
         <div className="container-vertical product-options__price">
-          {item.data.discount_percent > 0 ? (
+          {item.data.prices.discount > 0 ? (
             <>
               <span className="price price_new">
                 {item.data.prices.currency.symbol}
@@ -134,7 +145,7 @@ const ProductOptions = ({ item }) => {
           ) : (
             <span className="price">
               {item.data.prices.currency.symbol}
-              {item.data.price}
+              {item.data.prices.now}
             </span>
           )}
         </div>

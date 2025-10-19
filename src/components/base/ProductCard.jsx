@@ -22,8 +22,8 @@ const ProductCard = ({ item }) => {
     if (result.data) {
       dispatch(setCart_id(result.data.cart_id));
       Cookies.set("cart_id", result.data.cart_id);
-      console.log({onadd: Cookies.get("cart_id")});
-      dispatch(cartApi.util.invalidateTags(['Cart']));
+      console.log({ onadd: Cookies.get("cart_id") });
+      dispatch(cartApi.util.invalidateTags(["Cart"]));
     }
   };
 
@@ -38,7 +38,7 @@ const ProductCard = ({ item }) => {
         {item.new && <span className="tag tag_new">New</span>}
         <Link
           to={
-            "/catalog/" + item.product.category.slug + "/product/" + item.slug
+            "/catalog/" + item.product.category?.slug + "/product/" + item.slug
           }
         >
           <Image
@@ -52,7 +52,7 @@ const ProductCard = ({ item }) => {
         </Link>
       </div>
       <Link
-        to={"/catalog/" + item.product.category.slug + "/product/" + item.slug}
+        to={"/catalog/" + item.product.category?.slug + "/product/" + item.slug}
         className="text product-card__title"
       >
         {item.name}
@@ -65,7 +65,7 @@ const ProductCard = ({ item }) => {
       </div>
       <div className="container-horizontal product-card__bottom">
         <div className="container-horizontal price__container">
-          {item.discount > 0 ? (
+          {item.prices.discount > 0 ? (
             <>
               <span className="price price_new">
                 {item.prices.currency.symbol}
@@ -79,7 +79,7 @@ const ProductCard = ({ item }) => {
           ) : (
             <span className="price">
               {item.prices.currency.symbol}
-              {item.price}
+              {item.prices.now}
             </span>
           )}
         </div>

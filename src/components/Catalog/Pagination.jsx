@@ -1,22 +1,15 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({
-  setCurrentPage = () => {},
-  pageCount,
-  forcePage = 1,
-  onPageChange = () => {},
-}) => {
-  const handlePageClick = (event) => {
-    setCurrentPage(event.selected + 1);
-  };
-
+const Pagination = ({ pageCount, forcePage = 1, onPageChange = () => {} }) => {
   return (
     <>
       <ReactPaginate
         nextLabel=""
         forcePage={forcePage - 1}
-        onPageChange={(event) => {onPageChange(event.selected + 1)}}
+        onPageChange={(event) => {
+          onPageChange(event.selected + 1);
+        }}
         pageRangeDisplayed={3}
         marginPagesDisplayed={2}
         pageCount={pageCount}

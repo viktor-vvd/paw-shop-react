@@ -1,6 +1,8 @@
 .pagination {
     gap: 10rem;
     list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &__item {
         justify-content: center;
@@ -16,7 +18,7 @@
             border: 1px solid $accent;
         }
 
-        &_active &__link{
+        &_active &__link {
             background: $light-purple;
             border: 1px solid $accent;
         }

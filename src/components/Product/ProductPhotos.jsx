@@ -17,23 +17,37 @@ const ProductPhotos = ({ items }) => {
           items.map((item, index) => (
             <swiper-slide key={index}>
               <div className="container-horizontal slider__photo">
-                <Image src={item.conversions.preview.url} key={index} alt={"Image" + index} />
+                <Image
+                  src={item.conversions.preview.url}
+                  key={index}
+                  alt={"Image" + index}
+                />
               </div>
             </swiper-slide>
           ))}
       </swiper-container>
       <swiper-container
         class="container-vertical product-photos__list"
-        direction="vertical"
+        direction="horizontal"
         loop={false}
-        slides-per-view={5}
+        slides-per-view={3}
         watch-slides-progress={true}
+        breakpoints={JSON.stringify({
+          767: {
+            slidesPerView: 5,
+            direction: "vertical",
+          },
+        })}
       >
         {items &&
           items.map((item, index) => (
             <swiper-slide key={index}>
               <div className="container-horizontal list__photo">
-                <Image src={item.conversions.thumb.url} key={index} alt={"Image" + index} />
+                <Image
+                  src={item.conversions.thumb.url}
+                  key={index}
+                  alt={"Image" + index}
+                />
               </div>
             </swiper-slide>
           ))}

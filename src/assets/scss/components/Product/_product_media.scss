@@ -1,0 +1,22 @@
+@include sm {
+    .product {
+        gap: 20rem;
+        padding: 80rem 0 0rem;
+
+        &__top {
+            gap: 20rem 22rem;
+            grid-template-areas:
+                "product__header"
+                "product-photos"
+                "product-options";
+        }
+
+        &__header {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "product__title"
+                "product__code"
+                "product__rate";
+        }
+    }
+}

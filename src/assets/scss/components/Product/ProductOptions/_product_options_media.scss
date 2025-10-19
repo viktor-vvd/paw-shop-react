@@ -1,0 +1,23 @@
+@include sm {
+    .product-options {
+        gap: 10rem;
+
+        &__wrapper {
+            flex-wrap: wrap;
+        }
+
+        // .product-options__item
+
+        &__item {
+            padding: 13rem 13rem;
+
+            // .product-options__item_color
+
+            &_image {
+                width: 40rem;
+                height: 40rem;
+            }
+        }
+
+    }
+}

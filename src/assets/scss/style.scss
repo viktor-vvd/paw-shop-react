@@ -172,7 +172,7 @@ html {
 .main {
    width: 100%;
    flex: 1 0 auto;
-   /* min-height: 100vh; */
+   min-height: 100dvh;
 }
 
 .page-container {
@@ -233,3 +233,6 @@ html {
 @import 'components/modals/AuthModal/auth_modal_media';
 @import 'components/modals/CartModal/cart_modal_media';
 @import 'components/base/CartItem/cart_item_media';
+@import 'components/Product/product_media';
+@import 'components/Product/ProductPhotos/product_photos_media';
+@import 'components/Product/ProductOptions/product_options_media';

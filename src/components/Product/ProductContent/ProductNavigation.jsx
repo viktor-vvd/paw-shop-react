@@ -7,7 +7,7 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
   return (
     <>
       <div className="container-horizontal outer-container product__navigation">
-        {isDescrtiption && (
+        {/* {isDescrtiption && (
           <label className="container-horizontal" name="tab">
             <input
               type="radio"
@@ -21,7 +21,7 @@ const ProductNavigation = ({ reviews, tab, setTab, isDescrtiption }) => {
               Description
             </span>
           </label>
-        )}
+        )} */}
         <label className="container-horizontal" name="tab">
           <input
             type="radio"

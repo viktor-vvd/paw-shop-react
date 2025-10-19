@@ -9,16 +9,16 @@ export const cartApi = createApi({
     cartGET: builder.query({
       query: () => {
         return {
-          url: `carts/`,
+          url: `cart/`,
           method: `GET`,
         };
       },
       providesTags: ["Cart"],
     }),
     addToCartPOST: builder.mutation({
-      query: ({id, data}) => {
+      query: ({ id, data }) => {
         return {
-          url: `carts/${id}/add/`,
+          url: `cart/${id}/add/`,
           method: `POST`,
           body: data,
         };
@@ -26,9 +26,9 @@ export const cartApi = createApi({
       invalidatesTags: ["Cart"],
     }),
     removeFromCartPOST: builder.mutation({
-      query: ({id, data}) => {
+      query: ({ id, data }) => {
         return {
-          url: `carts/${id}/remove/`,
+          url: `cart/${id}/remove/`,
           method: `POST`,
           body: data,
         };
@@ -38,7 +38,7 @@ export const cartApi = createApi({
     addPromocodePOST: builder.mutation({
       query: (data) => {
         return {
-          url: `carts/promocode/add`,
+          url: `cart/promocode/add`,
           method: `POST`,
           body: data,
         };
@@ -48,7 +48,7 @@ export const cartApi = createApi({
     removePromocodePOST: builder.mutation({
       query: (data) => {
         return {
-          url: `carts/promocode/remove`,
+          url: `cart/promocode/remove`,
           method: `POST`,
           body: data,
         };
@@ -64,7 +64,7 @@ export const cartApi = createApi({
       },
       providesTags: ["page"],
     }), */
-/*     createProject: builder.mutation({
+    /*     createProject: builder.mutation({
       query: (data) => {
         return {
           url: `project/manage_project/`,
@@ -84,14 +84,13 @@ export const cartApi = createApi({
       },
       invalidatesTags:["Notifications"],
     }), */
-
   }),
 });
 export const {
-    useCartGETQuery,
+  useCartGETQuery,
   useLazyCartGETQuery,
   useAddToCartPOSTMutation,
   useRemoveFromCartPOSTMutation,
   useAddPromocodePOSTMutation,
-  useRemovePromocodePOSTMutation
+  useRemovePromocodePOSTMutation,
 } = cartApi;

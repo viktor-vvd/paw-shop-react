@@ -9,7 +9,7 @@ export const catalogApi = createApi({
     catalogListGET: builder.query({
       query: (data) => {
         return {
-          url: `variations/`,
+          url: `shop/variations/`,
           method: `GET`,
           params: data,
         };
@@ -19,7 +19,7 @@ export const catalogApi = createApi({
     catalogItemGET: builder.query({
       query: (data) => {
         return {
-          url: `variation/${data}`,
+          url: `shop/variations/${data}`,
           method: `GET`,
           /* params: data, */
         };
@@ -35,7 +35,7 @@ export const catalogApi = createApi({
       },
       providesTags: ["page"],
     }), */
-/*     createProject: builder.mutation({
+    /*     createProject: builder.mutation({
       query: (data) => {
         return {
           url: `project/manage_project/`,
@@ -44,8 +44,8 @@ export const catalogApi = createApi({
         };
       },
       invalidatesTags:["Projects"],
-    }),
- *//*     delete: builder.mutation({
+    }), */
+    /*     delete: builder.mutation({
       query: (data) => {
         return {
           url: `notifications/`,
@@ -55,7 +55,6 @@ export const catalogApi = createApi({
       },
       invalidatesTags:["Notifications"],
     }), */
-
   }),
 });
 export const {
