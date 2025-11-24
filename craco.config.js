@@ -11,6 +11,7 @@ module.exports = {
       "@pages": resolvePath("./src/pages"),
       "@public": resolvePath("./src/public"),
       "@imports": resolvePath("./src/imports"),
+      "@utils": resolvePath("./src/utils"),
     },
     /* configure: (webpackConfig) => {
       webpackConfig.optimization.minimize = true;

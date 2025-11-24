@@ -36,7 +36,7 @@ const ReviewCard = ({ item, link = true }) => {
         </div>
       </div>
       {item.body && <span className="text_light">{item.body}</span>}
-      {item.images && (
+      {/* {item.images && (
         <div className="container-horizontal review-card__photos">
           {item.images.map(
             (imageItem, index) =>
@@ -60,7 +60,7 @@ const ReviewCard = ({ item, link = true }) => {
             </div>
           )}
         </div>
-      )}
+      )} */}
       {link && (
         <a
           className="container-horizontal text__button review-card__link"

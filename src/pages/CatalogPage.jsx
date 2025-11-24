@@ -1,6 +1,4 @@
-import {
-  useLazyCatalogListGETQuery,
-} from "api/catalogApi";
+import { useLazyCatalogListGETQuery } from "api/catalogApi";
 import Category from "components/Catalog/Category";
 import Filter from "components/Catalog/Filter";
 import Pagination from "components/Catalog/Pagination";
@@ -14,14 +12,16 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const CatalogPage = () => {
   const navigate = useNavigate();
-    const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
   const { slug } = useParams();
 
   const [catalogListGET, { data, isFetching }] = useLazyCatalogListGETQuery();
 
-  const [itemsPerPage, setitemsPerPage] = useState(1);
+  const [itemsPerPage] = useState(8);
 
-  const [currentPage, setCurrentPage] = useState(Number(params.get("page")) || 1);
+  const [currentPage, setCurrentPage] = useState(
+    Number(params.get("page")) || 1
+  );
 
   const [sortValue, setSortValue] = useState({
     sort: params.get("sort") || "default",
@@ -29,12 +29,20 @@ const CatalogPage = () => {
   });
 
   const handlePagination = (selectedPage) => {
-    navigate(`/catalog/${slug}?sort=${sortValue.sort}&order=${sortValue.order}&page=${selectedPage}`);
+    navigate(
+      `/catalog/${slug}?sort=${sortValue.sort}&order=${sortValue.order}&page=${selectedPage}`
+    );
     setCurrentPage(selectedPage);
   };
 
   const handleSortChange = (event) => {
-    navigate(`/catalog/${slug}?sort=${JSON.parse(event.target.value)?.sort}&order=${JSON.parse(event.target.value)?.order?(JSON.parse(event.target.value)?.order):(`desc`)}&page=1`);
+    navigate(
+      `/catalog/${slug}?sort=${JSON.parse(event.target.value)?.sort}&order=${
+        JSON.parse(event.target.value)?.order
+          ? JSON.parse(event.target.value)?.order
+          : `desc`
+      }&page=1`
+    );
     setSortValue(JSON.parse(event.target.value));
     setCurrentPage(1);
   };
@@ -45,7 +53,7 @@ const CatalogPage = () => {
       per_page: itemsPerPage,
       sort: sortValue.sort,
       order: sortValue.order,
-      category: slug,
+      /* category: slug, */
     });
   }, [slug, currentPage, sortValue, navigate]);
 
@@ -62,10 +70,7 @@ const CatalogPage = () => {
           <div className="container-vertical outer__container catalog__bottom">
             <div className="container-horizontal container filter-sort">
               <Filter />
-              <Sort
-                sortValue={sortValue}
-                handleSortChange={handleSortChange}
-              />
+              <Sort sortValue={sortValue} handleSortChange={handleSortChange} />
             </div>
             <div className="container-horizontal container catalog__products">
               {data?.data &&

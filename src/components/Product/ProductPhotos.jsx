@@ -21,6 +21,7 @@ const ProductPhotos = ({ items }) => {
                   src={item.conversions.preview.url}
                   key={index}
                   alt={"Image" + index}
+                  loading={index !== 0 && "lazy"}
                 />
               </div>
             </swiper-slide>
@@ -47,6 +48,7 @@ const ProductPhotos = ({ items }) => {
                   src={item.conversions.thumb.url}
                   key={index}
                   alt={"Image" + index}
+                  loading={index >= 3 && "lazy"}
                 />
               </div>
             </swiper-slide>
